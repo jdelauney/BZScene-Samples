@@ -1,0 +1,217 @@
+object MainForm: TMainForm
+  Left = 451
+  Height = 816
+  Top = 250
+  Width = 1230
+  Caption = 'V.Breaker And H.Pong'
+  ClientHeight = 816
+  ClientWidth = 1230
+  Constraints.MinHeight = 768
+  Constraints.MinWidth = 1024
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.0.4'
+  object Panel1: TPanel
+    Left = 0
+    Height = 48
+    Top = 0
+    Width = 1230
+    Align = alTop
+    Caption = 'Level 1'
+    ClientHeight = 48
+    ClientWidth = 1230
+    TabOrder = 0
+    object Button1: TButton
+      Left = 5
+      Height = 38
+      Top = 5
+      Width = 75
+      Align = alLeft
+      BorderSpacing.Around = 4
+      Caption = 'Nouveau'
+      TabOrder = 0
+    end
+    object btnLoadLevel: TButton
+      Left = 84
+      Height = 38
+      Top = 5
+      Width = 75
+      Align = alLeft
+      BorderSpacing.Around = 4
+      Caption = 'Charger'
+      OnClick = btnLoadLevelClick
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 163
+      Height = 38
+      Top = 5
+      Width = 75
+      Align = alLeft
+      BorderSpacing.Around = 4
+      Caption = 'Sauver'
+      TabOrder = 2
+    end
+    object lbltmp: TLabel
+      Left = 758
+      Height = 15
+      Top = 20
+      Width = 35
+      Caption = 'lbltmp'
+      ParentColor = False
+    end
+    object chkShowGrid: TCheckBox
+      Left = 252
+      Height = 19
+      Top = 17
+      Width = 93
+      Caption = 'Montrer Grille'
+      Checked = True
+      State = cbChecked
+      TabOrder = 3
+    end
+  end
+  object Panel2: TPanel
+    Left = 1024
+    Height = 768
+    Top = 48
+    Width = 206
+    Align = alRight
+    ClientHeight = 768
+    ClientWidth = 206
+    Color = 4144959
+    ParentColor = False
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 9
+      Height = 15
+      Top = 21
+      Width = 75
+      Caption = 'Type de brick :'
+      Font.Color = clWhite
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 9
+      Height = 15
+      Top = 168
+      Width = 69
+      Caption = 'Type bonus : '
+      Font.Color = clWhite
+      ParentColor = False
+      ParentFont = False
+    end
+    object CheckBox1: TCheckBox
+      Left = 9
+      Height = 19
+      Top = 312
+      Width = 92
+      Caption = 'Indestructible'
+      Font.Color = clWhite
+      ParentFont = False
+      TabOrder = 0
+    end
+    object CheckBox2: TCheckBox
+      Left = 9
+      Height = 19
+      Top = 328
+      Width = 76
+      Caption = 'Animation'
+      Font.Color = clWhite
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 9
+      Height = 15
+      Top = 352
+      Width = 134
+      Caption = 'Nombre de frame ou hit :'
+      Font.Color = clWhite
+      ParentColor = False
+      ParentFont = False
+    end
+    object SpinEdit1: TSpinEdit
+      Left = 9
+      Height = 23
+      Top = 376
+      Width = 183
+      TabOrder = 2
+    end
+    object lbxBrickItem: TListBox
+      Left = 9
+      Height = 112
+      Top = 48
+      Width = 183
+      ItemHeight = 0
+      OnClick = lbxBrickItemClick
+      TabOrder = 3
+    end
+    object ListBox2: TListBox
+      Left = 9
+      Height = 112
+      Top = 192
+      Width = 183
+      ItemHeight = 0
+      TabOrder = 4
+    end
+    object Memo1: TMemo
+      Left = 8
+      Height = 296
+      Top = 408
+      Width = 192
+      Lines.Strings = (
+        '#VBHPLVL'
+        '@LEVELNAME:Mon premier niveau'
+        '@STARTRES'
+        '4'
+        'Brick rouge | brickred.png '
+        'Brick verte | brickgreen.png '
+        'Brick jaune | brickyellow.png '
+        'Brick bleu | brickblue.png '
+        '@ENDRES'
+        ' -1, 0, 1, 2, -1, 0, 1, 0,-1,2,1,0,-1'
+        ' -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1'
+        ' -1, 3,0,-1,-1,2,3,2,-1,-1,0,3,-1'
+        '-1,-1,2,1,3,-1,-1,-1,3,1,2,-1,-1'
+        ' -1, 3,0,-1,-1,1,0,1,-1,-1,0,3,-1'
+        ' -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1'
+        ' -1, 0,1,2, -1, 3,-1,3,-1, 2,1,0,-1'
+        ' -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1'
+        '#EOF'
+      )
+      TabOrder = 5
+      WordWrap = False
+    end
+  end
+  object pnlViewer: TPanel
+    Left = 0
+    Height = 768
+    Top = 48
+    Width = 1024
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clBlack
+    Constraints.MaxHeight = 768
+    Constraints.MaxWidth = 1024
+    Constraints.MinHeight = 768
+    Constraints.MinWidth = 1024
+    ParentColor = False
+    TabOrder = 2
+    OnMouseDown = pnlViewerMouseDown
+    OnMouseMove = pnlViewerMouseMove
+    OnMouseUp = pnlViewerMouseUp
+  end
+  object ppmEditMap: TPopupMenu
+    left = 349
+    top = 173
+    object mniDeleteBrick: TMenuItem
+      Caption = 'Effacer'
+      OnClick = mniDeleteBrickClick
+    end
+  end
+end

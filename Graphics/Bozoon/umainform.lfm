@@ -1,0 +1,16 @@
+object MainForm: TMainForm
+  Left = 389
+  Height = 600
+  Top = 242
+  Width = 800
+  BorderStyle = bsSingle
+  Caption = 'GLZScene BoZoon Demo (Hit : 1,2,3)'
+  KeyPreview = True
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+end

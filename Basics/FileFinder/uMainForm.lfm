@@ -1,0 +1,560 @@
+object MainForm: TMainForm
+  Left = 442
+  Height = 640
+  Top = 250
+  Width = 540
+  Caption = 'File Finder'
+  ClientHeight = 640
+  ClientWidth = 540
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 416
+    Top = 0
+    Width = 540
+    Align = alTop
+    ClientHeight = 416
+    ClientWidth = 540
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 52
+      Height = 15
+      Top = 18
+      Width = 47
+      Caption = 'Dossier :'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtFolder: TDirectoryEdit
+      Left = 104
+      Height = 23
+      Top = 15
+      Width = 408
+      ShowHidden = False
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 15
+      Top = 45
+      Width = 91
+      Caption = 'Filtre de fichier :'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtFileMask: TEdit
+      Left = 104
+      Height = 23
+      Top = 42
+      Width = 381
+      TabOrder = 1
+      Text = '*.*'
+    end
+    object GroupBox1: TGroupBox
+      Left = 1
+      Height = 319
+      Top = 96
+      Width = 538
+      Align = alBottom
+      Caption = 'Options'
+      ClientHeight = 299
+      ClientWidth = 534
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      object Panel2: TPanel
+        Left = 0
+        Height = 144
+        Top = 49
+        Width = 534
+        Align = alTop
+        ClientHeight = 144
+        ClientWidth = 534
+        TabOrder = 0
+        object GroupBox3: TGroupBox
+          Left = 268
+          Height = 142
+          Top = 1
+          Width = 265
+          Align = alClient
+          Caption = 'Date'
+          ClientHeight = 122
+          ClientWidth = 261
+          TabOrder = 0
+          object chkDateActive: TCheckBox
+            Left = 4
+            Height = 19
+            Top = 4
+            Width = 253
+            Align = alTop
+            BorderSpacing.Around = 4
+            Caption = 'Activer'
+            TabOrder = 0
+          end
+          object pnlDateCriterias: TPanel
+            Left = 0
+            Height = 95
+            Top = 27
+            Width = 261
+            Align = alClient
+            ClientHeight = 95
+            ClientWidth = 261
+            Enabled = False
+            TabOrder = 1
+            object Label5: TLabel
+              Left = 8
+              Height = 15
+              Top = 8
+              Width = 41
+              Caption = 'Critère :'
+              ParentColor = False
+              ParentFont = False
+            end
+            object cbxDateCriteria: TComboBox
+              Left = 56
+              Height = 23
+              Top = 5
+              Width = 198
+              ItemHeight = 15
+              ParentFont = False
+              Style = csDropDownList
+              TabOrder = 0
+            end
+            object Label7: TLabel
+              Left = 69
+              Height = 15
+              Top = 36
+              Width = 30
+              Caption = 'Date :'
+              ParentColor = False
+              ParentFont = False
+            end
+            object Label9: TLabel
+              Left = 8
+              Height = 15
+              Top = 65
+              Width = 91
+              Caption = 'Date maximum  :'
+              ParentColor = False
+              ParentFont = False
+            end
+            object edtDateFrom: TDateEdit
+              Left = 106
+              Height = 23
+              Top = 33
+              Width = 148
+              CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+              DateOrder = doNone
+              ButtonWidth = 23
+              NumGlyphs = 1
+              MaxLength = 0
+              ParentFont = False
+              TabOrder = 1
+              Text = 'edtDateFrom'
+            end
+            object edtDateTo: TDateEdit
+              Left = 106
+              Height = 23
+              Top = 61
+              Width = 148
+              CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+              DateOrder = doNone
+              ButtonWidth = 23
+              NumGlyphs = 1
+              MaxLength = 0
+              ParentFont = False
+              TabOrder = 2
+              Text = 'edtDateTo'
+            end
+          end
+        end
+        object GroupBox2: TGroupBox
+          Left = 1
+          Height = 142
+          Top = 1
+          Width = 267
+          Align = alLeft
+          Caption = 'Taille'
+          ClientHeight = 122
+          ClientWidth = 263
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 1
+          object chkSizeActive: TCheckBox
+            Left = 4
+            Height = 19
+            Top = 4
+            Width = 255
+            Align = alTop
+            BorderSpacing.Around = 4
+            Caption = 'Activer'
+            TabOrder = 0
+          end
+          object pnlSizeCirterias: TPanel
+            Left = 0
+            Height = 95
+            Top = 27
+            Width = 263
+            Align = alClient
+            ClientHeight = 95
+            ClientWidth = 263
+            Enabled = False
+            TabOrder = 1
+            object Label4: TLabel
+              Left = 8
+              Height = 15
+              Top = 8
+              Width = 41
+              Caption = 'Critère :'
+              ParentColor = False
+              ParentFont = False
+            end
+            object cbxSizeCriteria: TComboBox
+              Left = 56
+              Height = 23
+              Top = 5
+              Width = 200
+              ItemHeight = 15
+              ParentFont = False
+              Style = csDropDownList
+              TabOrder = 0
+            end
+            object Label6: TLabel
+              Left = 74
+              Height = 15
+              Top = 36
+              Width = 35
+              Caption = 'Taille : '
+              ParentColor = False
+              ParentFont = False
+            end
+            object Label8: TLabel
+              Left = 12
+              Height = 15
+              Top = 65
+              Width = 99
+              Caption = 'Taille maximum  :  '
+              ParentColor = False
+              ParentFont = False
+            end
+            object speMinSize: TSpinEdit
+              Left = 112
+              Height = 23
+              Top = 33
+              Width = 144
+              ParentFont = False
+              TabOrder = 1
+            end
+            object speMaxSize: TSpinEdit
+              Left = 112
+              Height = 23
+              Top = 61
+              Width = 144
+              ParentFont = False
+              TabOrder = 2
+            end
+          end
+        end
+      end
+      object GroupBox4: TGroupBox
+        Left = 0
+        Height = 106
+        Top = 193
+        Width = 534
+        Align = alClient
+        Caption = 'Contenu'
+        ClientHeight = 86
+        ClientWidth = 530
+        TabOrder = 1
+        object chkContentActive: TCheckBox
+          Left = 4
+          Height = 19
+          Top = 4
+          Width = 522
+          Align = alTop
+          BorderSpacing.Around = 4
+          Caption = 'Activer'
+          TabOrder = 0
+        end
+        object pnlContentCriterias: TPanel
+          Left = 0
+          Height = 59
+          Top = 27
+          Width = 530
+          Align = alClient
+          ClientHeight = 59
+          ClientWidth = 530
+          Enabled = False
+          TabOrder = 1
+          object Label3: TLabel
+            Left = 5
+            Height = 15
+            Top = 11
+            Width = 130
+            Caption = 'Contenu à rechercher : '
+            ParentColor = False
+          end
+          object edtContent: TEdit
+            Left = 133
+            Height = 23
+            Top = 8
+            Width = 379
+            ParentFont = False
+            TabOrder = 0
+          end
+          object chkContentCaseSensitive: TCheckBox
+            Left = 133
+            Height = 19
+            Top = 35
+            Width = 115
+            Caption = 'Sensible à la casse'
+            ParentFont = False
+            TabOrder = 1
+          end
+        end
+      end
+      object chkgAttributs: TGroupBox
+        Left = 0
+        Height = 49
+        Top = 0
+        Width = 534
+        Align = alTop
+        Caption = 'Attributs'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.TopBottomSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 6
+        ClientHeight = 29
+        ClientWidth = 530
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 2
+        object chkLookForDirectory: TCheckBox
+          Left = 6
+          Height = 17
+          Top = 6
+          Width = 58
+          Align = alLeft
+          BorderSpacing.Right = 24
+          Caption = 'Dossier'
+          Checked = True
+          ParentFont = False
+          State = cbChecked
+          TabOrder = 0
+        end
+        object chkLookForHidden: TCheckBox
+          Left = 452
+          Height = 17
+          Top = 6
+          Width = 53
+          Align = alLeft
+          BorderSpacing.Right = 24
+          Caption = 'Caché'
+          Checked = True
+          ParentFont = False
+          State = cbChecked
+          TabOrder = 1
+        end
+        object chkLookForSystem: TCheckBox
+          Left = 364
+          Height = 17
+          Top = 6
+          Width = 64
+          Align = alLeft
+          BorderSpacing.Right = 24
+          Caption = 'Système'
+          Checked = True
+          ParentFont = False
+          State = cbChecked
+          TabOrder = 2
+        end
+        object chkLookForArchive: TCheckBox
+          Left = 280
+          Height = 17
+          Top = 6
+          Width = 60
+          Align = alLeft
+          BorderSpacing.Right = 24
+          Caption = 'Archive'
+          Checked = True
+          ParentFont = False
+          State = cbChecked
+          TabOrder = 3
+        end
+        object chkLookForReadOnly: TCheckBox
+          Left = 167
+          Height = 17
+          Top = 6
+          Width = 89
+          Align = alLeft
+          BorderSpacing.Right = 24
+          Caption = 'Lecture seule'
+          Checked = True
+          ParentFont = False
+          State = cbChecked
+          TabOrder = 4
+        end
+        object chkLookForAnyFile: TCheckBox
+          Left = 88
+          Height = 17
+          Top = 6
+          Width = 55
+          Align = alLeft
+          BorderSpacing.Right = 24
+          Caption = 'Fichier'
+          Checked = True
+          ParentFont = False
+          State = cbChecked
+          TabOrder = 5
+        end
+      end
+    end
+    object chkRecursive: TCheckBox
+      Left = 104
+      Height = 19
+      Top = 66
+      Width = 159
+      Caption = 'Inclure les sous répertoires'
+      ParentFont = False
+      TabOrder = 3
+    end
+  end
+  object Panel6: TPanel
+    Left = 4
+    Height = 29
+    Top = 607
+    Width = 532
+    Align = alBottom
+    BorderSpacing.Around = 4
+    ClientHeight = 29
+    ClientWidth = 532
+    TabOrder = 1
+    object btnStartSearch: TButton
+      Left = 373
+      Height = 23
+      Top = 3
+      Width = 75
+      Align = alRight
+      BorderSpacing.Right = 4
+      BorderSpacing.Around = 2
+      Caption = 'Rechercher'
+      OnClick = btnStartSearchClick
+      TabOrder = 0
+    end
+    object btnQuit: TButton
+      Left = 454
+      Height = 23
+      Top = 3
+      Width = 75
+      Align = alRight
+      BorderSpacing.Around = 2
+      Caption = 'Quitter'
+      OnClick = btnQuitClick
+      TabOrder = 1
+    end
+    object lblStatus: TLabel
+      Left = 5
+      Height = 19
+      Top = 5
+      Width = 364
+      Align = alClient
+      BorderSpacing.Around = 4
+      Caption = 'En attente.'
+      Layout = tlCenter
+      ParentColor = False
+    end
+  end
+  object Panel7: TPanel
+    Left = 0
+    Height = 40
+    Top = 416
+    Width = 540
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 40
+    ClientWidth = 540
+    TabOrder = 2
+    object GroupBox5: TGroupBox
+      Left = 0
+      Height = 40
+      Top = 0
+      Width = 540
+      Align = alClient
+      Caption = 'Statistiques'
+      ClientHeight = 20
+      ClientWidth = 536
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      object Label10: TLabel
+        Left = 4
+        Height = 20
+        Top = 0
+        Width = 52
+        Align = alLeft
+        BorderSpacing.Left = 4
+        Caption = 'Dossiers :'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object lblNbFolderFound: TLabel
+        Left = 62
+        Height = 20
+        Top = 0
+        Width = 6
+        Align = alLeft
+        BorderSpacing.Left = 6
+        BorderSpacing.Right = 6
+        Caption = '0'
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label12: TLabel
+        Left = 74
+        Height = 20
+        Top = 0
+        Width = 48
+        Align = alLeft
+        BorderSpacing.Left = 6
+        Caption = 'Fichiers :'
+        Layout = tlCenter
+        ParentColor = False
+      end
+      object lblNbFilesFound: TLabel
+        Left = 128
+        Height = 20
+        Top = 0
+        Width = 6
+        Align = alLeft
+        BorderSpacing.Left = 6
+        BorderSpacing.Right = 6
+        Caption = '0'
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+  end
+  object lbxSearchResult: TListBox
+    Left = 0
+    Height = 147
+    Top = 456
+    Width = 540
+    Align = alClient
+    ItemHeight = 0
+    Sorted = True
+    TabOrder = 3
+  end
+end

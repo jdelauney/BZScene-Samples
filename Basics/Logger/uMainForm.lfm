@@ -1,0 +1,112 @@
+object MainForm: TMainForm
+  Left = 337
+  Height = 240
+  Top = 250
+  Width = 304
+  Caption = 'Logger'
+  ClientHeight = 240
+  ClientWidth = 304
+  OnCloseQuery = FormCloseQuery
+  OnShow = FormShow
+  LCLVersion = '2.0.6.0'
+  object btnLog: TButton
+    Left = 28
+    Height = 25
+    Top = 28
+    Width = 75
+    Caption = 'Log'
+    OnClick = btnLogClick
+    TabOrder = 0
+  end
+  object btnLogNotice: TButton
+    Left = 104
+    Height = 25
+    Top = 28
+    Width = 75
+    Caption = 'Notification'
+    OnClick = btnLogNoticeClick
+    TabOrder = 1
+  end
+  object btnLogStatus: TButton
+    Left = 182
+    Height = 25
+    Top = 28
+    Width = 75
+    Caption = 'Status'
+    OnClick = btnLogStatusClick
+    TabOrder = 2
+  end
+  object btnLogWarn: TButton
+    Left = 28
+    Height = 25
+    Top = 56
+    Width = 75
+    Caption = 'Warning'
+    OnClick = btnLogWarnClick
+    TabOrder = 3
+  end
+  object btnLogError: TButton
+    Left = 104
+    Height = 25
+    Top = 56
+    Width = 75
+    Caption = 'Error'
+    OnClick = btnLogErrorClick
+    TabOrder = 4
+  end
+  object btnLogException: TButton
+    Left = 182
+    Height = 25
+    Top = 56
+    Width = 75
+    Caption = 'Exception'
+    OnClick = tnLogHint
+    TabOrder = 5
+  end
+  object btnViewLog: TButton
+    Left = 28
+    Height = 25
+    Top = 128
+    Width = 235
+    Caption = 'Voir App  log'
+    Enabled = False
+    OnClick = btnViewLogClick
+    TabOrder = 6
+  end
+  object btnLogHint: TButton
+    Left = 28
+    Height = 25
+    Top = 84
+    Width = 75
+    Caption = 'Conseil'
+    OnClick = btnLogHintClick
+    TabOrder = 7
+  end
+  object btnHalt: TButton
+    Left = 104
+    Height = 25
+    Top = 84
+    Width = 75
+    Caption = 'Halt'
+    OnClick = btnHaltClick
+    TabOrder = 8
+  end
+  object btnShowLogView: TButton
+    Left = 28
+    Height = 25
+    Top = 156
+    Width = 235
+    Caption = 'Afficher  la fenêtre Log'
+    OnClick = btnShowLogViewClick
+    TabOrder = 9
+  end
+  object btnHideLogView: TButton
+    Left = 28
+    Height = 25
+    Top = 184
+    Width = 235
+    Caption = 'Cacher la fenêtre Log'
+    OnClick = btnHideLogViewClick
+    TabOrder = 10
+  end
+end

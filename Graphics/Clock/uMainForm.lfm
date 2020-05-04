@@ -1,0 +1,15 @@
+object MainForm: TMainForm
+  Left = 339
+  Height = 512
+  Top = 250
+  Width = 512
+  BorderStyle = bsSingle
+  Caption = 'BZScene Clock'
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnPaint = FormPaint
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+end

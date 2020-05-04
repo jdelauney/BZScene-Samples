@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="VectorClassesUnitTest"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+    </General>
+    <MacroValues Count="1"/>
+    <BuildModes Count="11">
+      <Item1 Name="Default" Default="True"/>
+      <Item2 Name="SSE_CONFIG_1">
+        <MacroValues Count="1"/>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="VectorClassesUnitTest64-SSE"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../../Source/Maths;../../Source/Core;../../Source/DevTools"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <ConfigFile>
+              <CustomConfigFile Value="True"/>
+            </ConfigFile>
+            <CustomOptions Value="-CfSSE3
+-Sv
+-al
+-an
+-ar
+-dUSE_ASM
+-dSSE_CONFIG_1"/>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+      <Item3 Name="SSE3_CONFIG_1">
+        <MacroValues Count="1"/>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="VectorClassesUnitTest64-SSE3"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../../Source/Maths;../../Source/Core;../../Source/DevTools"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+          </Linking>
+          <Other>
+            <ConfigFile>
+              <CustomConfigFile Value="True"/>
+            </ConfigFile>
+            <CustomOptions Value="-CfSSE3
+-Sv
+-al
+-an
+-ar
+-dUSE_ASM_SSE_3
+-dSSE3_CONFIG_1"/>
+          </Other>
+        </CompilerOptions>
+      </Item3>
+      <Item4 Name="SSE3_CONFIG_1_TEST">
+        <MacroValues Count="1"/>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="VectorClassesUnitTest64-SSE3-Test"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../../Source/Maths;../../Source/Core;../../Source/DevTools"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <ConfigFile>
+              <CustomConfigFile Value="True"/>
+            </ConfigFile>
+            <CustomOptions Value="-CfSSE3
+-Sv
+-al
+-an
+-ar
+-dTEST
+-dUSE_ASM_SSE_3
+-dSSE3_CONFIG_1_TEST"/>
+          </Other>
+        </CompilerOptions>
+      </Item4>
+      <Item5 Name="SSE4_CONFIG_1">
+        <MacroValues Count="1"/>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="VectorClassesUnitTest64-SSE4"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../../Source/Maths;../../Source/Core;../../Source/DevTools"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <ConfigFile>
+              <CustomConfigFile Value="True"/>
+            </ConfigFile>
+            <CustomOptions Value="-CfSSE42
+-Sv
+-al
+-an
+-ar
+-dUSE_ASM_SSE_4
+-dSSE4_CONFIG_1"/>
+          </Other>
+        </CompilerOptions>
+      </Item5>
+      <Item6 Name="SSE4_CONFIG_1_TEST">
+        <MacroValues Count="1"/>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="VectorClassesUnitTest64-SSE4-Test"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../../Source/Maths;../../Source/Core;../../Source/DevTools"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <ConfigFile>
+              <CustomConfigFile Value="True"/>
+            </ConfigFile>
+            <CustomOptions Value="-CfSSE42
+-Sv
+-al
+-an
+-ar
+-dTEST
+-dUSE_ASM_SSE_4
+-dSSE4_CONFIG_1_TEST"/>
+          </Other>
+        </CompilerOptions>
+      </Item6>
+      <Item7 Name="AVX_CONFIG_1">
+        <MacroValues Count="1"/>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="VectorClassesUnitTest64-AVX"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../../Source/Maths;../../Source/Core;../../Source/DevTools"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <ConfigFile>
+              <CustomConfigFile Value="True"/>
+            </ConfigFile>
+            <CustomOptions Value="-CfAVX
+-Sv
+-al
+-an
+-ar
+-dUSE_ASM_AVX
+-dAVX_CONFIG_1"/>
+          </Other>
+        </CompilerOptions>
+      </Item7>
+      <Item8 Name="AVX_CONFIG_1_TEST">
+        <MacroValues Count="1"/>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="VectorClassesUnitTest64-AVX-Test"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../../Source/Maths;../../Source/Core;../../Source/DevTools"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <ConfigFile>
+              <CustomConfigFile Value="True"/>
+            </ConfigFile>
+            <CustomOptions Value="-CfAVX
+-Sv
+-al
+-an
+-ar
+-dUSE_ASM_AVX
+-dTEST
+-dAVX_CONFIG_1_TEST"/>
+          </Other>
+        </CompilerOptions>
+      </Item8>
+      <Item9 Name="Native_CONFIG_1">
+        <MacroValues Count="1"/>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="VectorClassesUnitTest64-Native"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../../Source/Maths;../../Source/Core;../../Source/DevTools"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <ConfigFile>
+              <CustomConfigFile Value="True"/>
+            </ConfigFile>
+            <CustomOptions Value="-al
+-an
+-ar
+-dNATIVE_CONFIG_1"/>
+          </Other>
+        </CompilerOptions>
+      </Item9>
+      <Item10 Name="Native_CONFIG_2">
+        <MacroValues Count="1"/>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="VectorClassesUnitTest64-Native2"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../../Source/Maths;../../Source/Core;../../Source/DevTools"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <ConfigFile>
+              <CustomConfigFile Value="True"/>
+            </ConfigFile>
+            <CustomOptions Value="-al
+-an
+-ar
+-dNATIVE_CONFIG_2"/>
+          </Other>
+        </CompilerOptions>
+      </Item10>
+      <Item11 Name="SSE_CONFIG_1_TEST">
+        <MacroValues Count="1"/>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="VectorClassesUnitTest64-SSE-Test"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="../../Source/Maths;../../Source/Core;../../Source/DevTools"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <ConfigFile>
+              <CustomConfigFile Value="True"/>
+            </ConfigFile>
+            <CustomOptions Value="-CfSSE3
+-Sv
+-al
+-an
+-ar
+-dTEST
+-dUSE_ASM
+-dSSE_CONFIG_1_TEST"/>
+          </Other>
+        </CompilerOptions>
+      </Item11>
+      <SharedMatrixOptions Count="1">
+        <Item1 ID="197042861580" Modes="Default,SSE3_CONFIG_1,SSE_CONFIG_1,SSE4_CONFIG_1,Native_CONFIG_1,AVX_CONFIG_1,Native_CONFIG_2,AVX_CONFIG_1_TEST,SSE3_CONFIG_1_TEST,SSE4_CONFIG_1_TEST,SSE_CONFIG_1_TEST" Type="IDEMacro"/>
+      </SharedMatrixOptions>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
+    </RunParams>
+    <RequiredPackages Count="3">
+      <Item1>
+        <PackageName Value="FPCUnitTestRunner"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="FCL"/>
+      </Item3>
+    </RequiredPackages>
+    <Units Count="61">
+      <Unit0>
+        <Filename Value="VectorClassesTimingTest64.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="native.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="native.inc"/>
+        <IsPartOfProject Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="VectorOtherTestCase.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="VectorNumericsTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="BaseTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="ReportTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="BaseTestCase.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="Vector2OperatorsTestCase.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="VectorNumericsTestCase.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="vector2dtimingtest.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Vector2dTimingTest"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="MatrixTestCase.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="QuaternionTestCase.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="MatrixTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="QuaternionTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="VectorOperatorsTestCase.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="VectorOperatorsTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="Vector2NumericsTestCase.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="Vector3bComparatorTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="Vector4bComparatorTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="Vector3bTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="Vector4bTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="BoundingBoxComparatorTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="BoundingBoxTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="BSphereComparatorTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="BSphereTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="AABBComparatorTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="AABBTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="VectorOtherTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="VectorHelperTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="MatrixFunctionalTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="Vector4iComparatorTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="Vector4iTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="vector2dfunctionaltest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="HmgPlaneFunctionalTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="HmgPlaneComparatorTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="HmgPlaneTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="extrafpc.cfg"/>
+        <IsPartOfProject Value="True"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="Vector3bFunctionalTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="Vector4bFunctionalTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="Vector4iFunctionalTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="Vector4fFunctionalTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="VectorHelperTestCase.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="config.inc"/>
+        <IsPartOfProject Value="True"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="Vector4fHelperFunctionalTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="QuaternionFunctionalTestCase.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="BZMathFunctionalTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="Vector2fHelperFunctionalTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="Vector2iFunctionalTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="Vector2iComparatorTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="Vector2iTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="Vector2fFunctionalTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="Vector2fTimingTest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="../../Source/Maths/BZMath.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="../../Source/Maths/BZVectorMath.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="../../Source/Maths/BZVectorMathEx.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="../../Source/Maths/BZVectorMathUtils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="../../Source/Core/BZSystem.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit57>
+      <Unit58>
+        <Filename Value="../../Source/Core/BZUtils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit58>
+      <Unit59>
+        <Filename Value="../../Source/DevTools/BZStopWatch.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit59>
+      <Unit60>
+        <Filename Value="../../Source/DevTools/BZProfiler.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit60>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="VectorClassesUnitTest"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="../../Source/Maths;../../Source/Core;../../Source/DevTools"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Parsing>
+      <Style Value="1"/>
+    </Parsing>
+    <CodeGeneration>
+      <Optimizations>
+        <OptimizationLevel Value="0"/>
+      </Optimizations>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+        <StripSymbols Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CustomOptions Value="-CfSSE3
+-Sv
+-al
+-an
+-ar
+-dUSE_ASM
+-dCONFIG_1"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="4">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="EAssertionFailedError"/>
+      </Item4>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

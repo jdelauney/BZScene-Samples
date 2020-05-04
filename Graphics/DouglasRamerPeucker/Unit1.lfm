@@ -1,0 +1,50 @@
+object MainForm: TMainForm
+  Left = 280
+  Height = 768
+  Top = 250
+  Width = 1024
+  Caption = 'Fast Douglas Ramer Peucker Simplification'
+  ClientHeight = 768
+  ClientWidth = 1024
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  object pnlView: TPanel
+    Left = 0
+    Height = 600
+    Top = 0
+    Width = 1024
+    Align = alTop
+    Color = clBlack
+    ParentColor = False
+    TabOrder = 0
+    OnPaint = pnlViewPaint
+  end
+  object Button1: TButton
+    Left = 34
+    Height = 25
+    Top = 620
+    Width = 75
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object tbTolerance: TTrackBar
+    Left = 38
+    Height = 25
+    Top = 666
+    Width = 652
+    Max = 500
+    Min = 1
+    OnChange = tbToleranceChange
+    Position = 40
+    TabOrder = 2
+  end
+  object Memo1: TMemo
+    Left = 719
+    Height = 133
+    Top = 619
+    Width = 289
+    TabOrder = 3
+  end
+end

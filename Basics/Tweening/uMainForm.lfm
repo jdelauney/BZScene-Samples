@@ -1,0 +1,477 @@
+object MainForm: TMainForm
+  Left = 334
+  Height = 768
+  Top = 250
+  Width = 1024
+  Caption = 'BZScene Teweening demo'
+  ClientHeight = 768
+  ClientWidth = 1024
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 718
+    Width = 1024
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 1024
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 18
+      Height = 15
+      Top = 16
+      Width = 42
+      Caption = 'Vitesse :'
+      ParentColor = False
+    end
+    object tbWait: TTrackBar
+      Left = 64
+      Height = 25
+      Top = 14
+      Width = 334
+      Min = 1
+      OnChange = tbWaitChange
+      Position = 1
+      TabOrder = 0
+    end
+  end
+  object pnlLeft: TPanel
+    Left = 0
+    Height = 718
+    Top = 0
+    Width = 510
+    Align = alLeft
+    ClientHeight = 718
+    ClientWidth = 510
+    TabOrder = 1
+    object btnLinear: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 8
+      Width = 96
+      Caption = 'Linear'
+      OnClick = btnLinearClick
+      TabOrder = 0
+    end
+    object btnQuadIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 37
+      Width = 96
+      Caption = 'Quad In'
+      TabOrder = 1
+    end
+    object btnCubicIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 65
+      Width = 96
+      Caption = 'Cubic In'
+      TabOrder = 2
+    end
+    object btnQuartIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 93
+      Width = 96
+      Caption = 'Quart In'
+      TabOrder = 3
+    end
+    object btnQuintIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 121
+      Width = 96
+      Caption = 'Quint In'
+      TabOrder = 4
+    end
+    object btnSinIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 149
+      Width = 96
+      Caption = 'Sin In'
+      TabOrder = 5
+    end
+    object btnCircleIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 177
+      Width = 96
+      Caption = 'Circle In'
+      TabOrder = 6
+    end
+    object btnExpoIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 205
+      Width = 96
+      Caption = 'Expo In'
+      TabOrder = 7
+    end
+    object btnElasticIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 233
+      Width = 96
+      Caption = 'Elastic In'
+      TabOrder = 8
+    end
+    object btnBackIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 261
+      Width = 96
+      Caption = 'Back In'
+      TabOrder = 9
+    end
+    object btnBounceIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 289
+      Width = 96
+      Caption = 'Bounce In'
+      TabOrder = 10
+    end
+    object btnBounceOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 580
+      Width = 96
+      Caption = 'Bounce Out'
+      TabOrder = 11
+    end
+    object btnBackOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 552
+      Width = 96
+      Caption = 'Back Out'
+      TabOrder = 12
+    end
+    object btnElasticOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 524
+      Width = 96
+      Caption = 'Elastic Out'
+      TabOrder = 13
+    end
+    object btnExpoOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 496
+      Width = 96
+      Caption = 'Expo Out'
+      TabOrder = 14
+    end
+    object btnCircleOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 468
+      Width = 96
+      Caption = 'Circle Out'
+      TabOrder = 15
+    end
+    object btnSinOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 440
+      Width = 96
+      Caption = 'Sin Out'
+      TabOrder = 16
+    end
+    object btnQuintOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 412
+      Width = 96
+      Caption = 'Quint Out'
+      TabOrder = 17
+    end
+    object btnQuartOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 384
+      Width = 96
+      Caption = 'Quart Out'
+      TabOrder = 18
+    end
+    object btnCubicOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 356
+      Width = 96
+      Caption = 'Cubic Out'
+      TabOrder = 19
+    end
+    object btnQuadOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 328
+      Width = 96
+      Caption = 'Quad Out'
+      OnClick = btnQuadOutClick
+      TabOrder = 20
+    end
+    object btnSineTransform: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 616
+      Width = 96
+      Caption = 'Sin Transform'
+      OnClick = btnSineTransformClick
+      TabOrder = 21
+    end
+    object btnSineCycle: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 644
+      Width = 96
+      Caption = 'Sin Cycle'
+      TabOrder = 22
+    end
+    object btnSineSymCycle: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 672
+      Width = 96
+      Caption = 'Sin Sym Cycle'
+      TabOrder = 23
+    end
+  end
+  object Splitter1: TSplitter
+    Left = 510
+    Height = 718
+    Top = 0
+    Width = 4
+  end
+  object pnlRight: TPanel
+    Left = 514
+    Height = 718
+    Top = 0
+    Width = 510
+    Align = alClient
+    ClientHeight = 718
+    ClientWidth = 510
+    TabOrder = 3
+    object btnQuadInOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 37
+      Width = 96
+      Caption = 'Quad InOut'
+      OnClick = btnQuadInOutClick
+      TabOrder = 0
+    end
+    object btnCubicInOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 65
+      Width = 96
+      Caption = 'Cubic InOut'
+      TabOrder = 1
+    end
+    object btnQuartInOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 93
+      Width = 96
+      Caption = 'Quart InOut'
+      TabOrder = 2
+    end
+    object btnQuintInOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 121
+      Width = 96
+      Caption = 'Quint InOut'
+      TabOrder = 3
+    end
+    object btnSinInOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 149
+      Width = 96
+      Caption = 'Sin InOut'
+      TabOrder = 4
+    end
+    object btnCircleInOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 177
+      Width = 96
+      Caption = 'Circle InOut'
+      TabOrder = 5
+    end
+    object btnExpoInOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 205
+      Width = 96
+      Caption = 'Expo InOut'
+      TabOrder = 6
+    end
+    object btnElasticInOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 233
+      Width = 96
+      Caption = 'Elastic InOut'
+      TabOrder = 7
+    end
+    object btnBackInOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 261
+      Width = 96
+      Caption = 'Back InOut'
+      TabOrder = 8
+    end
+    object btnBounceInOut: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 289
+      Width = 96
+      Caption = 'Bounce InOut'
+      TabOrder = 9
+    end
+    object btnQuadOutIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 328
+      Width = 96
+      Caption = 'Quad OutIn'
+      OnClick = btnQuadOutInClick
+      TabOrder = 10
+    end
+    object btnCubicOutIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 356
+      Width = 96
+      Caption = 'Cubic OutIn'
+      TabOrder = 11
+    end
+    object btnQuartOutIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 384
+      Width = 96
+      Caption = 'Quart OutIn'
+      TabOrder = 12
+    end
+    object btnQuintOutIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 412
+      Width = 96
+      Caption = 'Quint OutIn'
+      TabOrder = 13
+    end
+    object btnSinOutIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 440
+      Width = 96
+      Caption = 'Sin OutIn'
+      TabOrder = 14
+    end
+    object btnCircleOutIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 468
+      Width = 96
+      Caption = 'Circle OutIn'
+      TabOrder = 15
+    end
+    object btnExpoOutIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 496
+      Width = 96
+      Caption = 'Expo OutIn'
+      TabOrder = 16
+    end
+    object btnElasticOutIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 524
+      Width = 96
+      Caption = 'Elastic OutIn'
+      TabOrder = 17
+    end
+    object btnBackOutIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 552
+      Width = 96
+      Caption = 'Back OutIn'
+      TabOrder = 18
+    end
+    object btnBounceOutIn: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 580
+      Width = 96
+      Caption = 'Bounce OutIn'
+      TabOrder = 19
+    end
+    object btnTardis: TButton
+      Tag = 8
+      Left = 8
+      Height = 25
+      Top = 616
+      Width = 96
+      Caption = 'Tardis'
+      OnClick = btnTardisClick
+      TabOrder = 20
+    end
+  end
+end

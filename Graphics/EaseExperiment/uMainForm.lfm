@@ -1,0 +1,909 @@
+object MainForm: TMainForm
+  Left = 334
+  Height = 768
+  Top = 250
+  Width = 1024
+  Caption = 'Ease Experiment'
+  ClientHeight = 768
+  ClientWidth = 1024
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+  object GroupBox1: TGroupBox
+    Left = 24
+    Height = 300
+    Top = 26
+    Width = 264
+    Caption = 'Graphique'
+    ClientHeight = 280
+    ClientWidth = 260
+    Constraints.MaxWidth = 264
+    Constraints.MinHeight = 300
+    Constraints.MinWidth = 264
+    TabOrder = 0
+    object pnlGraphView: TPanel
+      Left = 0
+      Height = 280
+      Top = 0
+      Width = 260
+      Align = alClient
+      BevelOuter = bvNone
+      Color = clBlack
+      ParentColor = False
+      TabOrder = 0
+      OnPaint = pnlGraphViewPaint
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 292
+    Height = 300
+    Top = 26
+    Width = 705
+    Caption = 'Equation'
+    ClientHeight = 280
+    ClientWidth = 701
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 24
+      Height = 15
+      Top = 36
+      Width = 56
+      Caption = 'Fonction : '
+      ParentColor = False
+    end
+    object cbxEaseFunction: TComboBox
+      Left = 85
+      Height = 23
+      Top = 33
+      Width = 452
+      DropDownCount = 16
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'Linear'
+        'Square'
+        'Cubic'
+        'Quartic'
+        'Quintic'
+        'Exponantial'
+        'Sine'
+        'Circle'
+        'Elastic'
+        'Back'
+        'Bounce'
+        'Bell'
+        'Power'
+        'Step'
+        'Jitter'
+        'Swing'
+        'Tardis'
+        'Damping'
+        'Wave'
+      )
+      OnSelect = cbxEaseFunctionSelect
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'Linear'
+    end
+    object Label2: TLabel
+      Left = 40
+      Height = 15
+      Top = 8
+      Width = 40
+      Caption = 'Mode : '
+      ParentColor = False
+    end
+    object cbxEaseMode: TComboBox
+      Left = 85
+      Height = 23
+      Top = 6
+      Width = 452
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'In'
+        'InInverted'
+        'Out'
+        'OutInverted'
+        'InOut'
+        'OutIn'
+        'Spike'
+        'Spike Inverted'
+        'Arch'
+        'Arch Inverted'
+        'Spike And Arch'
+        'Spike And Arch Inverted'
+        'Arch And Spike'
+        ''
+      )
+      OnSelect = cbxEaseFunctionSelect
+      Style = csDropDownList
+      TabOrder = 1
+      Text = 'In'
+    end
+    object GroupBox4: TGroupBox
+      Left = 8
+      Height = 176
+      Top = 96
+      Width = 704
+      Caption = 'Options'
+      ClientHeight = 156
+      ClientWidth = 700
+      TabOrder = 2
+      object Label3: TLabel
+        Left = 8
+        Height = 15
+        Top = 10
+        Width = 119
+        Caption = 'Durée de l''animation : '
+        ParentColor = False
+      end
+      object tbWait: TTrackBar
+        Left = 135
+        Height = 25
+        Top = 8
+        Width = 537
+        OnChange = tbWaitChange
+        Position = 0
+        TabOrder = 0
+      end
+      object chkInterpolate: TCheckBox
+        Left = 16
+        Height = 19
+        Top = 41
+        Width = 94
+        Caption = 'Interpolation :'
+        OnClick = chkInterpolateClick
+        TabOrder = 1
+      end
+      object cbxInterpolationFilter: TComboBox
+        Left = 120
+        Height = 23
+        Top = 40
+        Width = 248
+        DropDownCount = 16
+        ItemHeight = 15
+        OnSelect = cbxInterpolationFilterSelect
+        Style = csDropDownList
+        TabOrder = 2
+      end
+      object cbxClamp: TComboBox
+        Left = 440
+        Height = 23
+        Top = 40
+        Width = 224
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'Aucun'
+          'En Haut'
+          'En Bas'
+          'Les deux'
+        )
+        OnSelect = cbxClampSelect
+        Style = csDropDownList
+        TabOrder = 3
+        Text = 'Aucun'
+      end
+      object Label4: TLabel
+        Left = 392
+        Height = 15
+        Top = 44
+        Width = 44
+        Caption = 'Clamp : '
+        ParentColor = False
+      end
+      object gbxExtraParams: TGroupBox
+        Left = 0
+        Height = 84
+        Top = 72
+        Width = 700
+        Align = alBottom
+        Caption = 'Paramètres supplémentaires'
+        ClientHeight = 64
+        ClientWidth = 696
+        Enabled = False
+        TabOrder = 4
+        object pcParams: TPageControl
+          Left = 0
+          Height = 64
+          Top = 0
+          Width = 696
+          ActivePage = tsExtraParam1
+          Align = alClient
+          TabIndex = 0
+          TabOrder = 0
+          object tsExtraParam1: TTabSheet
+            Caption = 'Power'
+            ClientHeight = 36
+            ClientWidth = 688
+            object lblExtraParam1: TLabel
+              Left = 13
+              Height = 15
+              Top = 11
+              Width = 97
+              Alignment = taRightJustify
+              AutoSize = False
+              Caption = 'Exposant : '
+              ParentColor = False
+            end
+            object fseExtraParam1: TFloatSpinEdit
+              Left = 114
+              Height = 23
+              Top = 8
+              Width = 154
+              MinValue = 0
+              OnEditingDone = fseExtraParam1EditingDone
+              TabOrder = 0
+              Value = 3.6
+            end
+          end
+        end
+      end
+    end
+    object Button1: TButton
+      Left = 544
+      Height = 50
+      Top = 6
+      Width = 144
+      Caption = 'Animer'
+      OnClick = Button1Click
+      TabOrder = 3
+    end
+    object chkShowComposite: TCheckBox
+      Left = 85
+      Height = 19
+      Top = 64
+      Width = 199
+      Caption = 'Afficher composite et tout animer'
+      Checked = True
+      OnClick = chkShowCompositeClick
+      State = cbChecked
+      TabOrder = 4
+    end
+    object chkPingPong: TCheckBox
+      Left = 293
+      Height = 19
+      Top = 64
+      Width = 77
+      Caption = 'Ping-Pong'
+      TabOrder = 5
+    end
+    object btnReinitAnim: TButton
+      Left = 544
+      Height = 25
+      Top = 58
+      Width = 144
+      Caption = 'Réinitaliser Animation'
+      OnClick = btnReinitAnimClick
+      TabOrder = 6
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 4
+    Height = 428
+    Top = 336
+    Width = 1016
+    Align = alBottom
+    BorderSpacing.Around = 4
+    Caption = 'Animations'
+    ClientHeight = 408
+    ClientWidth = 1012
+    ParentColor = False
+    TabOrder = 2
+    object Panel1: TPanel
+      Left = 0
+      Height = 24
+      Top = 144
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 3
+      object Panel2: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = ' Out In'
+        Color = 3223857
+        Font.Color = clPurple
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseOutIn: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseOutIn: TShape
+          Left = 416
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clPurple
+          Shape = stCircle
+        end
+      end
+    end
+    object Panel3: TPanel
+      Left = 0
+      Height = 24
+      Top = 116
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 2
+      object Panel4: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = ' In Out'
+        Color = 3223857
+        Font.Color = clFuchsia
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseInOut: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseInOut: TShape
+          Left = 416
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clFuchsia
+          Shape = stCircle
+        end
+      end
+    end
+    object Panel5: TPanel
+      Left = 0
+      Height = 24
+      Top = 60
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 1
+      object Panel6: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = ' Out'
+        Color = 3223857
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseOut: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseOut: TShape
+          Left = 416
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clRed
+          Shape = stCircle
+        end
+      end
+    end
+    object Panel7: TPanel
+      Left = 0
+      Height = 24
+      Top = 200
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 0
+      object Panel8: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = 'Spike Inverted'
+        Color = 3223857
+        Font.Color = clAqua
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseIn3: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseSpikeInverted: TShape
+          Left = 417
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clAqua
+          Shape = stCircle
+        end
+      end
+    end
+    object Panel9: TPanel
+      Left = 0
+      Height = 24
+      Top = 88
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 4
+      object Panel10: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = 'Out Inverted'
+        Color = 3223857
+        Font.Color = clMaroon
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseOutIn1: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseOutInverted: TShape
+          Left = 416
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clMaroon
+          Shape = stCircle
+        end
+      end
+    end
+    object Panel11: TPanel
+      Left = 0
+      Height = 24
+      Top = 256
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 5
+      object Panel12: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = 'Arch Inverted'
+        Color = 3223857
+        Font.Color = clOlive
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseInOut1: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseArchInverted: TShape
+          Left = 416
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clOlive
+          Shape = stCircle
+        end
+      end
+    end
+    object Panel13: TPanel
+      Left = 0
+      Height = 24
+      Top = 32
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 6
+      object Panel14: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = 'In Inverted'
+        Color = 3223857
+        Font.Color = clNavy
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseOut1: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseInInverted: TShape
+          Left = 416
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clNavy
+          Shape = stCircle
+        end
+      end
+    end
+    object Panel15: TPanel
+      Left = 0
+      Height = 24
+      Top = 172
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 7
+      object Panel16: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = 'Spike'
+        Color = 3223857
+        Font.Color = clTeal
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseIn4: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseSpike: TShape
+          Left = 417
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clTeal
+          Shape = stCircle
+        end
+      end
+    end
+    object Panel17: TPanel
+      Left = 0
+      Height = 24
+      Top = 312
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 8
+      object Panel18: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = 'Combined Inverted'
+        Color = 3223857
+        Font.Color = clGreen
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseOutIn2: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseCombinedInverted: TShape
+          Left = 416
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clGreen
+          Shape = stCircle
+        end
+      end
+    end
+    object Panel19: TPanel
+      Left = 0
+      Height = 24
+      Top = 228
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 9
+      object Panel20: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = ' Arch'
+        Color = 3223857
+        Font.Color = clYellow
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseInOut2: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseArch: TShape
+          Left = 416
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clYellow
+          Shape = stCircle
+        end
+      end
+    end
+    object Panel21: TPanel
+      Left = 0
+      Height = 24
+      Top = 284
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      BevelColor = clGray
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 10
+      object Panel22: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = 'Combined'
+        Color = 3223857
+        Font.Color = clLime
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseOut2: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseCombined: TShape
+          Left = 416
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clLime
+          Shape = stCircle
+        end
+      end
+    end
+    object Panel23: TPanel
+      Left = 0
+      Height = 24
+      Top = 4
+      Width = 1012
+      Align = alTop
+      BorderSpacing.Top = 4
+      ClientHeight = 24
+      ClientWidth = 1012
+      ParentColor = False
+      TabOrder = 11
+      object Panel24: TPanel
+        Left = 1
+        Height = 22
+        Top = 1
+        Width = 170
+        Align = alLeft
+        BevelColor = clGray
+        BevelOuter = bvNone
+        Caption = ' In'
+        Color = 3223857
+        Font.Color = clBlue
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object pnlEaseIn5: TPanel
+        Left = 171
+        Height = 22
+        Top = 1
+        Width = 840
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 22
+        ClientWidth = 840
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+        object ShapeEaseIn: TShape
+          Left = 417
+          Height = 20
+          Top = 0
+          Width = 20
+          Brush.Color = clBlue
+          Shape = stCircle
+        end
+      end
+    end
+  end
+end

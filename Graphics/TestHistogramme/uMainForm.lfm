@@ -1,0 +1,633 @@
+object MainForm: TMainForm
+  Left = 329
+  Height = 600
+  Top = 250
+  Width = 800
+  Caption = 'Demo Histogramme'
+  ClientHeight = 600
+  ClientWidth = 800
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  object GroupBox2: TGroupBox
+    Left = 4
+    Height = 250
+    Top = 346
+    Width = 792
+    Align = alBottom
+    BorderSpacing.Around = 4
+    Caption = 'Histogramme'
+    ClientHeight = 230
+    ClientWidth = 788
+    TabOrder = 0
+    object pnlHistogram: TPanel
+      Left = 24
+      Height = 180
+      Top = 40
+      Width = 256
+      Align = alCustom
+      Color = clGray
+      Constraints.MaxWidth = 256
+      Constraints.MinWidth = 256
+      ParentColor = False
+      TabOrder = 0
+    end
+    object GroupBox3: TGroupBox
+      Left = 280
+      Height = 212
+      Top = 8
+      Width = 248
+      Caption = 'Statistiques'
+      ClientHeight = 192
+      ClientWidth = 244
+      TabOrder = 1
+      object Label2: TLabel
+        Left = 16
+        Height = 15
+        Top = 8
+        Width = 100
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Pixels : '
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label3: TLabel
+        Left = 16
+        Height = 15
+        Top = 23
+        Width = 100
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Minimum : '
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label4: TLabel
+        Left = 16
+        Height = 15
+        Top = 38
+        Width = 100
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Maximum : '
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label6: TLabel
+        Left = 16
+        Height = 15
+        Top = 66
+        Width = 100
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Moyenne : '
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label7: TLabel
+        Left = 16
+        Height = 15
+        Top = 81
+        Width = 100
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Mediane : '
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label8: TLabel
+        Left = 16
+        Height = 15
+        Top = 112
+        Width = 100
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Dev std : '
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label9: TLabel
+        Left = 16
+        Height = 15
+        Top = 127
+        Width = 100
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Excess kurtosis : '
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblStatPixels: TLabel
+        Left = 120
+        Height = 16
+        Top = 8
+        Width = 100
+        AutoSize = False
+        Caption = '000'
+        ParentColor = False
+      end
+      object lblStatMinimum: TLabel
+        Left = 120
+        Height = 16
+        Top = 23
+        Width = 100
+        AutoSize = False
+        Caption = '000'
+        ParentColor = False
+      end
+      object lblStatMaximum: TLabel
+        Left = 120
+        Height = 16
+        Top = 38
+        Width = 100
+        AutoSize = False
+        Caption = '000'
+        ParentColor = False
+      end
+      object lblStatMean: TLabel
+        Left = 120
+        Height = 16
+        Top = 66
+        Width = 100
+        AutoSize = False
+        Caption = '000'
+        ParentColor = False
+      end
+      object lblStatMedian: TLabel
+        Left = 120
+        Height = 16
+        Top = 81
+        Width = 100
+        AutoSize = False
+        Caption = '000'
+        ParentColor = False
+      end
+      object lblStatDevStd: TLabel
+        Left = 120
+        Height = 16
+        Top = 112
+        Width = 100
+        AutoSize = False
+        Caption = '000'
+        ParentColor = False
+      end
+      object lblStatExcess: TLabel
+        Left = 120
+        Height = 15
+        Top = 127
+        Width = 100
+        AutoSize = False
+        Caption = '000'
+        ParentColor = False
+      end
+      object Label10: TLabel
+        Left = 16
+        Height = 15
+        Top = 96
+        Width = 100
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Asymétrie : '
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblStatSkewness: TLabel
+        Left = 120
+        Height = 16
+        Top = 96
+        Width = 100
+        AutoSize = False
+        Caption = '000'
+        ParentColor = False
+      end
+      object Label11: TLabel
+        Left = 16
+        Height = 15
+        Top = 52
+        Width = 100
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Frequence max : '
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblStatMaxFrequency: TLabel
+        Left = 120
+        Height = 16
+        Top = 52
+        Width = 100
+        AutoSize = False
+        Caption = '000'
+        ParentColor = False
+      end
+    end
+    object Label1: TLabel
+      Left = 29
+      Height = 15
+      Top = 10
+      Width = 36
+      Caption = 'Canal :'
+      ParentColor = False
+    end
+    object cbxChannel: TComboBox
+      Left = 75
+      Height = 23
+      Top = 8
+      Width = 205
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'RVB+Intensité'
+        'RVB'
+        'Intensité'
+        'Rouge'
+        'Vert'
+        'Bleue'
+        'Teinte'
+        'Saturation'
+        'Luminance'
+        'Valeur'
+      )
+      OnSelect = cbxChannelSelect
+      Style = csDropDownList
+      TabOrder = 2
+      Text = 'RVB+Intensité'
+    end
+    object GroupBox4: TGroupBox
+      Left = 24
+      Height = 99
+      Top = 421
+      Width = 256
+      Caption = 'Ajustements'
+      TabOrder = 3
+    end
+    object GroupBox5: TGroupBox
+      Left = 536
+      Height = 212
+      Top = 8
+      Width = 241
+      Caption = 'Opération'
+      ClientHeight = 192
+      ClientWidth = 237
+      TabOrder = 4
+      object btnHistogramEqualize: TButton
+        Left = -2
+        Height = 25
+        Top = 8
+        Width = 67
+        Caption = 'Egaliser'
+        OnClick = btnHistogramEqualizeClick
+        TabOrder = 0
+      end
+      object Button1: TButton
+        Left = 70
+        Height = 25
+        Top = 8
+        Width = 168
+        Caption = 'Auto Ajustement des niveaux '
+        OnClick = Button1Click
+        TabOrder = 1
+      end
+      object GroupBox7: TGroupBox
+        Left = -2
+        Height = 113
+        Top = 40
+        Width = 240
+        Caption = 'Ajustement des niveaux'
+        ClientHeight = 93
+        ClientWidth = 236
+        TabOrder = 2
+        object Label12: TLabel
+          Left = 11
+          Height = 15
+          Top = 3
+          Width = 70
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = 'Entrée Min : '
+          ParentColor = False
+        end
+        object Label13: TLabel
+          Left = 11
+          Height = 15
+          Top = 21
+          Width = 70
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = 'Entrée Max : '
+          ParentColor = False
+        end
+        object Label14: TLabel
+          Left = 11
+          Height = 15
+          Top = 49
+          Width = 70
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = 'Sortie Min : '
+          ParentColor = False
+        end
+        object Label15: TLabel
+          Left = 11
+          Height = 15
+          Top = 66
+          Width = 70
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = 'Sortie Max : '
+          ParentColor = False
+        end
+        object sbLevelInMin: TScrollBar
+          Left = 84
+          Height = 17
+          Top = 3
+          Width = 150
+          PageSize = 0
+          TabOrder = 0
+          OnChange = sbLevelInOutChange
+        end
+        object sbLevelInMax: TScrollBar
+          Left = 84
+          Height = 17
+          Top = 20
+          Width = 150
+          PageSize = 0
+          Position = 100
+          TabOrder = 1
+          OnChange = sbLevelInOutChange
+        end
+        object sbLevelOutMin: TScrollBar
+          Left = 84
+          Height = 17
+          Top = 48
+          Width = 150
+          PageSize = 0
+          TabOrder = 2
+          OnChange = sbLevelInOutChange
+        end
+        object sbLevelOutMax: TScrollBar
+          Left = 84
+          Height = 17
+          Top = 65
+          Width = 150
+          PageSize = 0
+          Position = 100
+          TabOrder = 3
+          OnChange = sbLevelInOutChange
+        end
+      end
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 50
+    Top = 292
+    Width = 800
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 800
+    TabOrder = 1
+    object btnLoad: TButton
+      Left = 9
+      Height = 32
+      Top = 9
+      Width = 151
+      Align = alLeft
+      BorderSpacing.Around = 8
+      Caption = 'Charger image'
+      OnClick = btnLoadClick
+      TabOrder = 0
+    end
+    object pbImageProgress: TProgressBar
+      Left = 443
+      Height = 32
+      Top = 9
+      Width = 348
+      Align = alRight
+      BorderSpacing.Left = 2
+      BorderSpacing.Top = 8
+      BorderSpacing.Right = 8
+      BorderSpacing.Bottom = 8
+      TabOrder = 1
+    end
+    object lblAction: TLabel
+      Left = 416
+      Height = 32
+      Top = 9
+      Width = 25
+      Align = alClient
+      Alignment = taRightJustify
+      AutoSize = False
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 8
+      BorderSpacing.Right = 2
+      BorderSpacing.Bottom = 8
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+    object Panel8: TPanel
+      Left = 168
+      Height = 32
+      Top = 9
+      Width = 240
+      Align = alLeft
+      BorderSpacing.Around = 8
+      ClientHeight = 32
+      ClientWidth = 240
+      TabOrder = 2
+      object chkImgAdapt: TCheckBox
+        Left = 1
+        Height = 30
+        Top = 1
+        Width = 62
+        Align = alLeft
+        Caption = 'Adapter'
+        Checked = True
+        OnChange = chkImgAdaptChange
+        State = cbChecked
+        TabOrder = 0
+      end
+      object chkImgCenter: TCheckBox
+        Left = 67
+        Height = 30
+        Top = 1
+        Width = 59
+        Align = alLeft
+        BorderSpacing.Left = 4
+        Caption = 'Centrer'
+        Checked = True
+        OnChange = chkImgCenterChange
+        State = cbChecked
+        TabOrder = 1
+      end
+      object Label5: TLabel
+        Left = 128
+        Height = 30
+        Top = 1
+        Width = 38
+        Align = alLeft
+        BorderSpacing.Left = 2
+        BorderSpacing.Right = 2
+        Caption = 'Zoom :'
+        Font.Style = [fsBold]
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+      end
+      object cbxImageZoom: TComboBox
+        Left = 168
+        Height = 23
+        Hint = 'Facteur zoom en pourcentage'
+        Top = 6
+        Width = 71
+        Align = alClient
+        BorderSpacing.Top = 5
+        DropDownCount = 20
+        Enabled = False
+        ItemHeight = 15
+        ItemIndex = 7
+        Items.Strings = (
+          '5'
+          '10'
+          '15'
+          '20'
+          '25'
+          '50'
+          '75'
+          '100'
+          '200'
+          '300'
+          '400'
+          '600'
+          '800'
+          '1000'
+          '1200'
+          '1600'
+          '2000'
+          '2400'
+          '3200'
+        )
+        OnEditingDone = cbxImageZoomEditingDone
+        OnSelect = cbxImageZoomSelect
+        TabOrder = 2
+        Text = '100'
+      end
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Height = 292
+    Top = 0
+    Width = 800
+    Align = alClient
+    ClientHeight = 292
+    ClientWidth = 800
+    TabOrder = 2
+    object GroupBox1: TGroupBox
+      Left = 5
+      Height = 265
+      Top = 5
+      Width = 387
+      Align = alLeft
+      BorderSpacing.Around = 4
+      Caption = 'Original'
+      ClientHeight = 245
+      ClientWidth = 383
+      TabOrder = 0
+      object ImgOriginal: TBZImageViewer
+        Left = 0
+        Height = 245
+        Top = 0
+        Width = 383
+        Align = alClient
+        UseDockManager = False
+        TabOrder = 0
+        Color = clBlack
+        Stretch = True
+        Proportional = True
+        Center = True
+        StretchMode = ismDraft
+        ResampleFilter = ifmLanczos3
+        ZoomFactor = 100
+        OffsetLeft = 0
+        OffsetTop = 0
+        DrawWithTransparency = False
+        BackGroundChecker = True
+      end
+    end
+    object GroupBox6: TGroupBox
+      Left = 396
+      Height = 265
+      Top = 5
+      Width = 378
+      Align = alClient
+      BorderSpacing.Around = 4
+      Caption = 'Résultat'
+      ClientHeight = 245
+      ClientWidth = 374
+      TabOrder = 1
+      object ImgResult: TBZImageViewer
+        Left = 0
+        Height = 245
+        Top = 0
+        Width = 374
+        Align = alClient
+        UseDockManager = False
+        TabOrder = 0
+        Color = clBlack
+        Stretch = True
+        Proportional = True
+        Center = True
+        StretchMode = ismDraft
+        ResampleFilter = ifmLanczos3
+        ZoomFactor = 100
+        OffsetLeft = 0
+        OffsetTop = 0
+        DrawWithTransparency = False
+        BackGroundChecker = True
+      end
+    end
+    object sbHoriz: TScrollBar
+      Left = 5
+      Height = 17
+      Top = 274
+      Width = 790
+      Align = alBottom
+      BorderSpacing.Left = 4
+      BorderSpacing.Right = 4
+      Enabled = False
+      PageSize = 0
+      TabOrder = 2
+      OnChange = sbHorizChange
+    end
+    object sbVert: TScrollBar
+      Left = 778
+      Height = 269
+      Top = 5
+      Width = 17
+      Align = alRight
+      BorderSpacing.Top = 4
+      BorderSpacing.Right = 4
+      Enabled = False
+      Kind = sbVertical
+      PageSize = 0
+      TabOrder = 3
+      OnChange = sbVertChange
+    end
+  end
+  object OPD: TOpenPictureDialog
+    left = 179
+    top = 242
+  end
+end

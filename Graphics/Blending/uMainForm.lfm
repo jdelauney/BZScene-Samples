@@ -1,0 +1,202 @@
+object MainForm: TMainForm
+  Left = 232
+  Height = 560
+  Top = 250
+  Width = 1024
+  Caption = 'BZDemo Blending'
+  ClientHeight = 560
+  ClientWidth = 1024
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  object Panel1: TPanel
+    Left = 790
+    Height = 560
+    Top = 0
+    Width = 234
+    Align = alRight
+    ClientHeight = 560
+    ClientWidth = 234
+    TabOrder = 0
+    object btnOpenBmpA: TButton
+      Left = 9
+      Height = 25
+      Top = 9
+      Width = 216
+      Align = alTop
+      BorderSpacing.Around = 8
+      Caption = 'Ouvrir Image Source A'
+      OnClick = btnOpenBmpAClick
+      TabOrder = 0
+    end
+    object btnOpenBmpB: TButton
+      Left = 9
+      Height = 25
+      Top = 42
+      Width = 216
+      Align = alTop
+      BorderSpacing.Around = 8
+      Caption = 'Ouvrir Image Source B'
+      OnClick = btnOpenBmpBClick
+      TabOrder = 1
+    end
+    object GroupBox1: TGroupBox
+      Left = 9
+      Height = 297
+      Top = 108
+      Width = 216
+      Align = alTop
+      BorderSpacing.Around = 8
+      Caption = 'Options de fusion'
+      ClientHeight = 277
+      ClientWidth = 212
+      TabOrder = 2
+      object Label1: TLabel
+        Left = 10
+        Height = 15
+        Top = 13
+        Width = 31
+        Caption = 'Pixel :'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 10
+        Height = 15
+        Top = 72
+        Width = 37
+        Caption = 'Alpha :'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        Left = 10
+        Height = 15
+        Top = 43
+        Width = 55
+        Caption = 'Combine :'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 10
+        Height = 15
+        Top = 103
+        Width = 83
+        Caption = 'Opacité globale'
+        ParentColor = False
+      end
+      object Label5: TLabel
+        Left = 11
+        Height = 15
+        Top = 156
+        Width = 84
+        Caption = 'Facteur Source :'
+        ParentColor = False
+      end
+      object Label6: TLabel
+        Left = 11
+        Height = 15
+        Top = 208
+        Width = 105
+        Caption = 'FacteurDestination :'
+        ParentColor = False
+      end
+      object speOpacity: TSpinEdit
+        Left = 162
+        Height = 23
+        Top = 127
+        Width = 46
+        MaxValue = 255
+        OnChange = speOpacityChange
+        TabOrder = 0
+        Value = 255
+      end
+      object sbOpacity: TScrollBar
+        Left = 5
+        Height = 23
+        Top = 127
+        Width = 154
+        Max = 255
+        PageSize = 0
+        Position = 255
+        TabOrder = 1
+        OnChange = sbOpacityChange
+      end
+      object cbxPixelDrawMode: TComboBox
+        Left = 72
+        Height = 23
+        Top = 11
+        Width = 136
+        ItemHeight = 15
+        OnChange = cbxDrawModeChange
+        Style = csDropDownList
+        TabOrder = 2
+      end
+      object cbxCombineDrawMode: TComboBox
+        Left = 72
+        Height = 23
+        Top = 40
+        Width = 136
+        DropDownCount = 15
+        ItemHeight = 15
+        OnChange = cbxDrawModeChange
+        Style = csDropDownList
+        TabOrder = 3
+      end
+      object cbxAlphaDrawMode: TComboBox
+        Left = 72
+        Height = 23
+        Top = 68
+        Width = 136
+        ItemHeight = 15
+        OnChange = cbxDrawModeChange
+        Style = csDropDownList
+        TabOrder = 4
+      end
+      object cbxBlendSrcFactor: TComboBox
+        Left = 11
+        Height = 23
+        Top = 176
+        Width = 197
+        ItemHeight = 15
+        OnChange = cbxDrawModeChange
+        Style = csDropDownList
+        TabOrder = 5
+      end
+      object cbxBlendDstFactor: TComboBox
+        Left = 11
+        Height = 23
+        Top = 232
+        Width = 197
+        ItemHeight = 15
+        OnChange = cbxDrawModeChange
+        Style = csDropDownList
+        TabOrder = 6
+      end
+    end
+    object btnSwapAAndB: TButton
+      Left = 9
+      Height = 25
+      Top = 75
+      Width = 216
+      Align = alTop
+      BorderSpacing.Around = 8
+      Caption = 'Inverser A et B'
+      OnClick = btnSwapAAndBClick
+      TabOrder = 3
+    end
+  end
+  object pnlView: TPanel
+    Left = 0
+    Height = 560
+    Top = 0
+    Width = 790
+    Align = alClient
+    Color = 3815994
+    ParentColor = False
+    TabOrder = 1
+    OnPaint = pnlViewPaint
+  end
+  object opd: TOpenPictureDialog
+    Left = 688
+    Top = 52
+  end
+end

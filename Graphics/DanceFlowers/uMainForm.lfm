@@ -1,0 +1,13 @@
+object MainForm: TMainForm
+  Left = 350
+  Height = 480
+  Top = 250
+  Width = 640
+  Caption = 'BZScene Demo - Dance Flower '
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+end

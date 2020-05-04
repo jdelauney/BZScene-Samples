@@ -1,0 +1,309 @@
+object MainForm: TMainForm
+  Left = 315
+  Height = 524
+  Top = 250
+  Width = 835
+  BorderStyle = bsSingle
+  Caption = 'MainForm'
+  ClientHeight = 524
+  ClientWidth = 835
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 835
+    Align = alTop
+    ClientHeight = 50
+    ClientWidth = 835
+    Color = clMoneyGreen
+    ParentColor = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 5
+      Height = 40
+      Top = 5
+      Width = 825
+      Align = alClient
+      Alignment = taCenter
+      BorderSpacing.Around = 4
+      Caption = 'Test de conversion d''une image en niveau de gris'
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 50
+    Top = 474
+    Width = 835
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 835
+    TabOrder = 1
+    object btnLoad: TButton
+      Left = 9
+      Height = 32
+      Top = 9
+      Width = 151
+      Align = alLeft
+      BorderSpacing.Around = 8
+      Caption = 'Charger image'
+      OnClick = btnLoadClick
+      TabOrder = 0
+    end
+    object pbImageProgress: TProgressBar
+      Left = 406
+      Height = 32
+      Top = 9
+      Width = 420
+      Align = alRight
+      BorderSpacing.Left = 2
+      BorderSpacing.Top = 8
+      BorderSpacing.Right = 8
+      BorderSpacing.Bottom = 8
+      TabOrder = 1
+    end
+    object lblAction: TLabel
+      Left = 168
+      Height = 32
+      Top = 9
+      Width = 236
+      Align = alClient
+      Alignment = taRightJustify
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 8
+      BorderSpacing.Right = 2
+      BorderSpacing.Bottom = 8
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object Panel3: TPanel
+    Left = 664
+    Height = 424
+    Top = 50
+    Width = 171
+    Align = alRight
+    ClientHeight = 424
+    ClientWidth = 171
+    TabOrder = 2
+    object btnApply: TButton
+      Left = 5
+      Height = 25
+      Top = 394
+      Width = 161
+      Align = alBottom
+      BorderSpacing.Around = 4
+      Caption = 'Appliquer'
+      Enabled = False
+      OnClick = btnApplyClick
+      TabOrder = 0
+    end
+    object gbxOptions: TGroupBox
+      Left = 5
+      Height = 385
+      Top = 5
+      Width = 161
+      Align = alClient
+      BorderSpacing.Around = 4
+      Caption = 'Options'
+      ClientHeight = 365
+      ClientWidth = 157
+      Enabled = False
+      TabOrder = 1
+      object rgGrayScaleMethod: TRadioGroup
+        Left = 2
+        Height = 134
+        Top = 2
+        Width = 153
+        Align = alTop
+        AutoFill = True
+        BorderSpacing.Around = 2
+        Caption = 'Méthode'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 114
+        ClientWidth = 149
+        ItemIndex = 0
+        Items.Strings = (
+          'Lightness'
+          'Luminosity'
+          'Average, '
+          'Decompose Min'
+          'Decompose Max'
+          'Color Mask'
+          'Dégradé'
+        )
+        OnSelectionChanged = rgGrayScaleMethodSelectionChanged
+        TabOrder = 0
+      end
+      object rgConversionMatrix: TRadioGroup
+        Left = 2
+        Height = 200
+        Top = 163
+        Width = 153
+        Align = alBottom
+        AutoFill = True
+        BorderSpacing.Around = 2
+        Caption = 'Matrice de conversion'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 180
+        ClientWidth = 149
+        Enabled = False
+        ItemIndex = 4
+        Items.Strings = (
+          'Aucune'
+          'NTSC'
+          'JPEG, '
+          'Average'
+          'PhotoShop'
+          'CIE Observer Ref 709'
+          'RMY'
+          'Red Mask'
+          'Green Mask'
+          'Blue Mask '
+          'Alpha Mask'
+        )
+        TabOrder = 1
+      end
+      object Panel5: TPanel
+        Left = 2
+        Height = 23
+        Top = 138
+        Width = 153
+        Align = alClient
+        BorderSpacing.Left = 2
+        BorderSpacing.Right = 2
+        BevelOuter = bvNone
+        ClientHeight = 23
+        ClientWidth = 153
+        TabOrder = 2
+        object speNumOfShade: TSpinEdit
+          Left = 72
+          Height = 23
+          Top = 0
+          Width = 81
+          Align = alRight
+          Enabled = False
+          MaxValue = 255
+          TabOrder = 0
+          Value = 16
+        end
+        object cbxColorMask: TComboBox
+          Left = 0
+          Height = 23
+          Top = 0
+          Width = 72
+          Align = alClient
+          Enabled = False
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'Rouge'
+            'Vert'
+            'Bleu'
+            'Alpha'
+          )
+          Style = csDropDownList
+          TabOrder = 1
+          Text = 'Rouge'
+        end
+      end
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Height = 424
+    Top = 50
+    Width = 664
+    Align = alClient
+    ClientHeight = 424
+    ClientWidth = 664
+    TabOrder = 3
+    object GroupBox1: TGroupBox
+      Left = 5
+      Height = 414
+      Top = 5
+      Width = 325
+      Align = alLeft
+      BorderSpacing.Around = 4
+      Caption = 'Original'
+      ClientHeight = 394
+      ClientWidth = 321
+      TabOrder = 0
+      object ImgOriginal: TBZImageViewer
+        Left = 0
+        Height = 394
+        Top = 0
+        Width = 321
+        Align = alClient
+        UseDockManager = False
+        TabOrder = 0
+        Color = clBlack
+        Stretch = True
+        Proportional = True
+        Center = True
+        StretchMode = ismDraft
+        ResampleFilter = ifmLanczos3
+        ZoomFactor = 100
+        OffsetLeft = 0
+        OffsetTop = 0
+        DrawWithTransparency = True
+        BackGroundChecker = True
+      end
+    end
+    object GroupBox2: TGroupBox
+      Left = 334
+      Height = 414
+      Top = 5
+      Width = 325
+      Align = alClient
+      BorderSpacing.Around = 4
+      Caption = 'Résultat'
+      ClientHeight = 394
+      ClientWidth = 321
+      TabOrder = 1
+      object ImgResult: TBZImageViewer
+        Left = 0
+        Height = 394
+        Top = 0
+        Width = 321
+        Align = alClient
+        UseDockManager = False
+        TabOrder = 0
+        Color = clBlack
+        Stretch = True
+        Proportional = True
+        Center = True
+        StretchMode = ismDraft
+        ResampleFilter = ifmLanczos3
+        ZoomFactor = 100
+        OffsetLeft = 0
+        OffsetTop = 0
+        DrawWithTransparency = True
+        BackGroundChecker = True
+      end
+    end
+  end
+  object OPD: TOpenPictureDialog
+    Left = 100
+    Top = 212
+  end
+end

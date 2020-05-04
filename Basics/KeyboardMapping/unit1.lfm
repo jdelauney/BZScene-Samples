@@ -1,0 +1,117 @@
+object Form1: TForm1
+  Left = 248
+  Height = 267
+  Top = 153
+  Width = 591
+  Caption = 'Keyborad Mapping'
+  ClientHeight = 267
+  ClientWidth = 591
+  OnClose = FormClose
+  OnMouseWheel = FormMouseWheel
+  OnShow = FormShow
+  LCLVersion = '2.0.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 146
+    Top = 0
+    Width = 591
+    Align = alTop
+    ClientHeight = 146
+    ClientWidth = 591
+    TabOrder = 0
+    object Label2: TLabel
+      Left = 5
+      Height = 12
+      Top = 5
+      Width = 581
+      Align = alTop
+      Alignment = taCenter
+      BorderSpacing.Around = 4
+      Caption = 'Cliquez sur un panneau pour choisir une touche '
+      Font.Height = 12
+      Font.Style = [fsItalic]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label1: TLabel
+      Left = 5
+      Height = 17
+      Top = 21
+      Width = 581
+      Align = alTop
+      Alignment = taCenter
+      AutoSize = False
+      BorderSpacing.Around = 4
+      Caption = 'Appuyez sur une des touches ci-dessous pour allumer les panneaux et déplacer le carré ...'
+      Font.Height = 12
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+      OptimalFill = True
+    end
+    object Label3: TLabel
+      Left = 56
+      Height = 15
+      Top = 56
+      Width = 121
+      Caption = 'Déplacement à gauche'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 384
+      Height = 15
+      Top = 56
+      Width = 113
+      Caption = 'Déplacement à droite'
+      ParentColor = False
+    end
+    object pnlLeft: TPanel
+      Left = 35
+      Height = 50
+      Top = 80
+      Width = 170
+      Caption = 'LBUTTON'
+      TabOrder = 0
+      OnClick = PnlChooseKeyClick
+    end
+    object pnlRight: TPanel
+      Left = 368
+      Height = 50
+      Top = 80
+      Width = 170
+      Caption = 'RBUTTON'
+      TabOrder = 1
+      OnClick = PnlChooseKeyClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 121
+    Top = 146
+    Width = 591
+    Align = alClient
+    ClientHeight = 121
+    ClientWidth = 591
+    Color = clBlack
+    ParentColor = False
+    TabOrder = 1
+    object Shape1: TShape
+      Left = 248
+      Height = 64
+      Top = 24
+      Width = 64
+      ParentShowHint = False
+      Pen.Color = clSilver
+      Pen.Cosmetic = False
+      Pen.Mode = pmXor
+      Pen.Style = psClear
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 50
+    OnTimer = Timer1Timer
+    left = 528
+    top = 8
+  end
+end

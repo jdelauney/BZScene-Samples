@@ -1,0 +1,738 @@
+object MainForm: TMainForm
+  Left = 127
+  Height = 480
+  Top = 182
+  Width = 808
+  ActiveControl = PageControl1
+  Caption = 'BZScene System Informations Demo'
+  ClientHeight = 480
+  ClientWidth = 808
+  OnShow = FormShow
+  Position = poScreenCenter
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 57
+    Top = 8
+    Width = 792
+    Align = alTop
+    BorderSpacing.Around = 8
+    Caption = 'Description'
+    ClientHeight = 37
+    ClientWidth = 788
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 4
+      Height = 29
+      Top = 4
+      Width = 780
+      Align = alClient
+      Alignment = taCenter
+      AutoSize = False
+      BorderSpacing.Around = 4
+      Caption = '  This demo shows how to use some internal classes and function to retreive informations about the system'
+      Color = clMoneyGreen
+      Font.Height = 14
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      OptimalFill = True
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 4
+    Height = 403
+    Top = 73
+    Width = 800
+    Align = alClient
+    BorderSpacing.Around = 4
+    Caption = 'System informations'
+    ClientHeight = 383
+    ClientWidth = 796
+    TabOrder = 1
+    object PageControl1: TPageControl
+      Left = 4
+      Height = 375
+      Top = 4
+      Width = 788
+      ActivePage = TabSheet2
+      Align = alClient
+      BorderSpacing.Around = 4
+      TabIndex = 1
+      TabOrder = 0
+      object TabSheet1: TTabSheet
+        Caption = 'CPU'
+        ClientHeight = 347
+        ClientWidth = 780
+        object GroupBox3: TGroupBox
+          Left = 0
+          Height = 140
+          Top = 160
+          Width = 761
+          Anchors = [akTop, akLeft, akRight]
+          Caption = 'Supported Technologies :'
+          ClientHeight = 120
+          ClientWidth = 757
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 0
+          object CheckBox1: TCheckBox
+            Left = 8
+            Height = 19
+            Top = 8
+            Width = 62
+            AllowGrayed = True
+            Caption = '3DNow'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 0
+          end
+          object CheckBox2: TCheckBox
+            Left = 88
+            Height = 19
+            Top = 8
+            Width = 80
+            AllowGrayed = True
+            Caption = '3DNowExt'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 1
+          end
+          object CheckBox3: TCheckBox
+            Left = 184
+            Height = 19
+            Top = 8
+            Width = 50
+            AllowGrayed = True
+            Caption = 'MMX'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 2
+          end
+          object CheckBox4: TCheckBox
+            Left = 248
+            Height = 19
+            Top = 8
+            Width = 56
+            AllowGrayed = True
+            Caption = 'EMMX'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 3
+          end
+          object CheckBox5: TCheckBox
+            Left = 8
+            Height = 19
+            Top = 29
+            Width = 40
+            AllowGrayed = True
+            Caption = 'SSE'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 4
+          end
+          object CheckBox6: TCheckBox
+            Left = 88
+            Height = 19
+            Top = 29
+            Width = 47
+            AllowGrayed = True
+            Caption = 'SSE2'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 5
+          end
+          object CheckBox7: TCheckBox
+            Left = 184
+            Height = 19
+            Top = 29
+            Width = 47
+            AllowGrayed = True
+            Caption = 'SSE3'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 6
+          end
+          object CheckBox8: TCheckBox
+            Left = 8
+            Height = 19
+            Top = 51
+            Width = 57
+            AllowGrayed = True
+            Caption = 'SSE4.1'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 7
+          end
+          object CheckBox9: TCheckBox
+            Left = 88
+            Height = 19
+            Top = 51
+            Width = 57
+            AllowGrayed = True
+            Caption = 'SSE4.2'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 8
+          end
+          object CheckBox10: TCheckBox
+            Left = 184
+            Height = 19
+            Top = 51
+            Width = 55
+            AllowGrayed = True
+            Caption = 'SSE4A'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 9
+          end
+          object CheckBox11: TCheckBox
+            Left = 8
+            Height = 19
+            Top = 72
+            Width = 44
+            AllowGrayed = True
+            Caption = 'AVX'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 10
+          end
+          object CheckBox12: TCheckBox
+            Left = 88
+            Height = 19
+            Top = 72
+            Width = 52
+            AllowGrayed = True
+            Caption = 'FMA3'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 11
+          end
+          object CheckBox13: TCheckBox
+            Left = 184
+            Height = 19
+            Top = 72
+            Width = 52
+            AllowGrayed = True
+            Caption = 'FMA4'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 12
+          end
+          object CheckBox14: TCheckBox
+            Left = 8
+            Height = 19
+            Top = 94
+            Width = 41
+            AllowGrayed = True
+            Caption = 'AES'
+            Color = clDefault
+            ParentColor = False
+            TabOrder = 13
+          end
+        end
+        object Label7: TLabel
+          Left = 10
+          Height = 15
+          Top = 132
+          Width = 122
+          Caption = 'Estimated Frequency :'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label8: TLabel
+          Left = 144
+          Height = 15
+          Top = 132
+          Width = 34
+          Caption = 'Label8'
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 144
+          Height = 15
+          Top = 112
+          Width = 34
+          Caption = 'Label6'
+          ParentColor = False
+        end
+        object Label5: TLabel
+          Left = 33
+          Height = 15
+          Top = 112
+          Width = 99
+          Caption = 'logicals cpu units :'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label2: TLabel
+          Left = 64
+          Height = 15
+          Top = 28
+          Width = 62
+          Caption = 'Full name : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label3: TLabel
+          Left = 136
+          Height = 36
+          Top = 28
+          Width = 632
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = False
+          Caption = 'Label2'
+          ParentColor = False
+          WordWrap = True
+        end
+        object Label4: TLabel
+          Left = 136
+          Height = 15
+          Top = 8
+          Width = 34
+          Caption = 'Label4'
+          ParentColor = False
+        end
+        object Label9: TLabel
+          Left = 53
+          Height = 15
+          Top = 8
+          Width = 73
+          Caption = 'Technologie :'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label13: TLabel
+          Left = 32
+          Height = 15
+          Top = 72
+          Width = 44
+          Caption = 'Model : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label14: TLabel
+          Left = 88
+          Height = 15
+          Top = 72
+          Width = 40
+          Caption = 'Label14'
+          ParentColor = False
+        end
+        object Label15: TLabel
+          Left = 16
+          Height = 15
+          Top = 88
+          Width = 62
+          Caption = 'ExtModel : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label16: TLabel
+          Left = 88
+          Height = 15
+          Top = 88
+          Width = 40
+          Caption = 'Label16'
+          ParentColor = False
+        end
+        object Label17: TLabel
+          Left = 224
+          Height = 15
+          Top = 88
+          Width = 40
+          Caption = 'Label17'
+          ParentColor = False
+        end
+        object Label18: TLabel
+          Left = 144
+          Height = 15
+          Top = 88
+          Width = 65
+          Caption = 'ExtFamilly : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label19: TLabel
+          Left = 165
+          Height = 15
+          Top = 72
+          Width = 47
+          Caption = 'Familly : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label20: TLabel
+          Left = 224
+          Height = 15
+          Top = 72
+          Width = 40
+          Caption = 'Label20'
+          ParentColor = False
+        end
+        object Label21: TLabel
+          Left = 304
+          Height = 15
+          Top = 72
+          Width = 32
+          Caption = 'Type :'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label22: TLabel
+          Left = 280
+          Height = 15
+          Top = 88
+          Width = 56
+          Caption = 'Stepping :'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label23: TLabel
+          Left = 352
+          Height = 15
+          Top = 72
+          Width = 40
+          Caption = 'Label23'
+          ParentColor = False
+        end
+        object Label24: TLabel
+          Left = 352
+          Height = 15
+          Top = 88
+          Width = 40
+          Caption = 'Label24'
+          ParentColor = False
+        end
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'OS'
+        ClientHeight = 347
+        ClientWidth = 780
+        object Label10: TLabel
+          Left = 4
+          Height = 15
+          Top = 12
+          Width = 772
+          Align = alTop
+          BorderSpacing.Top = 8
+          BorderSpacing.Bottom = 8
+          BorderSpacing.Around = 4
+          Caption = 'OS'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+          WordWrap = True
+        end
+        object GroupBox4: TGroupBox
+          Left = 4
+          Height = 97
+          Top = 39
+          Width = 772
+          Align = alTop
+          BorderSpacing.Around = 4
+          Caption = 'Display :'
+          ClientHeight = 77
+          ClientWidth = 768
+          TabOrder = 0
+          object Label11: TLabel
+            Left = 8
+            Height = 15
+            Top = 8
+            Width = 752
+            Align = alTop
+            BorderSpacing.Around = 8
+            Caption = 'Label10'
+            ParentColor = False
+          end
+        end
+        object Panel1: TPanel
+          Left = 0
+          Height = 50
+          Top = 140
+          Width = 780
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 50
+          ClientWidth = 780
+          TabOrder = 1
+          object Label38: TLabel
+            Left = 8
+            Height = 15
+            Top = 16
+            Width = 69
+            Caption = 'User name : '
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lblUsername: TLabel
+            Left = 88
+            Height = 15
+            Top = 16
+            Width = 68
+            AutoSize = False
+            Caption = '--------'
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+      end
+      object TabSheet4: TTabSheet
+        Caption = 'Memory'
+        ClientHeight = 347
+        ClientWidth = 780
+        object Label30: TLabel
+          Left = 46
+          Height = 15
+          Top = 104
+          Width = 132
+          Caption = 'Total Physical Memory : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label31: TLabel
+          Left = 48
+          Height = 15
+          Top = 132
+          Width = 130
+          Caption = 'Free Physical Memory : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label32: TLabel
+          Left = 52
+          Height = 15
+          Top = 48
+          Width = 126
+          Caption = 'Total Virtual Memory : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label33: TLabel
+          Left = 54
+          Height = 15
+          Top = 76
+          Width = 124
+          Caption = 'Free Virtual Memory : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label34: TLabel
+          Left = 61
+          Height = 15
+          Top = 188
+          Width = 117
+          Caption = 'Free Swap Memory : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label35: TLabel
+          Left = 59
+          Height = 15
+          Top = 160
+          Width = 119
+          Caption = 'Total Swap Memory : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblMemFreeSwap: TLabel
+          Left = 192
+          Height = 15
+          Top = 188
+          Width = 68
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '--------'
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblMemTotalSwap: TLabel
+          Left = 192
+          Height = 15
+          Top = 160
+          Width = 68
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '--------'
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblMemFreeVirtual: TLabel
+          Left = 192
+          Height = 15
+          Top = 132
+          Width = 68
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '--------'
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblMemTotalVirtual: TLabel
+          Left = 192
+          Height = 15
+          Top = 104
+          Width = 68
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '--------'
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblMemFreePhys: TLabel
+          Left = 192
+          Height = 15
+          Top = 76
+          Width = 68
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '--------'
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblMemTotalPhys: TLabel
+          Left = 192
+          Height = 15
+          Top = 48
+          Width = 68
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '--------'
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label36: TLabel
+          Left = 77
+          Height = 15
+          Top = 216
+          Width = 101
+          Caption = 'Current disk size : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblMemDiskSize: TLabel
+          Left = 190
+          Height = 15
+          Top = 216
+          Width = 68
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '--------'
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label37: TLabel
+          Left = 40
+          Height = 15
+          Top = 240
+          Width = 138
+          Caption = 'Current free disk space : '
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblMemDiskFreeSpace: TLabel
+          Left = 192
+          Height = 15
+          Top = 240
+          Width = 68
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = '--------'
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object TabSheet3: TTabSheet
+        Caption = 'Others'
+        ClientHeight = 347
+        ClientWidth = 780
+        object Label12: TLabel
+          Left = 4
+          Height = 15
+          Top = 4
+          Width = 772
+          Align = alTop
+          BorderSpacing.Around = 4
+          Caption = 'Temp folder :'
+          ParentColor = False
+        end
+        object Label25: TLabel
+          Left = 4
+          Height = 15
+          Top = 23
+          Width = 772
+          Align = alTop
+          BorderSpacing.Around = 4
+          Caption = 'Label12'
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label26: TLabel
+          Left = 4
+          Height = 15
+          Top = 42
+          Width = 772
+          Align = alTop
+          BorderSpacing.Around = 4
+          Caption = 'Application Name :'
+          ParentColor = False
+        end
+        object Label27: TLabel
+          Left = 4
+          Height = 15
+          Top = 61
+          Width = 772
+          Align = alTop
+          BorderSpacing.Around = 4
+          Caption = 'Label27'
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label28: TLabel
+          Left = 4
+          Height = 15
+          Top = 80
+          Width = 772
+          Align = alTop
+          BorderSpacing.Around = 4
+          Caption = 'Application folder :'
+          ParentColor = False
+        end
+        object Label29: TLabel
+          Left = 4
+          Height = 15
+          Top = 99
+          Width = 772
+          Align = alTop
+          BorderSpacing.Around = 4
+          Caption = 'Label29'
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+    end
+  end
+end

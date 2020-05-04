@@ -1,0 +1,51 @@
+object Form1: TForm1
+  Left = 269
+  Height = 628
+  Top = 250
+  Width = 725
+  Caption = 'Form1'
+  ClientHeight = 628
+  ClientWidth = 725
+  OnCreate = FormCreate
+  object Button1: TButton
+    Left = 16
+    Height = 25
+    Top = 584
+    Width = 75
+    Caption = 'Charger'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object BZImageViewer1: TBZImageViewer
+    Left = 0
+    Height = 568
+    Top = 0
+    Width = 725
+    Align = alTop
+    UseDockManager = False
+    TabOrder = 1
+    OnMouseDown = BZImageViewer1MouseDown
+    OnMouseMove = BZImageViewer1MouseMove
+    OnMouseUp = BZImageViewer1MouseUp
+    Color = clBlack
+    StretchMode = ismDraft
+    ResampleFilter = ifmLanczos3
+    ZoomFactor = 100
+    OffsetLeft = 0
+    OffsetTop = 0
+    DrawWithTransparency = False
+    BackGroundChecker = False
+  end
+  object Label1: TLabel
+    Left = 114
+    Height = 15
+    Top = 591
+    Width = 233
+    Caption = 'Cliquez et  glissez la souris pour selectionner'
+    ParentColor = False
+  end
+  object OPD: TOpenPictureDialog
+    Left = 205
+    Top = 521
+  end
+end

@@ -1,0 +1,385 @@
+object MainForm: TMainForm
+  Left = 819
+  Height = 552
+  Top = 266
+  Width = 640
+  Caption = 'BZScene Sound Player'
+  ClientHeight = 552
+  ClientWidth = 640
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  object Button1: TButton
+    Left = 24
+    Height = 25
+    Top = 8
+    Width = 123
+    Caption = 'Ouvrir'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 208
+    Height = 25
+    Top = 8
+    Width = 104
+    Caption = 'Jouer / Stopper'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 312
+    Height = 25
+    Top = 8
+    Width = 120
+    Caption = 'Pause / Reprendre'
+    OnClick = Button3Click
+    TabOrder = 2
+  end
+  object GroupBox1: TGroupBox
+    Left = 19
+    Height = 160
+    Top = 56
+    Width = 288
+    Caption = 'Informations'
+    ClientHeight = 140
+    ClientWidth = 284
+    TabOrder = 3
+    object Label1: TLabel
+      Left = 16
+      Height = 15
+      Top = 16
+      Width = 41
+      Caption = 'Fichier :'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 16
+      Height = 15
+      Top = 40
+      Width = 61
+      Caption = 'Frequence :'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 15
+      Top = 64
+      Width = 97
+      Caption = 'Nombre de canal :'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 16
+      Height = 15
+      Top = 88
+      Width = 88
+      Caption = 'Nombre de Bits :'
+      ParentColor = False
+    end
+    object lblFileName: TLabel
+      Left = 70
+      Height = 15
+      Top = 16
+      Width = 63
+      Caption = 'lblFileName'
+      ParentColor = False
+    end
+    object lblFrequency: TLabel
+      Left = 80
+      Height = 15
+      Top = 40
+      Width = 68
+      Caption = 'lblFrequency'
+      ParentColor = False
+    end
+    object lblNbChannels: TLabel
+      Left = 120
+      Height = 15
+      Top = 66
+      Width = 78
+      Caption = 'lblNbChannels'
+      ParentColor = False
+    end
+    object lblNbBits: TLabel
+      Left = 120
+      Height = 15
+      Top = 88
+      Width = 48
+      Caption = 'lblNbBits'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 16
+      Height = 15
+      Top = 112
+      Width = 37
+      Caption = 'Durée :'
+      ParentColor = False
+    end
+    object lblDuration: TLabel
+      Left = 64
+      Height = 15
+      Top = 112
+      Width = 59
+      Caption = 'lblDuration'
+      ParentColor = False
+    end
+  end
+  object TrackBar1: TTrackBar
+    Left = 384
+    Height = 25
+    Top = 60
+    Width = 227
+    Max = 100
+    OnChange = TrackBar1Change
+    Position = 100
+    TabOrder = 4
+  end
+  object Label11: TLabel
+    Left = 328
+    Height = 15
+    Top = 64
+    Width = 40
+    Caption = 'Volume'
+    ParentColor = False
+  end
+  object Label13: TLabel
+    Left = 24
+    Height = 15
+    Top = 258
+    Width = 89
+    Caption = 'Volume principal'
+    ParentColor = False
+  end
+  object TrackBar3: TTrackBar
+    Left = 128
+    Height = 25
+    Top = 256
+    Width = 483
+    Max = 100
+    OnChange = TrackBar3Change
+    PageSize = 1
+    Position = 100
+    TabOrder = 5
+  end
+  object Label14: TLabel
+    Left = 336
+    Height = 15
+    Top = 96
+    Width = 27
+    Caption = 'Pitch'
+    ParentColor = False
+  end
+  object TrackBar4: TTrackBar
+    Left = 384
+    Height = 25
+    Top = 93
+    Width = 176
+    Max = 400
+    Min = 10
+    OnChange = TrackBar4Change
+    Position = 100
+    TabOrder = 6
+  end
+  object ProgressBar1: TProgressBar
+    Left = 24
+    Height = 20
+    Top = 224
+    Width = 587
+    Smooth = True
+    TabOrder = 7
+  end
+  object Button4: TButton
+    Left = 512
+    Height = 25
+    Top = 8
+    Width = 99
+    Caption = 'OpenAL Infos'
+    OnClick = Button4Click
+    TabOrder = 8
+  end
+  object GroupBox2: TGroupBox
+    Left = 19
+    Height = 153
+    Top = 304
+    Width = 213
+    Caption = 'Equaliseur '
+    TabOrder = 9
+  end
+  object GroupBox3: TGroupBox
+    Left = 19
+    Height = 71
+    Top = 472
+    Width = 592
+    Caption = 'Filtres'
+    TabOrder = 10
+  end
+  object Button5: TButton
+    Left = 560
+    Height = 25
+    Top = 95
+    Width = 43
+    Caption = 'Reset'
+    OnClick = Button5Click
+    TabOrder = 11
+  end
+  object GroupBox4: TGroupBox
+    Left = 328
+    Height = 88
+    Top = 128
+    Width = 273
+    Caption = 'Direct Filter'
+    ClientHeight = 68
+    ClientWidth = 269
+    TabOrder = 12
+    object ComboBox1: TComboBox
+      Left = 16
+      Height = 23
+      Top = 8
+      Width = 232
+      ItemHeight = 15
+      ItemIndex = 1
+      Items.Strings = (
+        'Aucun'
+        'Low Pass'
+        'High Pass'
+        'Band Pass'
+      )
+      TabOrder = 0
+      Text = 'Low Pass'
+    end
+    object Label6: TLabel
+      Left = 16
+      Height = 15
+      Top = 40
+      Width = 30
+      Caption = 'Gain :'
+      ParentColor = False
+    end
+    object FloatSpinEdit1: TFloatSpinEdit
+      Left = 50
+      Height = 23
+      Top = 37
+      Width = 50
+      Increment = 0.1
+      MaxValue = 1
+      MinValue = 0
+      TabOrder = 1
+      Value = 1
+    end
+    object FloatSpinEdit2: TFloatSpinEdit
+      Left = 128
+      Height = 23
+      Top = 37
+      Width = 50
+      Increment = 0.1
+      MaxValue = 1
+      MinValue = 0
+      TabOrder = 2
+      Value = 1
+    end
+    object FloatSpinEdit3: TFloatSpinEdit
+      Left = 208
+      Height = 23
+      Top = 37
+      Width = 50
+      Increment = 0.1
+      MaxValue = 1
+      MinValue = 0
+      TabOrder = 3
+      Value = 1
+    end
+    object Label7: TLabel
+      Left = 105
+      Height = 15
+      Top = 41
+      Width = 18
+      Caption = 'LF :'
+      ParentColor = False
+    end
+    object Label8: TLabel
+      Left = 184
+      Height = 15
+      Top = 41
+      Width = 21
+      Caption = 'HF :'
+      ParentColor = False
+    end
+  end
+  object ComboBox2: TComboBox
+    Left = 328
+    Height = 23
+    Top = 302
+    Width = 160
+    DropDownCount = 16
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'seNone'
+      'seDefault'
+      'sePaddedCell'
+      'seRoom'
+      'seBathroom'
+      'seLivingRoom'
+      'seStoneroom'
+      'seAuditorium'
+      'seConcertHall'
+      'seCave'
+      'seArena'
+      'seHangar'
+      'seCarpetedHallway'
+      'seHallway'
+      'seStoneCorridor'
+      'seAlley'
+      'seForest'
+      'seCity'
+      'seMountains'
+      'seQuarry'
+      'sePlain'
+      'seParkingLot'
+      'seSewerPipe'
+      'seUnderWater'
+      'seDrugged'
+      'seDizzy'
+      'sePsychotic'
+    )
+    OnChange = ComboBox2Change
+    Style = csDropDownList
+    TabOrder = 13
+    Text = 'seNone'
+  end
+  object chkDirectFilter: TCheckBox
+    Left = 328
+    Height = 19
+    Top = 128
+    Width = 80
+    Caption = 'Direct Filter'
+    Checked = True
+    OnClick = chkDirectFilterClick
+    State = cbChecked
+    TabOrder = 14
+  end
+  object chkSoundEnv: TCheckBox
+    Left = 240
+    Height = 19
+    Top = 306
+    Width = 39
+    Caption = 'Env'
+    OnChange = chkSoundEnvChange
+    OnClick = chkSoundEnvClick
+    TabOrder = 15
+  end
+  object OpenDialog: TOpenDialog
+    Filter = 'Tous les fichiers|*.*|Microsoft Wav file format|*.wav'
+    left = 216
+    top = 152
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = Timer1Timer
+    left = 216
+    top = 88
+  end
+end

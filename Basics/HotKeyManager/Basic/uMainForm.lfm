@@ -1,0 +1,40 @@
+object MainForm: TMainForm
+  Left = 452
+  Height = 114
+  Top = 250
+  Width = 388
+  Caption = 'BZFormHotKeyManager Demo'
+  ClientHeight = 114
+  ClientWidth = 388
+  object Label1: TLabel
+    Left = 16
+    Height = 30
+    Top = 16
+    Width = 214
+    Caption = 'Appuyez sur CTRL+ALT+S '#13#10'Pour afficher cette fenetre en plein ecran'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 39
+    Top = 54
+    Width = 355
+    AutoSize = False
+    Caption = 'Appuyez sur CTRL+SHIFT+ALT+L '#13#10'Pour ouvrir le site web de Lazarus avec le navigateur de votre choix'
+    ParentColor = False
+  end
+  object BZFormHotKeyManager1: TBZFormHotKeyManager
+    Active = True
+    HotKeys = <    
+      item
+        HotKey = 49235
+        OnExecute = TBZHotKeyList0Execute
+      end    
+      item
+        HotKey = 57420
+        OnExecute = TBZHotKeyList1Execute
+      end>
+    left = 288
+    top = 16
+  end
+end

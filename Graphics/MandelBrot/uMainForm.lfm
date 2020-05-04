@@ -1,0 +1,118 @@
+object MainForm: TMainForm
+  Left = 327
+  Height = 838
+  Top = 250
+  Width = 1024
+  BorderStyle = bsSingle
+  Caption = 'BZScene : MandelBrot'
+  ClientHeight = 838
+  ClientWidth = 1024
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 70
+    Top = 0
+    Width = 1024
+    Align = alTop
+    ClientHeight = 70
+    ClientWidth = 1024
+    TabOrder = 0
+    object Button1: TButton
+      Left = 8
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Render'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object lblTime: TLabel
+      Left = 288
+      Height = 15
+      Top = 14
+      Width = 40
+      Caption = 'lblTime'
+      ParentColor = False
+    end
+    object chkUseThread: TCheckBox
+      Left = 95
+      Height = 19
+      Top = 12
+      Width = 72
+      Caption = 'Parallelize'
+      Checked = True
+      State = cbChecked
+      TabOrder = 1
+    end
+    object Label2: TLabel
+      Left = 176
+      Height = 15
+      Top = 14
+      Width = 62
+      Caption = 'Nb Thread :'
+      ParentColor = False
+    end
+    object lblThreadCount: TLabel
+      Left = 248
+      Height = 15
+      Top = 14
+      Width = 5
+      Caption = '-'
+      ParentColor = False
+    end
+    object Button2: TButton
+      Left = 8
+      Height = 25
+      Top = 35
+      Width = 75
+      Caption = 'Reset'
+      OnClick = Button2Click
+      TabOrder = 2
+    end
+    object lblIterations: TLabel
+      Left = 166
+      Height = 15
+      Top = 40
+      Width = 18
+      Caption = '256'
+      ParentColor = False
+    end
+    object Label1: TLabel
+      Left = 100
+      Height = 15
+      Top = 39
+      Width = 55
+      Caption = 'Iterations :'
+      ParentColor = False
+    end
+  end
+  object pnlView: TPanel
+    Left = 0
+    Height = 768
+    Top = 70
+    Width = 1024
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 768
+    ClientWidth = 1024
+    TabOrder = 1
+    OnMouseDown = pnlViewMouseDown
+    OnMouseMove = pnlViewMouseMove
+    OnMouseUp = pnlViewMouseUp
+    OnPaint = pnlViewPaint
+    object Shape1: TShape
+      Left = 119
+      Height = 65
+      Top = 77
+      Width = 65
+      Brush.Style = bsClear
+      Pen.Color = clLime
+      Pen.Style = psDot
+      Pen.Width = 3
+      Visible = False
+    end
+  end
+end

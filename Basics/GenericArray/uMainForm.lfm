@@ -1,0 +1,422 @@
+object MainForm: TMainForm
+  Left = 336
+  Height = 579
+  Top = 250
+  Width = 731
+  Caption = 'BZScene - Demo generic BZArray'
+  ClientHeight = 579
+  ClientWidth = 731
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  LCLVersion = '2.0.6.0'
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 57
+    Top = 8
+    Width = 715
+    Align = alTop
+    BorderSpacing.Around = 8
+    Caption = 'Description'
+    ClientHeight = 37
+    ClientWidth = 711
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 4
+      Height = 29
+      Top = 4
+      Width = 703
+      Align = alClient
+      Alignment = taCenter
+      AutoSize = False
+      BorderSpacing.Around = 4
+      Caption = '  This demo shows how to use generic array class management in BZScene'
+      Color = clMoneyGreen
+      Font.Height = 22
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      OptimalFill = True
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 287
+    Top = 73
+    Width = 731
+    Align = alClient
+    ClientHeight = 287
+    ClientWidth = 731
+    TabOrder = 1
+    object GroupBox2: TGroupBox
+      Left = 5
+      Height = 277
+      Top = 5
+      Width = 721
+      Align = alClient
+      BorderSpacing.Around = 4
+      Caption = 'Array of Integer'
+      ClientHeight = 257
+      ClientWidth = 717
+      TabOrder = 0
+      object lbxInteger: TListBox
+        Left = 2
+        Height = 253
+        Top = 2
+        Width = 713
+        Align = alClient
+        BorderSpacing.Around = 2
+        ItemHeight = 0
+        OnSelectionChange = lbxIntegerSelectionChange
+        TabOrder = 0
+      end
+    end
+  end
+  object GroupBox4: TGroupBox
+    Left = 4
+    Height = 163
+    Top = 412
+    Width = 723
+    Align = alBottom
+    BorderSpacing.Around = 4
+    Caption = 'Operations (check code source for more)'
+    ClientHeight = 143
+    ClientWidth = 719
+    TabOrder = 2
+    object btnAddTenValues: TButton
+      Left = 2
+      Height = 25
+      Top = 34
+      Width = 88
+      Caption = 'Add 10 values'
+      OnClick = btnAddTenValuesClick
+      TabOrder = 0
+    end
+    object speValue: TSpinEdit
+      Left = 2
+      Height = 23
+      Top = 8
+      Width = 82
+      MaxValue = 1000000
+      MinValue = -1000000
+      TabOrder = 1
+    end
+    object btnAddValue: TButton
+      Left = 90
+      Height = 25
+      Top = 8
+      Width = 104
+      Caption = 'Add value'
+      OnClick = btnAddValueClick
+      TabOrder = 2
+    end
+    object btnPush: TButton
+      Left = 509
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Push value'
+      OnClick = btnPushClick
+      TabOrder = 3
+    end
+    object btnPop: TButton
+      Left = 584
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Pop Value'
+      OnClick = btnPopClick
+      TabOrder = 4
+    end
+    object Label3: TLabel
+      Left = 459
+      Height = 15
+      Top = 13
+      Width = 47
+      Caption = 'As LIFO :'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object btnGetFirst: TButton
+      Left = 200
+      Height = 25
+      Top = 62
+      Width = 75
+      Caption = 'Get First'
+      OnClick = btnGetFirstClick
+      TabOrder = 5
+    end
+    object btnGetLast: TButton
+      Left = 200
+      Height = 25
+      Top = 88
+      Width = 75
+      Caption = 'Get Last'
+      OnClick = btnGetLastClick
+      TabOrder = 6
+    end
+    object btnGetPrevious: TButton
+      Left = 359
+      Height = 25
+      Top = 62
+      Width = 75
+      Caption = 'Get Previous'
+      OnClick = btnGetPreviousClick
+      TabOrder = 7
+    end
+    object btnGetCurrent: TButton
+      Left = 434
+      Height = 25
+      Top = 62
+      Width = 75
+      Caption = 'Get Current'
+      OnClick = btnGetCurrentClick
+      TabOrder = 8
+    end
+    object btnGetNext: TButton
+      Left = 359
+      Height = 25
+      Top = 88
+      Width = 75
+      Caption = 'Get Next'
+      OnClick = btnGetNextClick
+      TabOrder = 9
+    end
+    object btnExchange: TButton
+      Left = 200
+      Height = 25
+      Top = 34
+      Width = 158
+      Caption = 'Exchange Fist and Last'
+      OnClick = btnExchangeClick
+      TabOrder = 10
+    end
+    object Label4: TLabel
+      Left = 2
+      Height = 15
+      Top = 69
+      Width = 76
+      Caption = 'Scan/Iterate :'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object btnMoveToPrev: TButton
+      Left = 276
+      Height = 25
+      Top = 62
+      Width = 82
+      Caption = 'Move to prev'
+      OnClick = btnMoveToPrevClick
+      TabOrder = 11
+    end
+    object Label5: TLabel
+      Left = 90
+      Height = 15
+      Top = 69
+      Width = 53
+      Caption = 'Position : '
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblPosition: TLabel
+      Left = 144
+      Height = 15
+      Top = 69
+      Width = 50
+      AutoSize = False
+      Caption = '0'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object btnReverse: TButton
+      Left = 359
+      Height = 25
+      Top = 34
+      Width = 75
+      Caption = 'Reverse'
+      OnClick = btnReverseClick
+      TabOrder = 12
+    end
+    object btnClear: TButton
+      Left = 434
+      Height = 25
+      Top = 35
+      Width = 75
+      Caption = 'Clear'
+      OnClick = btnClearClick
+      TabOrder = 13
+    end
+    object btnAddNoDup: TButton
+      Left = 200
+      Height = 25
+      Top = 8
+      Width = 112
+      Caption = 'Add no duplicate'
+      OnClick = btnAddNoDupClick
+      TabOrder = 14
+    end
+    object Button13: TButton
+      Left = 315
+      Height = 25
+      Top = 8
+      Width = 141
+      Caption = 'Insert At after current'
+      TabOrder = 15
+    end
+    object btnDelete: TButton
+      Left = 509
+      Height = 25
+      Top = 62
+      Width = 150
+      Caption = 'Delete current'
+      OnClick = btnDeleteClick
+      TabOrder = 16
+    end
+    object btnMoveToNext: TButton
+      Left = 277
+      Height = 25
+      Top = 88
+      Width = 82
+      Caption = 'Move to next'
+      OnClick = btnMoveToNextClick
+      TabOrder = 17
+    end
+    object Label7: TLabel
+      Left = 2
+      Height = 15
+      Top = 120
+      Width = 30
+      Caption = 'Sort :'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object chkSortOrder: TCheckBox
+      Left = 43
+      Height = 19
+      Top = 119
+      Width = 82
+      Caption = 'Descending'
+      TabOrder = 18
+    end
+    object btnQuickSort: TButton
+      Left = 124
+      Height = 25
+      Top = 116
+      Width = 75
+      Caption = 'Quick Sort'
+      OnClick = btnQuickSortClick
+      TabOrder = 19
+    end
+    object btnInsertionSort: TButton
+      Left = 200
+      Height = 25
+      Top = 116
+      Width = 88
+      Caption = 'Insertion Sort'
+      OnClick = btnInsertionSortClick
+      TabOrder = 20
+    end
+    object btnMergeSort: TButton
+      Left = 290
+      Height = 25
+      Top = 116
+      Width = 75
+      Caption = 'Merge sort'
+      OnClick = btnMergeSortClick
+      TabOrder = 21
+    end
+    object Label8: TLabel
+      Left = 100
+      Height = 15
+      Top = 94
+      Width = 39
+      Caption = 'Count :'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblCount: TLabel
+      Left = 144
+      Height = 15
+      Top = 94
+      Width = 50
+      AutoSize = False
+      Caption = '0'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object btnShuffle: TButton
+      Left = 509
+      Height = 25
+      Top = 35
+      Width = 75
+      Caption = 'Shuffle'
+      OnClick = btnShuffleClick
+      TabOrder = 22
+    end
+    object Label6: TLabel
+      Left = 368
+      Height = 15
+      Top = 122
+      Width = 70
+      Caption = 'Benchmark :'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblBenchTime: TLabel
+      Left = 443
+      Height = 15
+      Top = 122
+      Width = 34
+      Caption = '--- ms'
+      ParentColor = False
+    end
+    object btnAddManyValues1: TButton
+      Left = 91
+      Height = 25
+      Top = 34
+      Width = 103
+      Caption = 'Add 10000 values'
+      OnClick = btnAddManyValues1Click
+      TabOrder = 23
+    end
+    object Button1: TButton
+      Left = 520
+      Height = 25
+      Top = 106
+      Width = 121
+      Caption = 'Show log view'
+      OnClick = Button1Click
+      TabOrder = 24
+    end
+  end
+  object Label2: TLabel
+    Left = 4
+    Height = 44
+    Top = 364
+    Width = 723
+    Align = alBottom
+    Alignment = taCenter
+    AutoSize = False
+    BorderSpacing.Around = 4
+    Caption = 'In this sample we use a simple Integer list, you can also handle Byte, Single, double. '#13#10'2D Array is also supported for Byte, Integer, Single, Double, 2D and 3D Vector'
+    Color = clInfoBk
+    Font.Height = -13
+    Font.Style = [fsItalic]
+    Layout = tlCenter
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    WordWrap = True
+  end
+end

@@ -1,0 +1,50 @@
+object MainForm: TMainForm
+  Left = 401
+  Height = 480
+  Top = 181
+  Width = 640
+  BorderStyle = bsDialog
+  Caption = 'GLZScene StandAlone'
+  ClientHeight = 480
+  ClientWidth = 640
+  KeyPreview = True
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+  object pnlProgress: TPanel
+    Left = 129
+    Height = 58
+    Top = 158
+    Width = 383
+    ClientHeight = 58
+    ClientWidth = 383
+    TabOrder = 0
+    Visible = False
+    object lblAction: TLabel
+      Left = 5
+      Height = 19
+      Top = 5
+      Width = 373
+      Align = alTop
+      Alignment = taCenter
+      BorderSpacing.Around = 4
+      Caption = '---'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object pbImageProgress: TProgressBar
+      Left = 5
+      Height = 25
+      Top = 28
+      Width = 373
+      Align = alClient
+      BorderSpacing.Around = 4
+      TabOrder = 0
+    end
+  end
+end
