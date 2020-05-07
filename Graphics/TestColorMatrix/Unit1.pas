@@ -135,6 +135,7 @@ end;
 procedure TForm1.FormDestroy(Sender : TObject);
 begin
   FreeAndNil(FBuffer);
+  FreeAndNil(FSource);
 end;
 
 procedure TForm1.pnlViewClick(Sender : TObject);

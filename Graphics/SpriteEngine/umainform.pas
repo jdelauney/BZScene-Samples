@@ -97,7 +97,7 @@ Begin
   Randomize;
   SurfaceBuffer := TBZBitmap.Create(640,480);
   BallSpriteImage := TBZBitmap.Create;
-  BallSpriteImage.LoadFromFile('..\..\..\..\medias\ball1.tga');
+  BallSpriteImage.LoadFromFile('..\..\..\medias\ball1.tga');
   SpriteEngine := TBZBitmapSpriteEngine.Create(nil);
   SpriteEngine.Surface := SurfaceBuffer;
   SpriteEngine.SurfaceRect.Create(0,0,640,480);

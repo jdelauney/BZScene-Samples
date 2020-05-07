@@ -3,7 +3,7 @@ object MainForm: TMainForm
   Height = 480
   Top = 130
   Width = 640
-  Caption = 'GLZSprite Demo'
+  Caption = 'BZSprite Demo'
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -13,7 +13,7 @@ object MainForm: TMainForm
     Enabled = False
     Interval = 10
     OnTimer = Timer1Timer
-    Left = 200
-    Top = 104
+    left = 200
+    top = 104
   end
 end

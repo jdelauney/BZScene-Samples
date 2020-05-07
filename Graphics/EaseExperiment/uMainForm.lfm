@@ -17,7 +17,7 @@ object MainForm: TMainForm
     Width = 264
     Caption = 'Graphique'
     ClientHeight = 280
-    ClientWidth = 260
+    ClientWidth = 262
     Constraints.MaxWidth = 264
     Constraints.MinHeight = 300
     Constraints.MinWidth = 264
@@ -42,7 +42,7 @@ object MainForm: TMainForm
     Width = 705
     Caption = 'Equation'
     ClientHeight = 280
-    ClientWidth = 701
+    ClientWidth = 703
     TabOrder = 1
     object Label1: TLabel
       Left = 24
@@ -129,7 +129,7 @@ object MainForm: TMainForm
       Width = 704
       Caption = 'Options'
       ClientHeight = 156
-      ClientWidth = 700
+      ClientWidth = 702
       TabOrder = 2
       object Label3: TLabel
         Left = 8
@@ -202,7 +202,7 @@ object MainForm: TMainForm
         Align = alBottom
         Caption = 'Paramètres supplémentaires'
         ClientHeight = 64
-        ClientWidth = 696
+        ClientWidth = 698
         Enabled = False
         TabOrder = 4
         object pcParams: TPageControl
@@ -216,8 +216,8 @@ object MainForm: TMainForm
           TabOrder = 0
           object tsExtraParam1: TTabSheet
             Caption = 'Power'
-            ClientHeight = 36
-            ClientWidth = 688
+            ClientHeight = 30
+            ClientWidth = 686
             object lblExtraParam1: TLabel
               Left = 13
               Height = 15
@@ -289,7 +289,7 @@ object MainForm: TMainForm
     BorderSpacing.Around = 4
     Caption = 'Animations'
     ClientHeight = 408
-    ClientWidth = 1012
+    ClientWidth = 1014
     ParentColor = False
     TabOrder = 2
     object Panel1: TPanel

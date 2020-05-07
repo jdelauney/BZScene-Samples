@@ -60,7 +60,7 @@ begin
   FBackBitmap.LoadFromFile('../../../../../media/images/stonefloor.jpg');
   FBackBitmap.Transformation.Resample(bWidth,bHeight,ifmLanczos3);
   FGlassBitmap   := TBZBitmap.Create;
-  FGlassBitmap.LoadFromFile('../../../../../media/images/backclockglass01.png');
+  FGlassBitmap.LoadFromFile('../../../../../media/images/backclockGlass01.png');
   FGlassBitmap.PreMultiplyAlpha;
   FClockBitmap   := TBZBitmap.Create;
   FClockBitmap.LoadFromFile('../../../../../media/images/backclock01.png');
