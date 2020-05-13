@@ -10,7 +10,7 @@ Uses
   Classes, Sysutils, Fileutil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   ComCtrls, ExtCtrls, Spin,
   BZCadencer, BZSound, BZOpenALManager,
-  BZSoundSample, BZSoundFileWAV,  BZSoundFileMP3 , BZSoundFileOGG , BZSoundFileModplug, uinfoform;
+  BZSoundSample, BZSoundFileWAV,  BZSoundFileMP3 , BZSoundFileOGG {$IFDEF WINDOWS}, BZSoundFileModplug{$ENDIF}, uinfoform;
 
 Type
 

@@ -122,9 +122,10 @@ End;
 Procedure Tmainform.Formdestroy(Sender : Tobject);
 var i : Integer;
 Begin
-//    For I:=0 to 19 do BallSprites[I].Free;
+  SpriteEngine.Free;
+  For I:=0 to  BallCounts-1 do  FreeAndNil(BallSprites[I]);
 
- // SpriteEngine.Free;
+
   FreeAndNil(SurfaceBuffer);
   FreeAndNil(BallSpriteImage);
 End;

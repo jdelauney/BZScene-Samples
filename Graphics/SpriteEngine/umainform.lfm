@@ -13,7 +13,7 @@ object MainForm: TMainForm
     Enabled = False
     Interval = 10
     OnTimer = Timer1Timer
-    left = 200
-    top = 104
+    Left = 200
+    Top = 104
   end
 end
