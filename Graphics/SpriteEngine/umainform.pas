@@ -97,7 +97,7 @@ Begin
   Randomize;
   SurfaceBuffer := TBZBitmap.Create(640,480);
   BallSpriteImage := TBZBitmap.Create;
-  BallSpriteImage.LoadFromFile('..\..\..\..\medias\ball1.tga');
+  BallSpriteImage.LoadFromFile('..\..\..\medias\ball1.tga');
   SpriteEngine := TBZBitmapSpriteEngine.Create(nil);
   SpriteEngine.Surface := SurfaceBuffer;
   SpriteEngine.SurfaceRect.Create(0,0,640,480);
@@ -122,9 +122,10 @@ End;
 Procedure Tmainform.Formdestroy(Sender : Tobject);
 var i : Integer;
 Begin
-//    For I:=0 to 19 do BallSprites[I].Free;
+  SpriteEngine.Free;
+  For I:=0 to  BallCounts-1 do  FreeAndNil(BallSprites[I]);
 
- // SpriteEngine.Free;
+
   FreeAndNil(SurfaceBuffer);
   FreeAndNil(BallSpriteImage);
 End;

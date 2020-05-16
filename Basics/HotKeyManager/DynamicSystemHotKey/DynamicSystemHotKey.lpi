@@ -15,21 +15,20 @@
       </XPManifest>
       <Icon Value="0"/>
     </General>
-    <BuildModes Count="5">
+    <BuildModes Count="10">
       <Item1 Name="Default" Default="True"/>
-      <Item2 Name="Debug Win 64 bits">
+      <Item2 Name="Debug">
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="$NameOnly($(ProjFile))-$(BuildMode)-$(TargetCPU)"/>
+            <Filename Value="bin\$(TargetOS)\$(BuildMode)\$NameOnly($(ProjFile))-$(TargetCPU)"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <UnitOutputDirectory Value="lib\$(BuildMode)\$(TargetOS)-$(TargetCPU)"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Parsing>
-            <Style Value="1"/>
             <SyntaxOptions>
               <IncludeAssertionCode Value="True"/>
             </SyntaxOptions>
@@ -57,30 +56,27 @@
             </Options>
           </Linking>
           <Other>
-            <Verbosity>
-              <ShowDebugInfo Value="True"/>
-            </Verbosity>
-            <CustomOptions Value="-dDEBUG
--dUseCThreads"/>
+            <CustomOptions Value="-dUseCThreads"/>
           </Other>
         </CompilerOptions>
       </Item2>
-      <Item3 Name="Release Win 64 bits">
+      <Item3 Name="Release">
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="$NameOnly($(ProjFile))-$(BuildMode)-$(TargetCPU)"/>
+            <Filename Value="bin\$(TargetOS)\$(BuildMode)\$NameOnly($(ProjFile))-$(TargetCPU)"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <UnitOutputDirectory Value="lib\$(BuildMode)\$(TargetOS)-$(TargetCPU)"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Parsing>
             <Style Value="1"/>
           </Parsing>
           <CodeGeneration>
             <SmartLinkUnit Value="True"/>
+            <RelocatableUnit Value="True"/>
             <Optimizations>
               <OptimizationLevel Value="3"/>
             </Optimizations>
@@ -98,29 +94,77 @@
             </Options>
           </Linking>
           <Other>
-            <CustomOptions Value="-dRELEASE
--dUseCThreads
--dUSE_ASM_OPTIMIZATIONS
--dUSE_FASTMATH
--Sv
--O3
+            <CustomOptions Value="-dUseCThreads
+-CfSSE3
+-CpATHLON64
+-OoCSE
+-OoNODFA
 -OoFASTMATH
--OoLOOPUNROLL
--OoPEEPHOLE
+-OoNOPEEPHOLE
 -OoREMOVEEMPTYPROCS
 -OoNOSTACKFRAME
--OoCSE
--OoDFA
+-OpATHLON64
+-Sv
+-OoLOOPUNROLL
 -OoNOUSERBP"/>
           </Other>
         </CompilerOptions>
       </Item3>
-      <Item4 Name="Release Win 32 bits">
+      <Item4 Name="Debug-Win64">
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="$NameOnly($(ProjFile))-$(BuildMode)-$(TargetCPU)"/>
+            <Filename Value="bin\$(TargetOS)\$(BuildMode)\$NameOnly($(ProjFile))-$(TargetCPU)"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(BuildMode)\$(TargetOS)-$(TargetCPU)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="win64"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseHeaptrc Value="True"/>
+              <TrashVariables Value="True"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dDEBUG"/>
+          </Other>
+        </CompilerOptions>
+      </Item4>
+      <Item5 Name="Release-Win64">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="bin\$(TargetOS)\$(BuildMode)\$NameOnly($(ProjFile))-$(TargetCPU)"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -131,8 +175,8 @@
           </Parsing>
           <CodeGeneration>
             <SmartLinkUnit Value="True"/>
-            <TargetCPU Value="i386"/>
-            <TargetOS Value="win32"/>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="win64"/>
             <Optimizations>
               <OptimizationLevel Value="3"/>
             </Optimizations>
@@ -151,28 +195,29 @@
           </Linking>
           <Other>
             <CustomOptions Value="-dRELEASE
--dUseCThreads
 -dUSE_ASM_OPTIMIZATIONS
 -dUSE_FASTMATH
--Sv
 -O3
+-Sv
+-CfSSE3
+-CpATHLON64
 -OoFASTMATH
 -OoLOOPUNROLL
--OoPEEPHOLE
+-OoNOPEEPHOLE
 -OoREMOVEEMPTYPROCS
 -OoNOSTACKFRAME
 -OoCSE
--OoDFA
+-OoNODFA
 -OoNOUSERBP"/>
           </Other>
         </CompilerOptions>
-      </Item4>
-      <Item5 Name="Debug  Win 32 bits">
+      </Item5>
+      <Item6 Name="Debug-Win32">
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="$NameOnly($(ProjFile))-$(BuildMode)-$(TargetCPU)"/>
+            <Filename Value="bin\$(TargetOS)\$(BuildMode)\$NameOnly($(ProjFile))-$(TargetCPU)"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -212,11 +257,218 @@
             <Verbosity>
               <ShowDebugInfo Value="True"/>
             </Verbosity>
+            <CustomOptions Value="-dDEBUG"/>
+          </Other>
+        </CompilerOptions>
+      </Item6>
+      <Item7 Name="Release-Win32">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="bin\$(TargetOS)\$(BuildMode)\$NameOnly($(ProjFile))-$(TargetCPU)"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(BuildMode)\$(TargetOS)-$(TargetCPU)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="i386"/>
+            <TargetOS Value="win32"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <StripSymbols Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dRELEASE
+-dUSE_ASM_OPTIMIZATIONS
+-dUSE_FASTMATH
+-O3
+-Sv
+-CfSSE3
+-CpATHLON64
+-OoFASTMATH
+-OoLOOPUNROLL
+-OoNOPEEPHOLE
+-OoREMOVEEMPTYPROCS
+-OoNOSTACKFRAME
+-OoCSE
+-OoNODFA
+-OoNOUSERBP"/>
+          </Other>
+        </CompilerOptions>
+      </Item7>
+      <Item8 Name="Debug-Linux64">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="bin\$(TargetOS)\$(BuildMode)\$NameOnly($(ProjFile))-$(TargetCPU)"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(BuildMode)\$(TargetOS)-$(TargetCPU)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+            <TargetCPU Value="x86_64"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseHeaptrc Value="True"/>
+              <TrashVariables Value="True"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
             <CustomOptions Value="-dDEBUG
 -dUseCThreads"/>
           </Other>
         </CompilerOptions>
-      </Item5>
+      </Item8>
+      <Item9 Name="Release-Linux64">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="bin\$(TargetOS)\$(BuildMode)\$NameOnly($(ProjFile))-$(TargetCPU)"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(BuildMode)\$(TargetOS)-$(TargetCPU)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="x86_64"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <StripSymbols Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dRELEASE
+-dUseCThreads
+-dUSE_ASM_OPTIMIZATIONS
+-dUSE_FASTMATH
+-O3
+-Sv
+-CfSSE3
+-CpATHLON64
+-OoFASTMATH
+-OoLOOPUNROLL
+-OoNOPEEPHOLE
+-OoREMOVEEMPTYPROCS
+-OoNOSTACKFRAME
+-OoCSE
+-OoNODFA
+-OoNOUSERBP"/>
+          </Other>
+        </CompilerOptions>
+      </Item9>
+      <Item10 Name="Release-Linux32">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="bin\$(TargetOS)\$(BuildMode)\$NameOnly($(ProjFile))-$(TargetCPU)"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(BuildMode)\$(TargetOS)-$(TargetCPU)"/>
+          </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="i386"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <StripSymbols Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dRELEASE
+-dUseCThreads
+-dUSE_ASM_OPTIMIZATIONS
+-dUSE_FASTMATH
+-O3
+-Sv
+-CfSSE3
+-CpATHLON64
+-OoFASTMATH
+-OoLOOPUNROLL
+-OoNOPEEPHOLE
+-OoREMOVEEMPTYPROCS
+-OoNOSTACKFRAME
+-OoCSE
+-OoNODFA
+-OoNOUSERBP"/>
+          </Other>
+        </CompilerOptions>
+      </Item10>
     </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
@@ -226,16 +478,13 @@
       <FormatVersion Value="2"/>
       <Modes Count="0"/>
     </RunParams>
-    <RequiredPackages Count="3">
+    <RequiredPackages Count="2">
       <Item1>
-        <PackageName Value="bzscene_rt"/>
+        <PackageName Value="bzscene_tools_rt"/>
       </Item1>
       <Item2>
-        <PackageName Value="bzscene_image_rt"/>
-      </Item2>
-      <Item3>
         <PackageName Value="LCL"/>
-      </Item3>
+      </Item2>
     </RequiredPackages>
     <Units Count="2">
       <Unit0>
@@ -255,7 +504,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="$NameOnly($(ProjFile))-$(BuildMode)-$(TargetCPU)"/>
+      <Filename Value="bin\$(TargetOS)\$(BuildMode)\$NameOnly($(ProjFile))-$(TargetCPU)"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
@@ -272,6 +521,9 @@
       </Options>
     </Linking>
     <Other>
+      <CompilerMessages>
+        <IgnoredMessages idx5073="True" idx5072="True" idx5071="True" idx5060="True" idx5057="True" idx5031="True" idx5030="True" idx5029="True" idx5028="True" idx5027="True" idx5025="True" idx5024="True" idx2005="True"/>
+      </CompilerMessages>
       <CustomOptions Value="-dUseCThreads"/>
     </Other>
   </CompilerOptions>

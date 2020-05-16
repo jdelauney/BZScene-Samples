@@ -88,6 +88,7 @@ type
     lblUsername : TLabel;
 
     procedure FormShow(Sender: TObject);
+
   private
 
   public
@@ -156,7 +157,6 @@ begin
   lblUserName.Caption := GetCurrentUserName;
 
 end;
-
 
 end.
 

@@ -1,0 +1,362 @@
+object MainForm: TMainForm
+  Left = 318
+  Height = 801
+  Top = 250
+  Width = 1032
+  BorderStyle = bsSingle
+  Caption = 'Deplacement carte (Touches : Q, D, S, Z)'
+  ClientHeight = 801
+  ClientWidth = 1032
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+  object pnlView: TPanel
+    Left = 4
+    Height = 600
+    Top = 4
+    Width = 1024
+    Align = alTop
+    BorderSpacing.Around = 4
+    BevelOuter = bvNone
+    Color = clBlack
+    ParentColor = False
+    TabOrder = 0
+    OnMouseDown = pnlViewMouseDown
+    OnMouseMove = pnlViewMouseMove
+    OnMouseUp = pnlViewMouseUp
+    OnPaint = pnlViewPaint
+  end
+  object Panel1: TPanel
+    Left = 4
+    Height = 164
+    Top = 608
+    Width = 1024
+    Align = alClient
+    BorderSpacing.Around = 4
+    ClientHeight = 164
+    ClientWidth = 1024
+    TabOrder = 1
+    object GroupBox1: TGroupBox
+      Left = 560
+      Height = 162
+      Top = 1
+      Width = 463
+      Align = alRight
+      Caption = 'Infos'
+      ClientHeight = 142
+      ClientWidth = 461
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 54
+        Height = 17
+        Top = -1
+        Width = 147
+        Caption = 'Dimension affichage : '
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblDisplaySize: TLabel
+        Left = 200
+        Height = 17
+        Top = -1
+        Width = 55
+        Caption = '000x000'
+        ParentColor = False
+      end
+      object lblSurfaceMapSize: TLabel
+        Left = 200
+        Height = 17
+        Top = 16
+        Width = 55
+        Caption = '000x000'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        Left = 16
+        Height = 17
+        Top = 16
+        Width = 185
+        Caption = 'Dimension affichage carte : '
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label4: TLabel
+        Left = 28
+        Height = 17
+        Top = 33
+        Width = 174
+        Caption = 'Dimension carte en pixel : '
+        Font.Color = clTeal
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblPixelMapSize: TLabel
+        Left = 200
+        Height = 17
+        Top = 33
+        Width = 55
+        Caption = '000x000'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 264
+        Height = 17
+        Top = 57
+        Width = 60
+        Caption = 'En tuile : '
+        Font.Color = clPurple
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblTileMapPos: TLabel
+        Left = 326
+        Height = 17
+        Top = 57
+        Width = 23
+        Caption = '0x0'
+        ParentColor = False
+      end
+      object Label9: TLabel
+        Left = 264
+        Height = 17
+        Top = 33
+        Width = 60
+        Caption = 'En tuile : '
+        Font.Color = clPurple
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblSizeMapTile: TLabel
+        Left = 326
+        Height = 17
+        Top = 33
+        Width = 23
+        Caption = '0x0'
+        ParentColor = False
+      end
+      object lblPixelTileMapPos: TLabel
+        Left = 204
+        Height = 17
+        Top = 57
+        Width = 55
+        Caption = '000x000'
+        ParentColor = False
+      end
+      object Label10: TLabel
+        Left = 10
+        Height = 17
+        Top = 57
+        Width = 196
+        Caption = 'Position sur la carte en pixel : '
+        Font.Color = clTeal
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label11: TLabel
+        Left = 264
+        Height = 17
+        Top = 16
+        Width = 60
+        Caption = 'En tuile : '
+        Font.Color = clPurple
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblSizeMapBufferTile: TLabel
+        Left = 326
+        Height = 17
+        Top = 16
+        Width = 23
+        Caption = '0x0'
+        ParentColor = False
+      end
+      object Label12: TLabel
+        Left = 264
+        Height = 17
+        Top = -1
+        Width = 60
+        Caption = 'En tuile : '
+        Font.Color = clPurple
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblSizeDisplayTile: TLabel
+        Left = 326
+        Height = 17
+        Top = -1
+        Width = 23
+        Caption = '0x0'
+        ParentColor = False
+      end
+      object Bevel1: TBevel
+        Left = 13
+        Height = 8
+        Top = 53
+        Width = 442
+        Shape = bsTopLine
+      end
+      object Label13: TLabel
+        Left = 108
+        Height = 17
+        Top = 74
+        Width = 92
+        Caption = 'Coordonnes  : '
+        Font.Color = clBlue
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblMapPosCoord: TLabel
+        Left = 203
+        Height = 17
+        Top = 74
+        Width = 169
+        Caption = 'Lat : 0.00000 Lon : 0.00000'
+        ParentColor = False
+      end
+      object Label14: TLabel
+        Left = 47
+        Height = 17
+        Top = 91
+        Width = 155
+        Caption = 'Coordonnes  tuile min : '
+        Font.Color = clBlue
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label15: TLabel
+        Left = 43
+        Height = 17
+        Top = 108
+        Width = 158
+        Caption = 'Coordonnes  tuile max : '
+        Font.Color = clBlue
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblTileCoordMin: TLabel
+        Left = 204
+        Height = 17
+        Top = 91
+        Width = 169
+        Caption = 'Lat : 0.00000 Lon : 0.00000'
+        ParentColor = False
+      end
+      object lblTileCoordMax: TLabel
+        Left = 204
+        Height = 17
+        Top = 108
+        Width = 169
+        Caption = 'Lat : 0.00000 Lon : 0.00000'
+        ParentColor = False
+      end
+    end
+    object GroupBox2: TGroupBox
+      Left = 1
+      Height = 162
+      Top = 1
+      Width = 559
+      Align = alClient
+      Caption = 'Options'
+      ClientHeight = 142
+      ClientWidth = 557
+      TabOrder = 1
+      object chkFreeMove: TCheckBox
+        Left = 413
+        Height = 21
+        Top = 8
+        Width = 137
+        Caption = 'Déplacement libre'
+        Checked = True
+        OnClick = chkFreeMoveClick
+        State = cbChecked
+        TabOrder = 0
+      end
+      object Label7: TLabel
+        Left = 16
+        Height = 17
+        Top = 8
+        Width = 41
+        Caption = 'Carte :'
+        ParentColor = False
+      end
+      object cbxChooseMap: TComboBox
+        Left = 64
+        Height = 35
+        Top = 5
+        Width = 236
+        AutoComplete = True
+        AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+        AutoDropDown = True
+        ItemHeight = 0
+        OnSelect = cbxChooseMapSelect
+        Style = csDropDownList
+        TabOrder = 1
+      end
+      object cbxChooseZoomLevel: TComboBox
+        Left = 128
+        Height = 35
+        Top = 40
+        Width = 172
+        Enabled = False
+        ItemHeight = 0
+        OnSelect = cbxChooseZoomLevelSelect
+        Style = csDropDownList
+        TabOrder = 2
+      end
+      object Label8: TLabel
+        Left = 12
+        Height = 17
+        Top = 50
+        Width = 106
+        Caption = 'Niveau de zoom :'
+        ParentColor = False
+      end
+      object chkMapRenderGrid: TCheckBox
+        Left = 16
+        Height = 21
+        Top = 96
+        Width = 108
+        Caption = 'Afficher grille'
+        OnChange = chkMapRenderGridChange
+        TabOrder = 3
+      end
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 25
+    Top = 776
+    Width = 1032
+    Align = alBottom
+    ClientHeight = 25
+    ClientWidth = 1032
+    TabOrder = 2
+    object lblStatus: TLabel
+      Left = 5
+      Height = 15
+      Top = 5
+      Width = 4
+      Align = alLeft
+      BorderSpacing.Around = 4
+      Caption = '-'
+      Font.Color = clHighlight
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+end

@@ -32,11 +32,11 @@ Const
   MAXSPRITES = 299;
   ResNameList : Array[0..6] of String = ('flowerdance_back.tga',
                                          'flowerdance_fore1.tga',
-                                         'flowerdance_Sprite01.tga',
-                                         'flowerdance_Sprite02.tga',
-                                         'flowerdance_Sprite03.tga',
-                                         'flowerdance_Sprite04.tga',
-                                         'flowerdance_Sprite05.tga');
+                                         'flowerdance_sprite01.tga',
+                                         'flowerdance_sprite02.tga',
+                                         'flowerdance_sprite03.tga',
+                                         'flowerdance_sprite04.tga',
+                                         'flowerdance_sprite05.tga');
 type
   TSpriteRec = packed record
     Pos : TBZVector2i;

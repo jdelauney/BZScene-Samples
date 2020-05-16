@@ -8,15 +8,14 @@ object MainForm: TMainForm
   ClientHeight = 587
   ClientWidth = 890
   Position = poScreenCenter
-  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 4
-    Height = 60
+    Height = 84
     Top = 4
     Width = 882
     Align = alTop
     BorderSpacing.Around = 4
-    ClientHeight = 60
+    ClientHeight = 84
     ClientWidth = 882
     Color = clMoneyGreen
     Font.Style = [fsBold]
@@ -26,7 +25,7 @@ object MainForm: TMainForm
     Wordwrap = True
     object Label28: TLabel
       Left = 9
-      Height = 42
+      Height = 66
       Top = 9
       Width = 864
       Align = alClient
@@ -39,8 +38,8 @@ object MainForm: TMainForm
   end
   object PageControl1: TPageControl
     Left = 4
-    Height = 515
-    Top = 68
+    Height = 491
+    Top = 92
     Width = 882
     ActivePage = TabSheet8
     Align = alClient
@@ -49,8 +48,8 @@ object MainForm: TMainForm
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Char'
-      ClientHeight = 488
-      ClientWidth = 880
+      ClientHeight = 460
+      ClientWidth = 872
       object GroupBox2: TGroupBox
         Left = 4
         Height = 479
@@ -191,8 +190,8 @@ object MainForm: TMainForm
     end
     object TabSheet2: TTabSheet
       Caption = 'Boolean'
-      ClientHeight = 488
-      ClientWidth = 880
+      ClientHeight = 460
+      ClientWidth = 872
       object GroupBox3: TGroupBox
         Left = 4
         Height = 479
@@ -272,8 +271,8 @@ object MainForm: TMainForm
     end
     object TabSheet3: TTabSheet
       Caption = 'Integer'
-      ClientHeight = 488
-      ClientWidth = 880
+      ClientHeight = 460
+      ClientWidth = 872
       object GroupBox1: TGroupBox
         Left = 4
         Height = 196
@@ -632,8 +631,8 @@ object MainForm: TMainForm
     end
     object TabSheet7: TTabSheet
       Caption = 'Single and double'
-      ClientHeight = 488
-      ClientWidth = 880
+      ClientHeight = 460
+      ClientWidth = 872
       object GroupBox4: TGroupBox
         Left = 0
         Height = 361
@@ -989,8 +988,8 @@ object MainForm: TMainForm
     end
     object TabSheet4: TTabSheet
       Caption = 'String 1'
-      ClientHeight = 488
-      ClientWidth = 880
+      ClientHeight = 460
+      ClientWidth = 872
       object Label56: TLabel
         Left = 8
         Height = 15
@@ -1688,8 +1687,8 @@ object MainForm: TMainForm
     end
     object TabSheet5: TTabSheet
       Caption = 'String 2'
-      ClientHeight = 488
-      ClientWidth = 880
+      ClientHeight = 460
+      ClientWidth = 872
       object Label115: TLabel
         Left = 8
         Height = 15
@@ -2277,8 +2276,8 @@ object MainForm: TMainForm
     end
     object TabSheet6: TTabSheet
       Caption = 'String 3'
-      ClientHeight = 488
-      ClientWidth = 880
+      ClientHeight = 460
+      ClientWidth = 872
       object Label75: TLabel
         Left = 8
         Height = 15
@@ -2792,11 +2791,11 @@ object MainForm: TMainForm
     end
     object TabSheet8: TTabSheet
       Caption = 'DateTime'
-      ClientHeight = 488
-      ClientWidth = 880
+      ClientHeight = 460
+      ClientWidth = 872
       object Label203: TLabel
         Left = 24
-        Height = 19
+        Height = 17
         Top = 24
         Width = 107
         Caption = 'Date of the Day : '
@@ -2813,7 +2812,7 @@ object MainForm: TMainForm
       end
       object lblDateToStr: TLabel
         Left = 576
-        Height = 19
+        Height = 17
         Top = 24
         Width = 20
         Caption = '-----'
@@ -2821,15 +2820,15 @@ object MainForm: TMainForm
       end
       object Label204: TLabel
         Left = 576
-        Height = 19
+        Height = 17
         Top = 48
-        Width = 89
+        Width = 88
         Caption = 'Current Time :'
         ParentColor = False
       end
       object lblTimeToStr: TLabel
         Left = 672
-        Height = 19
+        Height = 17
         Top = 48
         Width = 16
         Caption = '----'
@@ -2837,7 +2836,7 @@ object MainForm: TMainForm
       end
       object Label205: TLabel
         Left = 36
-        Height = 19
+        Height = 17
         Top = 100
         Width = 65
         Caption = 'Add Days :'
@@ -2845,7 +2844,7 @@ object MainForm: TMainForm
       end
       object edtAddDays: TSpinEdit
         Left = 118
-        Height = 25
+        Height = 28
         Top = 96
         Width = 90
         MinValue = -100
@@ -2854,7 +2853,7 @@ object MainForm: TMainForm
       end
       object Label206: TLabel
         Left = 520
-        Height = 19
+        Height = 17
         Top = 99
         Width = 45
         Caption = 'Result :'
@@ -2862,7 +2861,7 @@ object MainForm: TMainForm
       end
       object Label207: TLabel
         Left = 344
-        Height = 19
+        Height = 17
         Top = 99
         Width = 39
         Caption = 'Code :'
@@ -2870,7 +2869,7 @@ object MainForm: TMainForm
       end
       object lblDateAddDay: TLabel
         Left = 580
-        Height = 19
+        Height = 17
         Top = 99
         Width = 8
         Caption = '0'
@@ -2882,9 +2881,9 @@ object MainForm: TMainForm
       end
       object Label208: TLabel
         Left = 389
-        Height = 19
+        Height = 17
         Top = 99
-        Width = 89
+        Width = 88
         Caption = 'DT.AddDay(Nb)'
         Color = 12573917
         Font.Style = [fsItalic]
@@ -2894,7 +2893,7 @@ object MainForm: TMainForm
       end
       object Label209: TLabel
         Left = 16
-        Height = 19
+        Height = 17
         Top = 132
         Width = 85
         Caption = 'Add  Months :'
@@ -2902,7 +2901,7 @@ object MainForm: TMainForm
       end
       object edtAddMonths: TSpinEdit
         Left = 118
-        Height = 25
+        Height = 28
         Top = 128
         Width = 90
         OnChange = edtAddMonthsChange
@@ -2910,7 +2909,7 @@ object MainForm: TMainForm
       end
       object Label210: TLabel
         Left = 520
-        Height = 19
+        Height = 17
         Top = 131
         Width = 45
         Caption = 'Result :'
@@ -2918,7 +2917,7 @@ object MainForm: TMainForm
       end
       object Label211: TLabel
         Left = 344
-        Height = 19
+        Height = 17
         Top = 131
         Width = 39
         Caption = 'Code :'
@@ -2926,7 +2925,7 @@ object MainForm: TMainForm
       end
       object lblDateAddMonth: TLabel
         Left = 580
-        Height = 19
+        Height = 17
         Top = 131
         Width = 8
         Caption = '0'
@@ -2938,9 +2937,9 @@ object MainForm: TMainForm
       end
       object Label212: TLabel
         Left = 389
-        Height = 19
+        Height = 17
         Top = 131
-        Width = 105
+        Width = 104
         Caption = 'DT.AddMonth(Nb)'
         Color = 12573917
         Font.Style = [fsItalic]
@@ -2950,7 +2949,7 @@ object MainForm: TMainForm
       end
       object Label213: TLabel
         Left = 32
-        Height = 19
+        Height = 17
         Top = 164
         Width = 69
         Caption = 'Add Years :'
@@ -2958,7 +2957,7 @@ object MainForm: TMainForm
       end
       object edtAddYears: TSpinEdit
         Left = 118
-        Height = 25
+        Height = 28
         Top = 160
         Width = 90
         OnChange = edtAddYearsChange
@@ -2966,7 +2965,7 @@ object MainForm: TMainForm
       end
       object Label214: TLabel
         Left = 520
-        Height = 19
+        Height = 17
         Top = 163
         Width = 45
         Caption = 'Result :'
@@ -2974,7 +2973,7 @@ object MainForm: TMainForm
       end
       object Label215: TLabel
         Left = 344
-        Height = 19
+        Height = 17
         Top = 163
         Width = 39
         Caption = 'Code :'
@@ -2982,7 +2981,7 @@ object MainForm: TMainForm
       end
       object lblDateAddYear: TLabel
         Left = 580
-        Height = 19
+        Height = 17
         Top = 163
         Width = 8
         Caption = '0'
@@ -2994,9 +2993,9 @@ object MainForm: TMainForm
       end
       object Label216: TLabel
         Left = 389
-        Height = 19
+        Height = 17
         Top = 163
-        Width = 92
+        Width = 91
         Caption = 'DT.AddYear(Nb)'
         Color = 12573917
         Font.Style = [fsItalic]
@@ -3006,7 +3005,7 @@ object MainForm: TMainForm
       end
       object Label218: TLabel
         Left = 520
-        Height = 19
+        Height = 17
         Top = 24
         Width = 45
         Caption = 'Result :'
@@ -3014,7 +3013,7 @@ object MainForm: TMainForm
       end
       object Label219: TLabel
         Left = 344
-        Height = 19
+        Height = 17
         Top = 24
         Width = 39
         Caption = 'Code :'
@@ -3022,9 +3021,9 @@ object MainForm: TMainForm
       end
       object Label220: TLabel
         Left = 389
-        Height = 19
+        Height = 17
         Top = 24
-        Width = 95
+        Width = 94
         Caption = 'DT.DateToString'
         Color = 12573917
         Font.Style = [fsItalic]
@@ -3034,7 +3033,7 @@ object MainForm: TMainForm
       end
       object Label217: TLabel
         Left = 24
-        Height = 19
+        Height = 17
         Top = 72
         Width = 84
         Caption = 'Random Date'
@@ -3042,7 +3041,7 @@ object MainForm: TMainForm
       end
       object Label221: TLabel
         Left = 344
-        Height = 19
+        Height = 17
         Top = 72
         Width = 39
         Caption = 'Code :'
@@ -3050,9 +3049,9 @@ object MainForm: TMainForm
       end
       object Label222: TLabel
         Left = 389
-        Height = 19
+        Height = 17
         Top = 72
-        Width = 116
+        Width = 115
         Caption = 'DT.SetRandomDate'
         Color = 12573917
         Font.Style = [fsItalic]
@@ -3062,7 +3061,7 @@ object MainForm: TMainForm
       end
       object Label223: TLabel
         Left = 520
-        Height = 19
+        Height = 17
         Top = 72
         Width = 45
         Caption = 'Result :'
@@ -3070,7 +3069,7 @@ object MainForm: TMainForm
       end
       object lblDateRandom: TLabel
         Left = 576
-        Height = 19
+        Height = 17
         Top = 72
         Width = 20
         Caption = '-----'
@@ -3078,7 +3077,7 @@ object MainForm: TMainForm
       end
       object Label240: TLabel
         Left = 24
-        Height = 19
+        Height = 17
         Top = 192
         Width = 116
         Caption = 'String to DateTime'
@@ -3086,7 +3085,7 @@ object MainForm: TMainForm
       end
       object lblDateStrToDate: TLabel
         Left = 576
-        Height = 19
+        Height = 17
         Top = 192
         Width = 20
         Caption = '-----'
@@ -3094,7 +3093,7 @@ object MainForm: TMainForm
       end
       object Label241: TLabel
         Left = 520
-        Height = 19
+        Height = 17
         Top = 192
         Width = 45
         Caption = 'Result :'
@@ -3102,7 +3101,7 @@ object MainForm: TMainForm
       end
       object Label242: TLabel
         Left = 192
-        Height = 19
+        Height = 17
         Top = 192
         Width = 39
         Caption = 'Code :'
@@ -3110,9 +3109,9 @@ object MainForm: TMainForm
       end
       object Label243: TLabel
         Left = 240
-        Height = 19
+        Height = 17
         Top = 192
-        Width = 233
+        Width = 232
         Caption = 'DT.SetFromString(''1977/02/07 15:55:12'')'
         Color = 12573917
         Font.Style = [fsItalic]
@@ -3122,15 +3121,15 @@ object MainForm: TMainForm
       end
       object Label252: TLabel
         Left = 24
-        Height = 19
+        Height = 17
         Top = 224
-        Width = 76
+        Width = 75
         Caption = 'Set from file'
         ParentColor = False
       end
       object Label253: TLabel
         Left = 112
-        Height = 19
+        Height = 17
         Top = 224
         Width = 39
         Caption = 'Code :'
@@ -3138,9 +3137,9 @@ object MainForm: TMainForm
       end
       object Label254: TLabel
         Left = 157
-        Height = 19
+        Height = 17
         Top = 224
-        Width = 321
+        Width = 318
         Caption = 'DT.SetFromFile(ExtractFileName(ParamStrUTF8(0));)'
         Color = 12573917
         ParentColor = False
@@ -3149,7 +3148,7 @@ object MainForm: TMainForm
       end
       object Label255: TLabel
         Left = 519
-        Height = 19
+        Height = 17
         Top = 224
         Width = 45
         Caption = 'Result :'
@@ -3157,7 +3156,7 @@ object MainForm: TMainForm
       end
       object lblDateFromFile: TLabel
         Left = 581
-        Height = 19
+        Height = 17
         Top = 224
         Width = 8
         Caption = '0'
@@ -3169,8 +3168,8 @@ object MainForm: TMainForm
     end
     object TabSheet9: TTabSheet
       Caption = 'Int64/QWord'
-      ClientHeight = 488
-      ClientWidth = 880
+      ClientHeight = 460
+      ClientWidth = 872
       object Label224: TLabel
         Left = 8
         Height = 15

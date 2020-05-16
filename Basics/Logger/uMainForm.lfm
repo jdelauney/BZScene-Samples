@@ -8,7 +8,6 @@ object MainForm: TMainForm
   ClientWidth = 304
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
-  LCLVersion = '2.0.6.0'
   object btnLog: TButton
     Left = 28
     Height = 25
@@ -72,6 +71,7 @@ object MainForm: TMainForm
     Enabled = False
     OnClick = btnViewLogClick
     TabOrder = 6
+    Visible = False
   end
   object btnLogHint: TButton
     Left = 28

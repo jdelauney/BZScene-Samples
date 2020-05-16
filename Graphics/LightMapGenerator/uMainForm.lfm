@@ -1,0 +1,233 @@
+object MainForm: TMainForm
+  Left = 451
+  Height = 665
+  Top = 250
+  Width = 1032
+  BorderStyle = bsSingle
+  Caption = 'LightMap Generator'
+  ClientHeight = 665
+  ClientWidth = 1032
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnShow = FormShow
+  LCLVersion = '2.0.8.0'
+  object Panel1: TPanel
+    Left = 4
+    Height = 512
+    Top = 4
+    Width = 1024
+    Align = alTop
+    BorderSpacing.Around = 4
+    BevelOuter = bvNone
+    ClientHeight = 512
+    ClientWidth = 1024
+    TabOrder = 4
+    object pnlViewSrc: TPanel
+      Left = 0
+      Height = 512
+      Top = 0
+      Width = 512
+      Align = alLeft
+      Color = clBlack
+      ParentColor = False
+      TabOrder = 0
+      OnPaint = pnlViewSrcPaint
+    end
+    object pnlViewDest: TPanel
+      Left = 512
+      Height = 512
+      Top = 0
+      Width = 512
+      Align = alLeft
+      Color = clBlack
+      ParentColor = False
+      TabOrder = 1
+      OnPaint = pnlViewDestPaint
+    end
+  end
+  object btnOpenImg: TButton
+    Left = 4
+    Height = 25
+    Top = 528
+    Width = 511
+    Caption = 'Ouvrir image source'
+    OnClick = btnOpenImgClick
+    TabOrder = 0
+  end
+  object btnGenerate: TButton
+    Left = 520
+    Height = 25
+    Top = 528
+    Width = 248
+    Caption = 'Générer LightMap'
+    OnClick = btnGenerateClick
+    TabOrder = 2
+  end
+  object pnlBottom: TPanel
+    Left = 4
+    Height = 80
+    Top = 561
+    Width = 1024
+    Align = alBottom
+    BorderSpacing.Around = 4
+    BevelOuter = bvLowered
+    BorderStyle = bsSingle
+    ClientHeight = 80
+    ClientWidth = 1024
+    TabOrder = 1
+    object lblRayHmax: TLabel
+      Left = 8
+      Height = 30
+      Top = 44
+      Width = 98
+      Caption = 'Hauteur maximale'#13#10'des rayons'
+      ParentColor = False
+    end
+    object lblHmax: TLabel
+      Left = 296
+      Height = 30
+      Top = 45
+      Width = 98
+      Caption = 'Hauteur maximale'#13#10'du relief'
+      ParentColor = False
+    end
+    object lblRayAngle: TLabel
+      Left = 296
+      Height = 30
+      Top = 9
+      Width = 90
+      Caption = 'Angle des rayons'#13#10'en degrés'
+      ParentColor = False
+    end
+    object lblOmbre: TLabel
+      Left = 8
+      Height = 15
+      Top = 13
+      Width = 92
+      Caption = 'Valeur de l''ombre'
+      ParentColor = False
+    end
+    object SpinOmbre: TSpinEdit
+      Left = 116
+      Height = 23
+      Top = 9
+      Width = 100
+      Alignment = taCenter
+      Color = clMenu
+      MaxValue = 255
+      TabOrder = 0
+      Value = 127
+    end
+    object spinRayAngle: TFloatSpinEdit
+      Left = 404
+      Height = 23
+      Top = 12
+      Width = 100
+      Alignment = taCenter
+      Color = clMenu
+      MaxValue = 89
+      MinValue = 1
+      TabOrder = 1
+      Value = 45
+    end
+    object spinHmax: TFloatSpinEdit
+      Left = 404
+      Height = 23
+      Top = 49
+      Width = 100
+      Alignment = taCenter
+      Color = clMenu
+      MaxValue = 255
+      MinValue = 1
+      TabOrder = 3
+      Value = 40
+    end
+    object spinRayHmax: TFloatSpinEdit
+      Left = 116
+      Height = 23
+      Top = 48
+      Width = 100
+      Alignment = taCenter
+      Color = clMenu
+      Increment = 10
+      MaxValue = 10000
+      MinValue = 10
+      TabOrder = 2
+      Value = 400
+    end
+    object chkExpMode: TCheckBox
+      Left = 520
+      Height = 19
+      Top = 15
+      Width = 142
+      Caption = 'Methode Exponentielle'
+      TabOrder = 4
+    end
+    object chkBlur: TCheckBox
+      Left = 522
+      Height = 19
+      Top = 43
+      Width = 102
+      Caption = 'Adoucissement'
+      TabOrder = 5
+    end
+    object spinBlurFactor: TFloatSpinEdit
+      Left = 632
+      Height = 23
+      Top = 40
+      Width = 100
+      Alignment = taCenter
+      Color = clMenu
+      MaxValue = 255
+      MinValue = 1
+      TabOrder = 6
+      Value = 4
+    end
+    object Label1: TLabel
+      Left = 752
+      Height = 15
+      Top = 17
+      Width = 49
+      Caption = 'Lumière :'
+      ParentColor = False
+    end
+    object btnLightColor: TColorButton
+      Left = 808
+      Height = 25
+      Top = 14
+      Width = 75
+      BorderWidth = 2
+      ButtonColorSize = 16
+      ButtonColor = 5197647
+      Color = 5197647
+    end
+  end
+  object btnSaveImg: TButton
+    Left = 776
+    Height = 25
+    Top = 528
+    Width = 247
+    Caption = 'Enregistrer Lightmap'
+    OnClick = btnSaveImgClick
+    TabOrder = 3
+  end
+  object Bar: TProgressBar
+    Left = 8
+    Height = 8
+    Top = 649
+    Width = 1016
+    Align = alBottom
+    BorderSpacing.Around = 8
+    TabOrder = 5
+  end
+  object opd: TOpenPictureDialog
+    left = 120
+    top = 70
+  end
+  object spd: TSavePictureDialog
+    DefaultExt = '.bmp'
+    Filter = 'Windows Bitmaps (*.bmp)|*.bmp|'
+    left = 200
+    top = 72
+  end
+end

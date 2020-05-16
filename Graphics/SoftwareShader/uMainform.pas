@@ -452,7 +452,7 @@ begin
   ColoredLinesShader.LightPosition.CreatePoint( 2.0, 4.5, -2.0); //(2.0, -5.0, 3.0);
 
   TunnelShader.iChannel0 := TBZBitmap.Create;
-  TunnelShader.iChannel0.LoadFromFile('..\..\..\textures\tunnel8.bmp');
+  TunnelShader.iChannel0.LoadFromFile('..\..\..\textures\Tunnel8.bmp');
   TunnelShader.CameraPosition.CreatePoint(0, 0, -5);
   TunnelShader.LightPosition.CreatePoint( 2.0, 4.5, -2.0); //(2.0, -5.0, 3.0);
 
@@ -494,7 +494,7 @@ begin
   RenderScene;
   DisplayBuffer;
 
-  Caption:='BZScene Software Shaders Demo - Tap key [0..9, A, C] + B = Blur ON/OFF - '+Format('%.*f FPS', [3, FStopWatch.getFPS]);
+  Caption:='BZScene Software Shaders Demo - Tap key [0..9, A,C,D] + B = Blur ON/OFF - '+Format('%.*f FPS', [3, FStopWatch.getFPS]);
 end;
 
 Procedure TMainForm.DoRasterProgress(Sender: TObject; Stage: TBZProgressStage; PercentDone: Byte; RedrawNow: Boolean;

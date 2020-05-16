@@ -55,7 +55,7 @@ implementation
 procedure TMainForm.ThreadTimer1Timer(Sender: TObject);
 begin
   Label2.Caption:= ' Nous sommes le : '+ FormatDateTime('YYYY-MM-DD',Now)+' Il est : '+FormatDateTime('HH:NN:SS',Now);
-  Label4.Caption:=GlobalPerformanceTimer.getValueAsSeconds;
+  Label4.Caption:=GlobalStopWatch.getValueAsSeconds;
   Label6.Caption:=StopWatch1.getValueAsSeconds;
 end;
 
@@ -103,8 +103,8 @@ begin
   ThreadTimer1 := TBZThreadTimer.Create(self);
   ThreadTimer1.Interval := 1000;
   ThreadTimer1.KeepAlive := True;
-  ThreadTimer1.Accurate := True;
-  ThreadTimer1.Synchronize := True;
+  ThreadTimer1.Accurate := False;//True;
+  //ThreadTimer1.Synchronize := True;
   ThreadTimer1.OnTimer := @ThreadTimer1Timer;
   Label8.Caption:='Frequence : '+inttostr(StopWatch1.Frequency)+' / Vitesse : '+inttostr(round(CPU_Speed)) + ' Mhz';
 end;

@@ -17,7 +17,7 @@ uses
   LCLType,  // Pour les touches clavier
   BZArrayClasses, BZVectorMath, BZMath,
   BZColors, BZGraphic, BZBitmap, BZImageFileTGA,
-  BZStopWatch, BZCadencer, BZKeyBoard;
+  BZStopWatch, BZCadencer, BZKeyboard;
 
 Type
   TVirtualCam = packed record

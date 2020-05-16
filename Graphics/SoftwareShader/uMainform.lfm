@@ -4,7 +4,7 @@ object MainForm: TMainForm
   Top = 181
   Width = 640
   BorderStyle = bsDialog
-  Caption = 'GLZScene StandAlone'
+  Caption = 'BZScene StandAlone'
   ClientHeight = 480
   ClientWidth = 640
   KeyPreview = True

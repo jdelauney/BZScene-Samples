@@ -1,0 +1,77 @@
+object MainForm: TMainForm
+  Left = 353
+  Height = 516
+  Top = 250
+  Width = 720
+  Caption = 'Simply GIF viewer'
+  ClientHeight = 516
+  ClientWidth = 720
+  Position = poScreenCenter
+  object ImageView: TBZImageViewer
+    Left = 24
+    Height = 376
+    Top = 16
+    Width = 680
+    UseDockManager = False
+    TabOrder = 0
+    Color = 3552822
+    Center = True
+    StretchMode = ismDraft
+    ResampleFilter = ifmLanczos3
+    ZoomFactor = 100
+    OffsetLeft = 0
+    OffsetTop = 0
+    DrawWithTransparency = True
+    BackGroundChecker = False
+  end
+  object btnLoad: TButton
+    Left = 24
+    Height = 25
+    Top = 408
+    Width = 75
+    Caption = 'Ouvrir'
+    OnClick = btnLoadClick
+    TabOrder = 1
+  end
+  object btnStop: TButton
+    Left = 184
+    Height = 25
+    Top = 408
+    Width = 75
+    Caption = 'Arreter'
+    OnClick = btnStopClick
+    TabOrder = 2
+  end
+  object btnPlay: TButton
+    Left = 104
+    Height = 25
+    Top = 408
+    Width = 75
+    Caption = 'Jouer'
+    OnClick = btnPlayClick
+    TabOrder = 3
+  end
+  object btnPause: TButton
+    Left = 272
+    Height = 25
+    Top = 408
+    Width = 75
+    Caption = 'Pause'
+    OnClick = btnPauseClick
+    TabOrder = 4
+  end
+  object lblCounter: TLabel
+    Left = 584
+    Height = 15
+    Top = 408
+    Width = 114
+    Alignment = taCenter
+    AutoSize = False
+    Caption = './.'
+    ParentColor = False
+  end
+  object OPD: TOpenPictureDialog
+    Left = 269
+    Top = 134
+  end
+end

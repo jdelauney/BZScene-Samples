@@ -358,8 +358,7 @@
             <Verbosity>
               <ShowDebugInfo Value="True"/>
             </Verbosity>
-            <CustomOptions Value="-dDEBUG
--dUseCThreads"/>
+            <CustomOptions Value="-dUseCThreads"/>
           </Other>
         </CompilerOptions>
       </Item8>

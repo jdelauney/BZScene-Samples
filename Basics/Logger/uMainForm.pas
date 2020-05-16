@@ -107,6 +107,7 @@ begin
   GlobalLogger.LogWriters.AddWriter(FConsoleLoggerWriter);
   GlobalLogger.LogWriters.Items[1].Enabled := true;
   GlobalLogger.HandleApplicationException := True;
+
   //GlobalLogger.OnCallBack := @GetLog;
   //ViewLoggerMainForm.Top := Self.Top;
   //ViewLoggerMainForm.Left := Self.Left + Self.Width + 4;
@@ -125,12 +126,14 @@ end;
 
 procedure TMainForm.btnShowLogViewClick(Sender : TObject);
 begin
+  GlobalLogger.LogViewEnabled:= True;
   GlobalLogger.ShowLogView;
 end;
 
 procedure TMainForm.btnHideLogViewClick(Sender : TObject);
 begin
   GlobalLogger.HideLogView;
+  //GlobalLogger.LogViewEnabled:= False;
 end;
 
 procedure TMainForm.GetLog(aLevel : TBZLogLevel; aTimeStamp : TDateTime; const aMessage, ParseMsg : String);
@@ -142,7 +145,7 @@ end;
 
 procedure TMainForm.LogToMemo;
 begin
-  Close;
+  //Close;
   //ViewLoggerMainForm.MemoLog.Append(FLogStr);
 end;
 

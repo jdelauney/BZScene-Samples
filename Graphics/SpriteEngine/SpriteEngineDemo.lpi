@@ -81,6 +81,9 @@
               </Win32>
             </Options>
           </Linking>
+          <Other>
+            <CustomOptions Value="-dUseCThreads"/>
+          </Other>
         </CompilerOptions>
       </Item3>
     </BuildModes>
@@ -93,16 +96,13 @@
         <Mode0 Name="default"/>
       </Modes>
     </RunParams>
-    <RequiredPackages Count="3">
+    <RequiredPackages Count="2">
       <Item1>
-        <PackageName Value="bzscene_image_rt"/>
+        <PackageName Value="bzscene_engine_rt"/>
       </Item1>
       <Item2>
-        <PackageName Value="bzscene_engine_rt"/>
-      </Item2>
-      <Item3>
         <PackageName Value="LCL"/>
-      </Item3>
+      </Item2>
     </RequiredPackages>
     <Units Count="2">
       <Unit0>
@@ -138,6 +138,9 @@
         </Win32>
       </Options>
     </Linking>
+    <Other>
+      <CustomOptions Value="-dUseCThreads"/>
+    </Other>
   </CompilerOptions>
   <Debugging>
     <Exceptions Count="3">

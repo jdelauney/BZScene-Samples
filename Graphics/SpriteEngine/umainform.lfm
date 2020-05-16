@@ -3,7 +3,7 @@ object MainForm: TMainForm
   Height = 480
   Top = 130
   Width = 640
-  Caption = 'GLZSprite Demo'
+  Caption = 'BZSprite Demo'
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy

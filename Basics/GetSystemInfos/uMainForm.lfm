@@ -18,13 +18,13 @@ object MainForm: TMainForm
     BorderSpacing.Around = 8
     Caption = 'Description'
     ClientHeight = 37
-    ClientWidth = 788
+    ClientWidth = 790
     TabOrder = 0
     object Label1: TLabel
       Left = 4
       Height = 29
       Top = 4
-      Width = 780
+      Width = 782
       Align = alClient
       Alignment = taCenter
       AutoSize = False
@@ -49,39 +49,39 @@ object MainForm: TMainForm
     BorderSpacing.Around = 4
     Caption = 'System informations'
     ClientHeight = 383
-    ClientWidth = 796
+    ClientWidth = 798
     TabOrder = 1
     object PageControl1: TPageControl
       Left = 4
       Height = 375
       Top = 4
-      Width = 788
-      ActivePage = TabSheet2
+      Width = 790
+      ActivePage = TabSheet1
       Align = alClient
       BorderSpacing.Around = 4
-      TabIndex = 1
+      TabIndex = 0
       TabOrder = 0
       object TabSheet1: TTabSheet
         Caption = 'CPU'
-        ClientHeight = 347
-        ClientWidth = 780
+        ClientHeight = 348
+        ClientWidth = 788
         object GroupBox3: TGroupBox
           Left = 0
           Height = 140
           Top = 160
-          Width = 761
+          Width = 769
           Anchors = [akTop, akLeft, akRight]
           Caption = 'Supported Technologies :'
           ClientHeight = 120
-          ClientWidth = 757
+          ClientWidth = 767
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 0
           object CheckBox1: TCheckBox
             Left = 8
-            Height = 19
+            Height = 21
             Top = 8
-            Width = 62
+            Width = 72
             AllowGrayed = True
             Caption = '3DNow'
             Color = clDefault
@@ -90,9 +90,9 @@ object MainForm: TMainForm
           end
           object CheckBox2: TCheckBox
             Left = 88
-            Height = 19
+            Height = 21
             Top = 8
-            Width = 80
+            Width = 93
             AllowGrayed = True
             Caption = '3DNowExt'
             Color = clDefault
@@ -101,9 +101,9 @@ object MainForm: TMainForm
           end
           object CheckBox3: TCheckBox
             Left = 184
-            Height = 19
+            Height = 21
             Top = 8
-            Width = 50
+            Width = 59
             AllowGrayed = True
             Caption = 'MMX'
             Color = clDefault
@@ -112,9 +112,9 @@ object MainForm: TMainForm
           end
           object CheckBox4: TCheckBox
             Left = 248
-            Height = 19
+            Height = 21
             Top = 8
-            Width = 56
+            Width = 66
             AllowGrayed = True
             Caption = 'EMMX'
             Color = clDefault
@@ -123,9 +123,9 @@ object MainForm: TMainForm
           end
           object CheckBox5: TCheckBox
             Left = 8
-            Height = 19
+            Height = 21
             Top = 29
-            Width = 40
+            Width = 45
             AllowGrayed = True
             Caption = 'SSE'
             Color = clDefault
@@ -134,9 +134,9 @@ object MainForm: TMainForm
           end
           object CheckBox6: TCheckBox
             Left = 88
-            Height = 19
+            Height = 21
             Top = 29
-            Width = 47
+            Width = 53
             AllowGrayed = True
             Caption = 'SSE2'
             Color = clDefault
@@ -145,9 +145,9 @@ object MainForm: TMainForm
           end
           object CheckBox7: TCheckBox
             Left = 184
-            Height = 19
+            Height = 21
             Top = 29
-            Width = 47
+            Width = 53
             AllowGrayed = True
             Caption = 'SSE3'
             Color = clDefault
@@ -156,9 +156,9 @@ object MainForm: TMainForm
           end
           object CheckBox8: TCheckBox
             Left = 8
-            Height = 19
+            Height = 21
             Top = 51
-            Width = 57
+            Width = 65
             AllowGrayed = True
             Caption = 'SSE4.1'
             Color = clDefault
@@ -167,9 +167,9 @@ object MainForm: TMainForm
           end
           object CheckBox9: TCheckBox
             Left = 88
-            Height = 19
+            Height = 21
             Top = 51
-            Width = 57
+            Width = 65
             AllowGrayed = True
             Caption = 'SSE4.2'
             Color = clDefault
@@ -178,9 +178,9 @@ object MainForm: TMainForm
           end
           object CheckBox10: TCheckBox
             Left = 184
-            Height = 19
+            Height = 21
             Top = 51
-            Width = 55
+            Width = 62
             AllowGrayed = True
             Caption = 'SSE4A'
             Color = clDefault
@@ -189,9 +189,9 @@ object MainForm: TMainForm
           end
           object CheckBox11: TCheckBox
             Left = 8
-            Height = 19
+            Height = 21
             Top = 72
-            Width = 44
+            Width = 51
             AllowGrayed = True
             Caption = 'AVX'
             Color = clDefault
@@ -200,9 +200,9 @@ object MainForm: TMainForm
           end
           object CheckBox12: TCheckBox
             Left = 88
-            Height = 19
+            Height = 21
             Top = 72
-            Width = 52
+            Width = 61
             AllowGrayed = True
             Caption = 'FMA3'
             Color = clDefault
@@ -211,9 +211,9 @@ object MainForm: TMainForm
           end
           object CheckBox13: TCheckBox
             Left = 184
-            Height = 19
+            Height = 21
             Top = 72
-            Width = 52
+            Width = 61
             AllowGrayed = True
             Caption = 'FMA4'
             Color = clDefault
@@ -222,9 +222,9 @@ object MainForm: TMainForm
           end
           object CheckBox14: TCheckBox
             Left = 8
-            Height = 19
+            Height = 21
             Top = 94
-            Width = 41
+            Width = 47
             AllowGrayed = True
             Caption = 'AES'
             Color = clDefault
@@ -234,9 +234,9 @@ object MainForm: TMainForm
         end
         object Label7: TLabel
           Left = 10
-          Height = 15
+          Height = 17
           Top = 132
-          Width = 122
+          Width = 147
           Caption = 'Estimated Frequency :'
           Font.Style = [fsBold]
           ParentColor = False
@@ -244,25 +244,25 @@ object MainForm: TMainForm
         end
         object Label8: TLabel
           Left = 144
-          Height = 15
+          Height = 17
           Top = 132
-          Width = 34
+          Width = 41
           Caption = 'Label8'
           ParentColor = False
         end
         object Label6: TLabel
           Left = 144
-          Height = 15
+          Height = 17
           Top = 112
-          Width = 34
+          Width = 41
           Caption = 'Label6'
           ParentColor = False
         end
         object Label5: TLabel
           Left = 33
-          Height = 15
+          Height = 17
           Top = 112
-          Width = 99
+          Width = 122
           Caption = 'logicals cpu units :'
           Font.Style = [fsBold]
           ParentColor = False
@@ -270,9 +270,9 @@ object MainForm: TMainForm
         end
         object Label2: TLabel
           Left = 64
-          Height = 15
+          Height = 17
           Top = 28
-          Width = 62
+          Width = 75
           Caption = 'Full name : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -282,7 +282,7 @@ object MainForm: TMainForm
           Left = 136
           Height = 36
           Top = 28
-          Width = 632
+          Width = 640
           Anchors = [akTop, akLeft, akRight]
           AutoSize = False
           Caption = 'Label2'
@@ -291,17 +291,17 @@ object MainForm: TMainForm
         end
         object Label4: TLabel
           Left = 136
-          Height = 15
+          Height = 17
           Top = 8
-          Width = 34
+          Width = 41
           Caption = 'Label4'
           ParentColor = False
         end
         object Label9: TLabel
           Left = 53
-          Height = 15
+          Height = 17
           Top = 8
-          Width = 73
+          Width = 87
           Caption = 'Technologie :'
           Font.Style = [fsBold]
           ParentColor = False
@@ -309,9 +309,9 @@ object MainForm: TMainForm
         end
         object Label13: TLabel
           Left = 32
-          Height = 15
+          Height = 17
           Top = 72
-          Width = 44
+          Width = 51
           Caption = 'Model : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -319,17 +319,17 @@ object MainForm: TMainForm
         end
         object Label14: TLabel
           Left = 88
-          Height = 15
+          Height = 17
           Top = 72
-          Width = 40
+          Width = 49
           Caption = 'Label14'
           ParentColor = False
         end
         object Label15: TLabel
           Left = 16
-          Height = 15
+          Height = 17
           Top = 88
-          Width = 62
+          Width = 72
           Caption = 'ExtModel : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -337,25 +337,25 @@ object MainForm: TMainForm
         end
         object Label16: TLabel
           Left = 88
-          Height = 15
+          Height = 17
           Top = 88
-          Width = 40
+          Width = 49
           Caption = 'Label16'
           ParentColor = False
         end
         object Label17: TLabel
           Left = 224
-          Height = 15
+          Height = 17
           Top = 88
-          Width = 40
+          Width = 49
           Caption = 'Label17'
           ParentColor = False
         end
         object Label18: TLabel
           Left = 144
-          Height = 15
+          Height = 17
           Top = 88
-          Width = 65
+          Width = 79
           Caption = 'ExtFamilly : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -363,9 +363,9 @@ object MainForm: TMainForm
         end
         object Label19: TLabel
           Left = 165
-          Height = 15
+          Height = 17
           Top = 72
-          Width = 47
+          Width = 58
           Caption = 'Familly : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -373,17 +373,17 @@ object MainForm: TMainForm
         end
         object Label20: TLabel
           Left = 224
-          Height = 15
+          Height = 17
           Top = 72
-          Width = 40
+          Width = 49
           Caption = 'Label20'
           ParentColor = False
         end
         object Label21: TLabel
           Left = 304
-          Height = 15
+          Height = 17
           Top = 72
-          Width = 32
+          Width = 38
           Caption = 'Type :'
           Font.Style = [fsBold]
           ParentColor = False
@@ -391,9 +391,9 @@ object MainForm: TMainForm
         end
         object Label22: TLabel
           Left = 280
-          Height = 15
+          Height = 17
           Top = 88
-          Width = 56
+          Width = 65
           Caption = 'Stepping :'
           Font.Style = [fsBold]
           ParentColor = False
@@ -401,30 +401,30 @@ object MainForm: TMainForm
         end
         object Label23: TLabel
           Left = 352
-          Height = 15
+          Height = 17
           Top = 72
-          Width = 40
+          Width = 49
           Caption = 'Label23'
           ParentColor = False
         end
         object Label24: TLabel
           Left = 352
-          Height = 15
+          Height = 17
           Top = 88
-          Width = 40
+          Width = 49
           Caption = 'Label24'
           ParentColor = False
         end
       end
       object TabSheet2: TTabSheet
         Caption = 'OS'
-        ClientHeight = 347
-        ClientWidth = 780
+        ClientHeight = 348
+        ClientWidth = 788
         object Label10: TLabel
           Left = 4
-          Height = 15
+          Height = 17
           Top = 12
-          Width = 772
+          Width = 780
           Align = alTop
           BorderSpacing.Top = 8
           BorderSpacing.Bottom = 8
@@ -438,19 +438,19 @@ object MainForm: TMainForm
         object GroupBox4: TGroupBox
           Left = 4
           Height = 97
-          Top = 39
-          Width = 772
+          Top = 41
+          Width = 780
           Align = alTop
           BorderSpacing.Around = 4
           Caption = 'Display :'
           ClientHeight = 77
-          ClientWidth = 768
+          ClientWidth = 778
           TabOrder = 0
           object Label11: TLabel
             Left = 8
-            Height = 15
+            Height = 17
             Top = 8
-            Width = 752
+            Width = 762
             Align = alTop
             BorderSpacing.Around = 8
             Caption = 'Label10'
@@ -460,18 +460,18 @@ object MainForm: TMainForm
         object Panel1: TPanel
           Left = 0
           Height = 50
-          Top = 140
-          Width = 780
+          Top = 142
+          Width = 788
           Align = alTop
           BevelOuter = bvNone
           ClientHeight = 50
-          ClientWidth = 780
+          ClientWidth = 788
           TabOrder = 1
           object Label38: TLabel
             Left = 8
-            Height = 15
+            Height = 17
             Top = 16
-            Width = 69
+            Width = 82
             Caption = 'User name : '
             Font.Style = [fsBold]
             ParentColor = False
@@ -491,13 +491,13 @@ object MainForm: TMainForm
       end
       object TabSheet4: TTabSheet
         Caption = 'Memory'
-        ClientHeight = 347
-        ClientWidth = 780
+        ClientHeight = 348
+        ClientWidth = 788
         object Label30: TLabel
           Left = 46
-          Height = 15
+          Height = 17
           Top = 104
-          Width = 132
+          Width = 160
           Caption = 'Total Physical Memory : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -505,9 +505,9 @@ object MainForm: TMainForm
         end
         object Label31: TLabel
           Left = 48
-          Height = 15
+          Height = 17
           Top = 132
-          Width = 130
+          Width = 156
           Caption = 'Free Physical Memory : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -515,9 +515,9 @@ object MainForm: TMainForm
         end
         object Label32: TLabel
           Left = 52
-          Height = 15
+          Height = 17
           Top = 48
-          Width = 126
+          Width = 151
           Caption = 'Total Virtual Memory : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -525,9 +525,9 @@ object MainForm: TMainForm
         end
         object Label33: TLabel
           Left = 54
-          Height = 15
+          Height = 17
           Top = 76
-          Width = 124
+          Width = 147
           Caption = 'Free Virtual Memory : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -535,9 +535,9 @@ object MainForm: TMainForm
         end
         object Label34: TLabel
           Left = 61
-          Height = 15
+          Height = 17
           Top = 188
-          Width = 117
+          Width = 135
           Caption = 'Free Swap Memory : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -545,9 +545,9 @@ object MainForm: TMainForm
         end
         object Label35: TLabel
           Left = 59
-          Height = 15
+          Height = 17
           Top = 160
-          Width = 119
+          Width = 139
           Caption = 'Total Swap Memory : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -621,9 +621,9 @@ object MainForm: TMainForm
         end
         object Label36: TLabel
           Left = 77
-          Height = 15
+          Height = 17
           Top = 216
-          Width = 101
+          Width = 121
           Caption = 'Current disk size : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -642,9 +642,9 @@ object MainForm: TMainForm
         end
         object Label37: TLabel
           Left = 40
-          Height = 15
+          Height = 17
           Top = 240
-          Width = 138
+          Width = 163
           Caption = 'Current free disk space : '
           Font.Style = [fsBold]
           ParentColor = False
@@ -664,8 +664,8 @@ object MainForm: TMainForm
       end
       object TabSheet3: TTabSheet
         Caption = 'Others'
-        ClientHeight = 347
-        ClientWidth = 780
+        ClientHeight = 348
+        ClientWidth = 788
         object Label12: TLabel
           Left = 4
           Height = 15

@@ -316,6 +316,7 @@ Var
 begin
 
   FCadencer := TBZCadencer.Create(self);
+  FCadencer.Enabled:= False;
   FCadencer.OnProgress := @CadencerProgress;
 
 
