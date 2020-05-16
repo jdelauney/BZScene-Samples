@@ -46,10 +46,10 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Spin, Menus,
   BZMath, BZVectorMath,
-  BZGraphic, BZBitmap, BZBitmapIO,
+  BZColors, BZGraphic, BZBitmap, BZBitmapIO,
   BZBitmapFont,
   BZCadencer,
-  BZSound, BZOpenALManager, BZSoundSample, BZSoundFileModplug, BZSoundFileWAV;
+  BZSound, BZOpenALManager, BZSoundSample, {$IFDEF WINDOWS}BZSoundFileModplug,{$ENDIF} BZSoundFileWAV;
 
 const
   cGridMaxRowCount = 8;
@@ -288,7 +288,7 @@ begin
         sRight := sLine.After('|').Trim;
         lbxBrickItem.Items.Add(sLeft);
         //if not(Assigned(FBrickPack[j])) then
-        FBrickPack[j].LoadFromFile(sRight);
+        FBrickPack[j].LoadFromFile('../../../'+sRight);
 
         Inc(i);
       end;
@@ -355,9 +355,9 @@ begin
   FSoundManager.Sources.Items[0].SoundLibrary := FSoundLibrary;
 
   FRacketBitmap := TBZBitmap.Create;
-  FRacketBitmap.LoadFromFile('Racket.png');
+  FRacketBitmap.LoadFromFile('../../../racket.png');
   FRacketBitmapV := TBZBitmap.Create;
-  FRacketBitmapV.LoadFromFile('Racketv.png');
+  FRacketBitmapV.LoadFromFile('../../../racketv.png');
   FRacketPosV.Create(0, 240);
   FRacketPos.Create( FDisplayBuffer.CenterX - FRacketBitmap.CenterX, 700);
 
@@ -372,22 +372,22 @@ begin
 
 
   FGameBoardBackground := TBZBitmap.Create;
-  FGameBoardBackground.LoadFromFile('gbBackground.png');
+  FGameBoardBackground.LoadFromFile('../../../gbbackground.png');
   FSideBarBitmap := TBZBitmap.Create;
-  FSideBarBitmap.LoadFromFile('rightbar02.png');
+  FSideBarBitmap.LoadFromFile('../../../rightBar02.png');
 
   FBallPong  := TBZBitmap.Create;
-  FBallPong.LoadFromFile('ballpong01.png');
+  FBallPong.LoadFromFile('../../../Ballpong01.png');
   FBallBreak := TBZBitmap.Create;
-  FBallBreak.LoadFromFile('BallBreak01.png');
+  FBallBreak.LoadFromFile('../../../BallBreak01.png');
 
   FBrickexplosion := TBZBitmap.Create;
-  FBrickExplosion.LoadFromFile('explosion01.png');
+  FBrickExplosion.LoadFromFile('../../../explosion01.png');
 
   FListExplosion := TBZVector4iList.Create;
 
 
-  FBmpFont := TBZBitmapFont.Create('megamini_font.png',16,16);
+  FBmpFont := TBZBitmapFont.Create('../../../megamini_font.png',16,16);
   FBmpFont.Alphabet := 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789()!"';
   FBmpFont.VerticalLowerCaseGapSize := 2;
   FBmpFont.HorizontalLowerCaseGapSize := 0;
@@ -395,7 +395,7 @@ begin
   FBmpFont.VerticalGapSize := 0;
   FBmpFont.SpaceOffset := 0;
 
-  FBmpFontB := TBZBitmapFont.Create('KnightHawks_fontb.png',32,25);
+  FBmpFontB := TBZBitmapFont.Create('../../../knighthawks_fontb.png',32,25);
   FBmpFontB.Alphabet := ' !"  % `() +,-./0123456789:; = ?''ABCDEFGHIJKLMNOPQRSTUVWXYZ    _     ';
   FBmpFontB.VerticalLowerCaseGapSize := 2;
   FBmpFontB.HorizontalLowerCaseGapSize := 0;
@@ -448,7 +448,7 @@ end;
 
 procedure TMainForm.FormCloseQuery(Sender : TObject; var CanClose : boolean);
 begin
-  FSoundManager.Sources.Items[0].Playing := False;
+  {$IFDEF WINDOWS}FSoundManager.Sources.Items[0].Playing := False;{$ENDIF}
   FSoundManager.Active := False;
   FCadencer.Enabled := False;
   Screen.Cursor := crDefault;
@@ -456,7 +456,8 @@ begin
 end;
 
 procedure TMainForm.FormShow(Sender : TObject);
-
+Var
+  idx : Integer;
 begin
   DoubleBuffered:=true;
 
@@ -464,51 +465,63 @@ begin
   FCadencer.Enabled := False;
   FSoundLibrary.Samples.Clear;
   //FSoundLibrary.Samples.AddFile('breakthepower.s3m','Music1');
-  FSoundLibrary.Samples.AddFile('chip1299.xm','Music1');
-  FSoundLibrary.Samples.AddFile('impact.wav','ImpactH');
-  FSoundLibrary.Samples.AddFile('pop.wav','ImpactV');
-  FSoundLibrary.Samples.AddFile('explosion.wav','Explode');
-  FSoundLibrary.Samples.AddFile('electricshock.wav','ElectricShock');
-  FSoundLibrary.Samples.AddFile('youwin.wav','YouWin');
-  FSoundLibrary.Samples.AddFile('splatcrush.wav','YouLoose');
+  {$IFDEF WINDOWS}
+  FSoundLibrary.Samples.AddFile('../../../chip1299.xm','Music1');
+  {$ENDIF}
+  FSoundLibrary.Samples.AddFile('../../../IMPACT.wav','ImpactH');
+  FSoundLibrary.Samples.AddFile('../../../POP.wav','ImpactV');
+  FSoundLibrary.Samples.AddFile('../../../EXPLOSION.wav','Explode');
+  FSoundLibrary.Samples.AddFile('../../../ElectricShock.wav','ElectricShock');
+  FSoundLibrary.Samples.AddFile('../../../youwin.wav','YouWin');
+  FSoundLibrary.Samples.AddFile('../../../SplatCrush.wav','YouLoose');
 
+  idx := 0;
+  {$IFDEF WINDOWS}
   FSoundManager.Sources.Items[0].SoundName := 'Music1';
   FSoundManager.Sources.Items[0].Volume:= 255;
   FSoundManager.Sources.Items[0].NbLoops := 10;
+  inc(idx);
+  {$ENDIF}
+  FSoundManager.Sources.Add;
+  FSoundManager.Sources.Items[idx].SoundLibrary := FSoundLibrary;
+  FSoundManager.Sources.Items[idx].SoundName := 'ImpactH';
+  FSoundManager.Sources.Items[idx].Volume:= 255;
+  inc(idx);
 
   FSoundManager.Sources.Add;
-  FSoundManager.Sources.Items[1].SoundLibrary := FSoundLibrary;
-  FSoundManager.Sources.Items[1].SoundName := 'ImpactH';
-  FSoundManager.Sources.Items[1].Volume:= 255;
+  FSoundManager.Sources.Items[idx].SoundLibrary := FSoundLibrary;
+  FSoundManager.Sources.Items[idx].SoundName := 'ImpactV';
+  FSoundManager.Sources.Items[idx].Volume:= 255;
+  inc(idx);
 
   FSoundManager.Sources.Add;
-  FSoundManager.Sources.Items[2].SoundLibrary := FSoundLibrary;
-  FSoundManager.Sources.Items[2].SoundName := 'ImpactV';
-  FSoundManager.Sources.Items[2].Volume:= 255;
+  FSoundManager.Sources.Items[idx].SoundLibrary := FSoundLibrary;
+  FSoundManager.Sources.Items[idx].SoundName := 'Explode';
+  FSoundManager.Sources.Items[idx].Volume:= 255;
+  inc(idx);
 
   FSoundManager.Sources.Add;
-  FSoundManager.Sources.Items[3].SoundLibrary := FSoundLibrary;
-  FSoundManager.Sources.Items[3].SoundName := 'Explode';
-  FSoundManager.Sources.Items[3].Volume:= 255;
+  FSoundManager.Sources.Items[idx].SoundLibrary := FSoundLibrary;
+  FSoundManager.Sources.Items[idx].SoundName := 'ElectricShock';
+  FSoundManager.Sources.Items[idx].Volume:= 255;
+  inc(idx);
 
   FSoundManager.Sources.Add;
-  FSoundManager.Sources.Items[4].SoundLibrary := FSoundLibrary;
-  FSoundManager.Sources.Items[4].SoundName := 'ElectricShock';
-  FSoundManager.Sources.Items[4].Volume:= 255;
-
-  FSoundManager.Sources.Add;
-  FSoundManager.Sources.Items[5].SoundLibrary := FSoundLibrary;
-  FSoundManager.Sources.Items[5].SoundName := 'YouWin';
-  FSoundManager.Sources.Items[5].Volume:= 255;
+  FSoundManager.Sources.Items[idx].SoundLibrary := FSoundLibrary;
+  FSoundManager.Sources.Items[idx].SoundName := 'YouWin';
+  FSoundManager.Sources.Items[idx].Volume:= 255;
+  inc(idx);
 
 
   FSoundManager.Sources.Add;
-  FSoundManager.Sources.Items[6].SoundLibrary := FSoundLibrary;
-  FSoundManager.Sources.Items[6].SoundName := 'YouLoose';
-  FSoundManager.Sources.Items[6].Volume:= 255;
+  FSoundManager.Sources.Items[idx].SoundLibrary := FSoundLibrary;
+  FSoundManager.Sources.Items[idx].SoundName := 'YouLoose';
+  FSoundManager.Sources.Items[idx].Volume:= 255;
 
   FSoundManager.Active := True;
+  {$IFDEF WINDOWS}
    if Not(FSoundManager.Sources.Items[0].Playing) then FSoundManager.Sources.Items[0].Playing := True;
+  {$ENDIF}
 
   Screen.Cursor := crNone;
 
@@ -748,7 +761,7 @@ end;
 procedure TMainForm.RenderScene(NewTime : Double);
 var
   CollideRectA, CollideRectB : TBZRect;
-  i,j : Integer;
+  i,j, idx : Integer;
   Collision : Boolean;
   ci : TBZVector4i;
 begin
@@ -760,12 +773,14 @@ begin
     // Partie Gagné
     if Not(FLoose) then
     begin
-      if FBallBreakRun then FSoundManager.Sources.Items[5].Playing := True;
+      {$IFDEF WINDOWS}idx := 5;{$ELSE} idx := 4; {$ENDIF}
+      if FBallBreakRun then FSoundManager.Sources.Items[idx].Playing := True;
       DrawAnimText(UpperCase('You win !'), 350,200,NewTime);
     end
     else
     begin
-      if FBallBreakRun then FSoundManager.Sources.Items[6].Playing := True;
+      {$IFDEF WINDOWS}idx := 6;{$ELSE} idx := 5; {$ENDIF}
+      if FBallBreakRun then FSoundManager.Sources.Items[idx].Playing := True;
       DrawAnimText(UpperCase('You Loose !'), 380,200,NewTime);
     end;
 
@@ -819,7 +834,8 @@ begin
       if FBallPongPos.x>2039 then
       begin
         FBallPongDir.x := -FBallPongDir.x; //La balle passe chez le deuxieme joueur
-        FSoundManager.Sources.Items[2].Playing := True;
+        {$IFDEF WINDOWS}idx := 2;{$ELSE} idx := 1; {$ENDIF}
+        FSoundManager.Sources.Items[idx].Playing := True;
       end;
       if FBallPongPos.y>515 then FBallPongDir.y := -FBallPongDir.y;
 
@@ -830,7 +846,8 @@ begin
         begin
           FBallPongDir.x := -FBallPongDir.x; // You DIE Reset PongBall + Malus
           FPlayerScore := FPlayerScore - 10;
-          FSoundManager.Sources.Items[4].Playing := True;
+          {$IFDEF WINDOWS}idx := 4;{$ELSE} idx := 3; {$ENDIF}
+          FSoundManager.Sources.Items[idx].Playing := True;
         end
         else
         begin
@@ -847,7 +864,8 @@ begin
           if CollideRectA.OverlapRect(CollideRectB) then
           begin
             FBallPongDir.x := -FBallPongDir.x;
-            FSoundManager.Sources.Items[2].Playing := True;
+            {$IFDEF WINDOWS}idx := 2;{$ELSE} idx := 1; {$ENDIF}
+            FSoundManager.Sources.Items[idx].Playing := True;
           end;
         end;
 
@@ -883,7 +901,8 @@ begin
         if CollideRectA.OverlapRect(CollideRectB) then
         begin
           FBallBreakDir.y := -FBallBreakDir.y;
-          FSoundManager.Sources.Items[1].Playing := True;
+          {$IFDEF WINDOWS}idx := 1;{$ELSE} idx := 0; {$ENDIF}
+          FSoundManager.Sources.Items[idx].Playing := True;
         end;
 
       end
@@ -916,7 +935,8 @@ begin
                   ci.Create(CollideRectB.CenterPoint.X,CollideRectB.CenterPoint.Y,23,-1); // Anim explosion = 24 images
                   FListExplosion.Add(ci);
                   Dec(FNbBricks);
-                  FSoundManager.Sources.Items[3].Playing := True;
+                  {$IFDEF WINDOWS}idx := 3;{$ELSE} idx := 2; {$ENDIF}
+                  FSoundManager.Sources.Items[idx].Playing := True;
                   Break;
                 end;
               end;
@@ -932,7 +952,8 @@ begin
         if CollideRectA.OverlapRect(CollideRectB) then
         begin
           FBallBreakDir.x := -FBallBreakDir.x;
-          FSoundManager.Sources.Items[1].Playing := True;
+          {$IFDEF WINDOWS}idx := 1;{$ELSE} idx := 0; {$ENDIF}
+          FSoundManager.Sources.Items[idx].Playing := True;
         end;
 
 
