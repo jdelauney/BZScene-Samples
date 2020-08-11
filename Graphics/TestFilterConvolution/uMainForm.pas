@@ -61,6 +61,7 @@ type
     Panel9 : TPanel;
     Label6 : TLabel;
     cbxMode : TComboBox;
+    Splitter1 : TSplitter;
     procedure btnLoadClick(Sender : TObject);
     procedure FormCreate(Sender : TObject);
     procedure FormDestroy(Sender : TObject);
