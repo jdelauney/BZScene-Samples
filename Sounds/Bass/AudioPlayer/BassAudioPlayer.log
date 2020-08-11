@@ -1,0 +1,154 @@
+--------------------------------------------------------------------------------
+[STATUS] : [ Start Logging ] - [ 19/05/2020 17:28:48 ] BassAudioPlayer.exe
+--------------------------------[ Informations ]--------------------------------
+Compilé             : à 12:35:01 le 2020/05/19
+FPC                 : 3.2.0
+LCL                 : 2.0.6.0
+OS Cible            : Win64
+CPU Cible           : x86_64
+Widget              : win32/win64
+------------------------[ Informations complémentaires ]------------------------
+OS Informations     : Windows 10 ( Version : 10.0 Build : 18362 )
+Type CPU            : AMD A10-7870K Radeon R7, 12 Compute Cores 4C+8G
+Dossier courrant    : H:\BeanzMaster\Documents\Projets\Lazarus\Github\BZScene-Samples\Sounds\Bass\AudioPlayer
+--------------------------------------------------------------------------------
+
+[17:28:48][NOTICE] : Initialize Sound BASS Manager. Ver 2.4
+[17:28:48][NOTICE] : Activate Sound BASS Manager. OutputFrequency = 44100
+[17:28:48][NOTICE] : UpdateSources
+[17:28:48][NOTICE] : UpdateSources
+[17:28:48][NOTICE] : UpdateSources
+[17:28:49][NOTICE] : UpdateSources
+[17:28:49][NOTICE] : UpdateSources
+[17:28:49][NOTICE] : UpdateSources
+[17:28:49][NOTICE] : UpdateSources
+[17:28:49][NOTICE] : UpdateSources
+[17:28:49][NOTICE] : UpdateSources
+[17:28:49][NOTICE] : UpdateSources
+[17:28:49][NOTICE] : UpdateSources
+[17:28:49][NOTICE] : UpdateSources
+[17:28:49][NOTICE] : UpdateSources
+[17:28:50][NOTICE] : UpdateSources
+[17:28:50][NOTICE] : UpdateSources
+[17:28:50][NOTICE] : UpdateSources
+[17:28:50][NOTICE] : UpdateSources
+[17:28:50][NOTICE] : UpdateSources
+[17:28:50][NOTICE] : UpdateSources
+[17:28:50][NOTICE] : UpdateSources
+[17:28:50][NOTICE] : UpdateSources
+[17:28:50][NOTICE] : UpdateSources
+[17:28:50][NOTICE] : UpdateSources
+[17:28:51][NOTICE] : UpdateSources
+[17:28:51][NOTICE] : UpdateSources
+[17:28:51][NOTICE] : UpdateSources
+[17:28:51][NOTICE] : UpdateSources
+[17:28:51][NOTICE] : UpdateSources
+[17:28:51][NOTICE] : UpdateSources
+[17:28:51][NOTICE] : UpdateSources
+[17:28:51][NOTICE] : UpdateSources
+[17:28:51][NOTICE] : UpdateSources
+[17:28:51][NOTICE] : UpdateSources
+[17:28:52][NOTICE] : UpdateSources
+[17:28:52][NOTICE] : UpdateSources
+[17:28:52][NOTICE] : UpdateSources
+[17:28:52][NOTICE] : UpdateSources
+[17:28:52][NOTICE] : UpdateSources
+[17:28:52][NOTICE] : UpdateSources
+[17:28:52][NOTICE] : UpdateSources
+[17:28:52][NOTICE] : UpdateSources
+[17:28:52][NOTICE] : UpdateSources
+[17:28:52][NOTICE] : UpdateSources
+[17:28:53][NOTICE] : UpdateSources
+[17:28:53][NOTICE] : UpdateSources
+[17:28:53][NOTICE] : UpdateSources
+[17:28:53][NOTICE] : UpdateSources
+[17:28:53][NOTICE] : UpdateSources
+[17:28:53][NOTICE] : UpdateSources
+[17:28:53][NOTICE] : UpdateSources
+[17:28:53][NOTICE] : UpdateSources
+[17:28:53][NOTICE] : UpdateSources
+[17:28:53][NOTICE] : UpdateSources
+[17:28:54][NOTICE] : UpdateSources
+[17:28:54][NOTICE] : UpdateSources
+[17:28:54][NOTICE] : UpdateSources
+[17:28:54][NOTICE] : UpdateSources
+[17:28:54][NOTICE] : UpdateSources
+[17:28:54][NOTICE] : UpdateSources
+[17:28:54][NOTICE] : UpdateSources
+[17:28:54][NOTICE] : UpdateSources
+[17:28:54][NOTICE] : UpdateSources
+[17:28:54][NOTICE] : UpdateSources
+[17:28:55][NOTICE] : UpdateSources
+[17:28:55][NOTICE] : UpdateSources
+[17:28:55][NOTICE] : UpdateSources
+[17:28:55][NOTICE] : UpdateSources
+[17:28:55][NOTICE] : UpdateSources
+[17:28:55][NOTICE] : UpdateSources
+[17:28:55][NOTICE] : UpdateSources
+[17:28:55][NOTICE] : UpdateSources
+[17:28:55][NOTICE] : UpdateSources
+[17:28:55][NOTICE] : UpdateSources
+[17:28:56][NOTICE] : UpdateSources
+[17:28:56][NOTICE] : UpdateSources
+[17:28:56][NOTICE] : UpdateSources
+[17:28:56][NOTICE] : UpdateSources
+[17:28:56][NOTICE] : UpdateSources
+[17:28:56][NOTICE] : UpdateSources
+[17:28:56][NOTICE] : UpdateSources
+[17:28:56][NOTICE] : UpdateSources
+[17:28:56][NOTICE] : UpdateSources
+[17:28:56][NOTICE] : UpdateSources
+[17:28:57][NOTICE] : UpdateSources
+[17:28:57][NOTICE] : UpdateSources
+[17:28:57][NOTICE] : UpdateSources
+[17:28:57][NOTICE] : UpdateSources
+[17:28:57][NOTICE] : UpdateSources
+[17:28:57][NOTICE] : UpdateSources
+[17:28:57][NOTICE] : UpdateSources
+[17:28:57][NOTICE] : UpdateSources
+[17:28:57][NOTICE] : UpdateSources
+[17:28:57][NOTICE] : UpdateSources
+[17:28:58][NOTICE] : UpdateSources
+[17:28:58][NOTICE] : UpdateSources
+[17:28:58][NOTICE] : UpdateSources
+[17:28:58][NOTICE] : UpdateSources
+[17:28:58][NOTICE] : UpdateSources
+[17:28:58][NOTICE] : UpdateSources
+[17:28:58][NOTICE] : UpdateSources
+[17:28:58][NOTICE] : UpdateSources
+[17:28:58][NOTICE] : UpdateSources
+[17:28:58][NOTICE] : UpdateSources
+[17:28:59][NOTICE] : UpdateSources
+[17:28:59][NOTICE] : UpdateSources
+[17:28:59][NOTICE] : UpdateSources
+[17:28:59][NOTICE] : UpdateSources
+[17:28:59][NOTICE] : UpdateSources
+[17:28:59][NOTICE] : UpdateSources
+[17:28:59][NOTICE] : UpdateSources
+[17:28:59][NOTICE] : UpdateSources
+[17:28:59][NOTICE] : UpdateSources
+[17:28:59][NOTICE] : UpdateSources
+[17:29:00][NOTICE] : UpdateSources
+[17:29:00][NOTICE] : UpdateSources
+[17:29:00][NOTICE] : UpdateSources
+[17:29:00][NOTICE] : UpdateSources
+[17:29:00][NOTICE] : UpdateSources
+[17:29:00][NOTICE] : UpdateSources
+[17:29:00][NOTICE] : UpdateSources
+[17:29:00][NOTICE] : UpdateSources
+[17:29:00][NOTICE] : UpdateSources
+[17:29:00][NOTICE] : UpdateSources
+[17:29:01][NOTICE] : UpdateSources
+[17:29:01][NOTICE] : UpdateSources
+[17:29:01][NOTICE] : UpdateSources
+[17:29:01][NOTICE] : UpdateSources
+[17:29:01][NOTICE] : UpdateSources
+[17:29:01][NOTICE] : UpdateSources
+[17:29:01][NOTICE] : Finalize Sound BASS Manager
+[17:29:01][NOTICE] : Desactivate Sound BASS Manager
+
+--------------------------------------------------------------------------------
+[STATUS] : [ Conseils : 0 | Warnings : 0 | Erreurs : 0 | Exceptions : 0 ]
+--------------------------------------------------------------------------------
+[STATUS] : [ Stop Logging] - [ 19/05/2020 17:29:01 ] BassAudioPlayer.exe
+--------------------------------------------------------------------------------
