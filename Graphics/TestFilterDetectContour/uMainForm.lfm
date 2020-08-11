@@ -3,13 +3,11 @@ object MainForm: TMainForm
   Height = 524
   Top = 250
   Width = 835
-  BorderStyle = bsSingle
   Caption = 'Detection des contours'
   ClientHeight = 524
   ClientWidth = 835
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '2.0.6.0'
   object Panel1: TPanel
     Left = 0
     Height = 50
@@ -114,7 +112,7 @@ object MainForm: TMainForm
       TabOrder = 1
       object rgConvolutionFilters: TRadioGroup
         Left = 0
-        Height = 164
+        Height = 244
         Top = 4
         Width = 157
         Align = alTop
@@ -128,7 +126,7 @@ object MainForm: TMainForm
         ChildSizing.ShrinkVertical = crsScaleChilds
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 1
-        ClientHeight = 144
+        ClientHeight = 224
         ClientWidth = 153
         Enabled = False
         ItemIndex = 0
@@ -140,13 +138,14 @@ object MainForm: TMainForm
           'Scharr'
           'Robinson'
           'MDif'
+          'Laplace'
         )
         TabOrder = 0
       end
       object chkGrayScale: TCheckBox
         Left = 4
         Height = 19
-        Top = 172
+        Top = 252
         Width = 149
         Align = alTop
         BorderSpacing.Around = 4
@@ -199,21 +198,21 @@ object MainForm: TMainForm
       end
     end
     object GroupBox2: TGroupBox
-      Left = 333
+      Left = 342
       Height = 414
       Top = 5
-      Width = 326
+      Width = 317
       Align = alClient
       BorderSpacing.Around = 4
       Caption = 'Résultat'
       ClientHeight = 394
-      ClientWidth = 322
+      ClientWidth = 313
       TabOrder = 1
       object ImgResult: TBZImageViewer
         Left = 0
         Height = 394
         Top = 0
-        Width = 322
+        Width = 313
         Align = alClient
         UseDockManager = False
         TabOrder = 0
@@ -229,6 +228,12 @@ object MainForm: TMainForm
         DrawWithTransparency = False
         BackGroundChecker = True
       end
+    end
+    object Splitter1: TSplitter
+      Left = 333
+      Height = 422
+      Top = 1
+      Width = 5
     end
   end
   object OPD: TOpenPictureDialog

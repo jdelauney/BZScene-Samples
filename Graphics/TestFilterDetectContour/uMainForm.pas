@@ -30,6 +30,7 @@ type
     chkGrayScale : TCheckBox;
     pbImageProgress : TProgressBar;
     lblAction : TLabel;
+    Splitter1 : TSplitter;
     procedure btnLoadClick(Sender : TObject);
     procedure FormCreate(Sender : TObject);
     procedure FormDestroy(Sender : TObject);

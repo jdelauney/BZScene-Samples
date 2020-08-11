@@ -1,0 +1,21 @@
+--------------------------------------------------------------------------------
+[STATUS] : [ Start Logging ] - [ 19/05/2020 10:06:08 ] SimplyGifViewer.exe
+--------------------------------[ Informations ]--------------------------------
+Compilé             : à 09:52:37 le 2020/05/19
+FPC                 : 3.2.0
+LCL                 : 2.0.6.0
+OS Cible            : Win64
+CPU Cible           : x86_64
+Widget              : win32/win64
+------------------------[ Informations complémentaires ]------------------------
+OS Informations     : Windows 10 ( Version : 10.0 Build : 18362 )
+Type CPU            : AMD A10-7870K Radeon R7, 12 Compute Cores 4C+8G
+Dossier courrant    : H:\BeanzMaster\Documents\Projets\Lazarus\Github\BZScene-Samples\Graphics\SimplyGifViewer
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+[STATUS] : [ Conseils : 0 | Warnings : 0 | Erreurs : 0 | Exceptions : 0 ]
+--------------------------------------------------------------------------------
+[STATUS] : [ Stop Logging] - [ 19/05/2020 10:06:08 ] SimplyGifViewer.exe
+--------------------------------------------------------------------------------

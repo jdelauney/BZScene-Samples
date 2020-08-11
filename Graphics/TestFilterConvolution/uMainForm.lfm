@@ -3,7 +3,6 @@ object MainForm: TMainForm
   Height = 543
   Top = 250
   Width = 1024
-  BorderStyle = bsSingle
   Caption = 'MainForm'
   ClientHeight = 543
   ClientWidth = 1024
@@ -370,7 +369,8 @@ object MainForm: TMainForm
           Height = 98
           Top = 0
           Width = 341
-          Align = alBottom
+          Align = alCustom
+          Anchors = [akTop, akLeft, akBottom]
           ItemHeight = 0
           OnSelectionChange = lbxConvolutionFiltersSelectionChange
           TabOrder = 0
@@ -551,21 +551,21 @@ object MainForm: TMainForm
       end
     end
     object GroupBox2: TGroupBox
-      Left = 324
+      Left = 333
       Height = 416
       Top = 5
-      Width = 315
+      Width = 306
       Align = alClient
       BorderSpacing.Around = 4
       Caption = 'Résultat'
       ClientHeight = 396
-      ClientWidth = 311
+      ClientWidth = 302
       TabOrder = 1
       object ImgResult: TBZImageViewer
         Left = 0
         Height = 396
         Top = 0
-        Width = 311
+        Width = 302
         Align = alClient
         UseDockManager = False
         TabOrder = 0
@@ -608,6 +608,12 @@ object MainForm: TMainForm
       PageSize = 0
       TabOrder = 3
       OnChange = sbVertChange
+    end
+    object Splitter1: TSplitter
+      Left = 324
+      Height = 424
+      Top = 1
+      Width = 5
     end
   end
   object OPD: TOpenPictureDialog

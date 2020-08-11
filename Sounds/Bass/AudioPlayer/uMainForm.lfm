@@ -1,0 +1,194 @@
+object MainForm: TMainForm
+  Left = 351
+  Height = 580
+  Top = 250
+  Width = 637
+  Caption = 'BZScene Bass Audio Player'
+  ClientHeight = 580
+  ClientWidth = 637
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  object Button1: TButton
+    Left = 24
+    Height = 25
+    Top = 8
+    Width = 123
+    Caption = 'Ouvrir'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 208
+    Height = 25
+    Top = 8
+    Width = 104
+    Caption = 'Jouer / Stopper'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 312
+    Height = 25
+    Top = 8
+    Width = 120
+    Caption = 'Pause / Reprendre'
+    OnClick = Button3Click
+    TabOrder = 2
+  end
+  object GroupBox1: TGroupBox
+    Left = 19
+    Height = 160
+    Top = 56
+    Width = 288
+    Caption = 'Informations'
+    ClientHeight = 140
+    ClientWidth = 284
+    TabOrder = 3
+    object Label1: TLabel
+      Left = 16
+      Height = 15
+      Top = 16
+      Width = 41
+      Caption = 'Fichier :'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 16
+      Height = 15
+      Top = 40
+      Width = 61
+      Caption = 'Frequence :'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 15
+      Top = 64
+      Width = 97
+      Caption = 'Nombre de canal :'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 16
+      Height = 15
+      Top = 88
+      Width = 88
+      Caption = 'Nombre de Bits :'
+      ParentColor = False
+    end
+    object lblFileName: TLabel
+      Left = 70
+      Height = 15
+      Top = 16
+      Width = 63
+      Caption = 'lblFileName'
+      ParentColor = False
+    end
+    object lblFrequency: TLabel
+      Left = 80
+      Height = 15
+      Top = 40
+      Width = 68
+      Caption = 'lblFrequency'
+      ParentColor = False
+    end
+    object lblNbChannels: TLabel
+      Left = 120
+      Height = 15
+      Top = 66
+      Width = 78
+      Caption = 'lblNbChannels'
+      ParentColor = False
+    end
+    object lblNbBits: TLabel
+      Left = 120
+      Height = 15
+      Top = 88
+      Width = 48
+      Caption = 'lblNbBits'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 16
+      Height = 15
+      Top = 112
+      Width = 37
+      Caption = 'Durée :'
+      ParentColor = False
+    end
+    object lblDuration: TLabel
+      Left = 64
+      Height = 15
+      Top = 112
+      Width = 59
+      Caption = 'lblDuration'
+      ParentColor = False
+    end
+  end
+  object Label11: TLabel
+    Left = 328
+    Height = 15
+    Top = 64
+    Width = 40
+    Caption = 'Volume'
+    ParentColor = False
+  end
+  object TrackBar1: TTrackBar
+    Left = 384
+    Height = 25
+    Top = 60
+    Width = 227
+    Max = 100
+    OnChange = TrackBar1Change
+    Position = 100
+    TabOrder = 4
+  end
+  object ProgressBar1: TProgressBar
+    Left = 24
+    Height = 20
+    Top = 224
+    Width = 587
+    Smooth = True
+    TabOrder = 5
+  end
+  object Label13: TLabel
+    Left = 24
+    Height = 15
+    Top = 258
+    Width = 89
+    Caption = 'Volume principal'
+    ParentColor = False
+  end
+  object TrackBar3: TTrackBar
+    Left = 128
+    Height = 25
+    Top = 256
+    Width = 483
+    Max = 100
+    OnChange = TrackBar3Change
+    PageSize = 1
+    Position = 100
+    TabOrder = 6
+  end
+  object Button4: TButton
+    Left = 512
+    Height = 25
+    Top = 8
+    Width = 99
+    Caption = 'Bass Infos'
+    OnClick = Button4Click
+    TabOrder = 7
+  end
+  object OpenDialog: TOpenDialog
+    Filter = 'Tous les fichiers|*.*|Microsoft Wav file format|*.wav'
+    Left = 336
+    Top = 120
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = Timer1Timer
+    Left = 258
+    Top = 127
+  end
+end

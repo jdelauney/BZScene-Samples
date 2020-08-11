@@ -1,0 +1,54 @@
+object BassInfosForm: TBassInfosForm
+  Left = 351
+  Height = 480
+  Top = 250
+  Width = 777
+  Caption = 'Bass Informations'
+  ClientHeight = 480
+  ClientWidth = 777
+  object GroupBox3: TGroupBox
+    Left = 0
+    Height = 430
+    Top = 0
+    Width = 777
+    Align = alClient
+    Caption = 'Informations Bass'
+    ClientHeight = 410
+    ClientWidth = 773
+    TabOrder = 0
+    object Memo1: TMemo
+      Left = 4
+      Height = 402
+      Top = 4
+      Width = 765
+      Align = alClient
+      BorderSpacing.Around = 4
+      Font.Name = 'Courier New'
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 0
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 430
+    Width = 777
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 777
+    TabOrder = 1
+    object Button1: TButton
+      Left = 5
+      Height = 40
+      Top = 5
+      Width = 767
+      Align = alClient
+      BorderSpacing.Around = 4
+      Caption = 'Fermer'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+  end
+end

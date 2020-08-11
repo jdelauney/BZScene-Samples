@@ -31,6 +31,16 @@ type
     Label5 : TLabel;
     cbxNoiseInterpolation : TComboBox;
     ScrollBar1 : TScrollBar;
+    Label6: TLabel;
+    cbxNoiseType: TComboBox;
+    Label7: TLabel;
+    cbxFractalType: TComboBox;
+    Label8: TLabel;
+    fsePersistence: TFloatSpinEdit;
+    Label9: TLabel;
+    fseAmplitude: TFloatSpinEdit;
+    Label10: TLabel;
+    speOctave: TSpinEdit;
     procedure Button1Click(Sender : TObject);
     procedure pnlViewPaint(Sender : TObject);
     procedure FormCreate(Sender : TObject);
@@ -61,50 +71,88 @@ var
   //ng : TBZGradientNoiseGenerator;
   //ng : TBZImprovedPerlinNoiseGenerator;
   //ng : TBZSimplexNoiseGenerator;
-  ng : TBZOpenSimplexNoiseGenerator;
+  //ng : TBZOpenSimplexNoiseGenerator;
 
-  x,y : Integer;
-  n, PertubAmp, PertubFreq, PertubBias, k,l : Double;
+  ng : TBZCustomFractalNoiseGenerator;
+
+  i, x,y : Integer;
+  n, PertubAmp, PertubFreq, Freq, Amplitude, maxValue, PertubBias, k,l,vx,vy : Double;
   r,g,b: Byte;
 begin
-  PertubAmp := 12;
-  PertubBias := 64;
-  PertubFreq := 0.01;
+  //ng := TBZGradientNoiseGenerator.Create;
   //ng := TBZNoiseGenerator.Create;
 
   //ng := TBZValueNoiseGenerator.Create;
-  //ng := TBZGradientNoiseGenerator.Create;
+
   //ng := TBZImprovedPerlinNoiseGenerator.Create;
   //ng := TBZSimplexNoiseGenerator.Create;
-  ng := TBZOpenSimplexNoiseGenerator.Create;
+  //ng := TBZOpenSimplexNoiseGenerator.Create;
+  ng := TBZCustomFractalNoiseGenerator.Create;
+
   Case cbxBaseNoise.ItemIndex of
-    0 : ng.RandomNoiseGenerator := ngtWhite;
-    1 : ng.RandomNoiseGenerator := ngtAdditiveGaussian;
+    0 : ng.NoiseGenerator.RandomNoiseGenerator := ngtWhite;
+    1 : ng.NoiseGenerator.RandomNoiseGenerator := ngtAdditiveGaussian;
   end;
 
   ng.Seed := StrToInt(edtSeed.Text);
   ng.Frequency := fseFrequency.Value;
 
+ // PertubAmp := 12;
+  //PertubBias := 64;
+  //PertubFreq := ng.Frequency;
+  Amplitude := 1.0;
+
   Case cbxNoiseInterpolation.ItemIndex of
-    0,1 : ng.NoiseInterpolation := nitLinear;
-    2   : ng.NoiseInterpolation := nitCosine;
-    3   : ng.NoiseInterpolation := nitCubic;
+    0,1 : ng.NoiseGenerator.NoiseInterpolation := nitLinear;
+    2   : ng.NoiseGenerator.NoiseInterpolation := nitCosine;
+    3   : ng.NoiseGenerator.NoiseInterpolation := nitCubic;
   end;
 
-  ng.Smooth := chkSmoothNoise.Checked;
-  ng.SmoothInterpolation := GetBZInterpolationFilters.getFilterByIndex(cbxSmoothFilter.ItemIndex); //ifmHermit; //
+  ng.NoiseGenerator.Smooth := chkSmoothNoise.Checked;
+  ng.NoiseGenerator.SmoothInterpolation := GetBZInterpolationFilters.getFilterByIndex(cbxSmoothFilter.ItemIndex); //ifmHermit; //
+  ng.NoiseType := TBZNoiseType(cbxNoiseType.ItemIndex);
+  ng.Amplitude := fseAmplitude.Value;
+  ng.Lacunarity := fsePersistence.Value;
+
+  ng.Octaves := speOctave.Value;
+
 //  Label4.Caption := TBZInterpolationFilterRec(GetBZInterpolationFilters.Items[cbxSmoothFilter.ItemIndex]).Name;
   bmp.Clear(clrBlack);
   for y:=1 to 512 do
   begin
     //Memo1.Lines.Add('----- '+Inttostr(y));
-    l:= Cos(cPi*(y)/PertubBias)*PertubAmp+(y-1);
+    //l:= Cos(cPi*(y)/PertubBias)*PertubAmp+(y-1);
+    //vy := y;
     For x := 1 to 512 do
     begin
-      k:= Sin(cPi*(x)/PertubBias)*PertubAmp+(x-1);
-
-      //n := (0.5 + ng.GetNoise(x,y) * 0.5) ;
-      n := RangeMap(ng.GetNoise(x ,y, 0, c2PI * ScrollBar1.Position / 100 ),-1.0,1.0,0,255);
+      //k:= Sin(cPi*(x)/PertubBias)*PertubAmp+(x-1);
+      //vx := x;
+      //
+      ////n := (0.5 + ng.GetNoise(x,y) * 0.5) ;
+      //n:=0;
+      //Amplitude := 1.0;
+      //Freq := PertubFreq ;
+      //MaxValue := 0;
+      ////vx := vx + k;
+      ////vy := vy + l;
+      //for i := 0 to 3 do
+      //begin
+      //
+      //  ng.Frequency := Freq;
+      //  n := n + ng.GetNoise(vx ,vy) * Amplitude; // 0, c2PI * ScrollBar1.Position / 100 )
+      //  MaxValue := MaxValue + Amplitude;
+      //  //ng.Seed := ng.Seed + 1;
+      //  Freq := Freq * 2;
+      //  Amplitude := Amplitude * 1.2;
+      //  //vx := vx * 2;
+      //  //vy := vy * 2;
+      //
+      //end;
+      //n := n / MaxValue;
+      n := ng.GetNoise(x - 256 ,y - 256);
+      //n := RangeMap(n,-4,4,0,255);
+      n := RangeMap(n,-1,1,0,255);
+      //n := n + RangeMap(ng.GetNoise(x+k ,y+l, 0, c2PI * ScrollBar1.Position / 100 ),-1.0,1.0,0,255);
       r := Round(n);
       g := Round(n);
       b := Round(n);
